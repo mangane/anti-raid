@@ -10,6 +10,10 @@ client.on('message', message => {
     if (message.content === '!ping') {
     	message.reply("**pong!**");
   	}
+if (message.content === 'salope') {
+    message.delete(1)
+        message.reply("**change de vocabulaire merci !**");
+    }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
