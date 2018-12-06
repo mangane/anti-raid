@@ -28,7 +28,7 @@ client.on('message', message => {
         message.reply('__insulté est mauvais pour la santé__');
     } 
    if (message.content === 'fdp') {
-        message.reply('On est pas là pour s'insulter mais pour s'amusez')
+        message.reply('On est pas là pour s'insulter mais pour s'amusez');
 }
 if (message.content === 'fils de pute') {
      message.reply('On est pas là pour s'insulter mais pour s'amusez');
@@ -39,8 +39,6 @@ if (message.content === 'nique ta mere') {
 if (message.content === 'couille') {
      mesage.reply('veuillez evité de mettre des propos à caractères sexuels');
 }
-if (message.content === '
-
 });
 
 // THIS  MUST  BE  THIS  WAY
