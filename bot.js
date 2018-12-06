@@ -33,12 +33,6 @@ client.on('message', message => {
 if (message.content === 'fils de pute') {
      message.reply('On est pas là pour s'insulter mais pour s'amusez');
 }
-if (message.content === 'nique ta mere') {
-     message.reply('faite l'amour et pas la guerre');
-}
-if (message.content === 'couille') {
-     mesage.reply('veuillez evité de mettre des propos à caractères sexuels');
-}
 });
 
 // THIS  MUST  BE  THIS  WAY
