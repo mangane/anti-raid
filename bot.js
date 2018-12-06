@@ -15,7 +15,7 @@ if (message.content === 'salope') {
         message.reply("**change de vocabulaire merci !**");
     }
     if (message.content === '!clear') {
-message.(50); 
+message.delete(50); 
     }
 });
 // THIS  MUST  BE  THIS  WAY
