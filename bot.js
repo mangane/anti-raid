@@ -5,13 +5,6 @@ var prefix = "!"
 client.on('ready', () => {
     console.log('I am ready!');
 });
-
-client.on('message', message => {
-    if (message.content === '!ping') {
-    	message.reply("**pong!**");
-  	}   
-client.login(process.env.TOKEN);
-
 client.on("ready", () => {
     console.log("Connexion en cours ...");
 });
