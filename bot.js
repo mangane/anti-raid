@@ -107,6 +107,8 @@ client.on(`message`, message =>{
     await message.react("✅")
     await message.react("❌")
     await message.react("🤷") 
+      }); 
+  } 
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
