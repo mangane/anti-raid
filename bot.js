@@ -91,6 +91,11 @@ client.on(`message`, message =>{
         }
         message.delete()
 }
+    if(message.content.startsWith(prefix + "help") {
+    .setTitle("test")
+  .setColor("#5599ff")
+.setDescription(`help commandes`)
+}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
