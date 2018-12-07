@@ -91,7 +91,7 @@ client.on(`message`, message =>{
         }
         message.delete()
 }
-    if (message.content.startsWith('!poll')) {
+    if (message.content.startsWith(prefix + "help")) {
   const poll = message.content.substring(5);
       if (poll.lenght === 0) {
          message.reply("Vous n'avez pas mis de question");
