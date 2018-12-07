@@ -91,15 +91,22 @@ client.on(`message`, message =>{
         }
         message.delete()
 }
-    const pollembed = new Discord.RichEmbed()
-    if(message.content.startsWith(prefix + "help") {
-    .setTitle("test")
+    f (message.content.startsWith('!poll')) {
+  const poll = message.content.substring(5);
+      if (poll.lenght === 0) {
+         message.reply("Vous n'avez pas mis de question");
+      }
+            message.delete(1);
+  const pollembed = new Discord.RichEmbed()
+  .setTitle("test")
   .setColor("#5599ff")
-.setDescription(`help commandes`)
-    const pollembed = new Discord.RichEmbed()
+  .setDescription(`test`)
+  .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
   message.channel.sendMessage(pollembed)
-  .then(async function (message)
-}
+  .then(async function (message) {
+    await message.react("✅")
+    await message.react("❌")
+    await message.react("🤷") 
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
