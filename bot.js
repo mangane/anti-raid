@@ -91,10 +91,14 @@ client.on(`message`, message =>{
         }
         message.delete()
 }
+    const pollembed = new Discord.RichEmbed()
     if(message.content.startsWith(prefix + "help") {
     .setTitle("test")
   .setColor("#5599ff")
 .setDescription(`help commandes`)
+    const pollembed = new Discord.RichEmbed()
+  message.channel.sendMessage(pollembed)
+  .then(async function (message)
 }
 });
 // THIS  MUST  BE  THIS  WAY
