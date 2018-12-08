@@ -100,7 +100,7 @@ client.on(`message`, message =>{
   const pollembed = new Discord.RichEmbed()
   .setTitle("help commandes")
   .setColor("#5599ff")
-  .setDescription("Les commandes du bot : ```!mute ```")
+  .setDescription("Les commandes du bot : ```!mute (interdit à la personne mentionner de communiquer sur le serveur ``` ```!unmute : Enleve le mute sur la personne mentionner``` ")
   .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
   message.channel.send(pollembed)
   .then(async function (message) {
