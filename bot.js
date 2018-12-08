@@ -98,7 +98,7 @@ client.on(`message`, message =>{
       }
             message.delete(1);
   const pollembed = new Discord.RichEmbed()
-  .setTitle("Help commandes")
+  .setTitle("Help")
   .setColor("#5599ff")
   .setDescription(`Les commandes du bot : !mute (Interdit une personne de communiquer sur le serveur`)
   .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
