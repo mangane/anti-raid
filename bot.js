@@ -103,7 +103,7 @@ client.on(`message`, message =>{
   .setDescription(`Les commandes du bot : 
 !mute (Interdit une personne de communiquer sur le serveur`)
   .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
-  message.channel.sendMessage(pollembed)
+  message.channel.sendMessage(pollembed);
       }); 
   } 
 });
