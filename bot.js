@@ -96,15 +96,17 @@ client.on(`message`, message =>{
       if (poll.lenght === 0) {
          message.reply("Vous n'avez pas mis de question");
       }
-            message.delete(1);
+  message.delete(1);
   const pollembed = new Discord.RichEmbed()
-  .setTitle("Help")
+  .setTitle("help commandes)
   .setColor("#5599ff")
-  .setDescription(`Les commandes du bot : !mute (Interdit une personne de communiquer sur le serveur`)
+  .setDescription("test")
   .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
-  message.channel.sendMessage(pollembed);
-      }); 
-  } 
+  message.channel.send(pollembed)
+  .then(async function (message) {
+    await message.react("✅")
+    });
+  }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
