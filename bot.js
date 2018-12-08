@@ -98,15 +98,12 @@ client.on(`message`, message =>{
       }
             message.delete(1);
   const pollembed = new Discord.RichEmbed()
-  .setTitle("test")
+  .setTitle("Help commandes")
   .setColor("#5599ff")
-  .setDescription(`test`)
+  .setDescription(`Les commandes du bot : 
+!mute (Interdit une personne de communiquer sur le serveur`)
   .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
   message.channel.sendMessage(pollembed)
-  .then(async function (message) {
-    await message.react("✅")
-    await message.react("❌")
-    await message.react("🤷") 
       }); 
   } 
 });
