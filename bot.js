@@ -98,7 +98,7 @@ client.on(`message`, message =>{
       }
   message.delete(1);
   const pollembed = new Discord.RichEmbed()
-  .setTitle("help commandes)
+  .setTitle("help commandes")
   .setColor("#5599ff")
   .setDescription("test")
   .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
