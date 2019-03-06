@@ -15,7 +15,7 @@ client.on(`message`, message =>{
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
-            return message.channel.send("vous devez mentionner une personne pour éxecuter la commande");
+            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
         }
     
         var mute = message.guild.member(message.mentions.users.first());
@@ -34,7 +34,7 @@ client.on(`message`, message =>{
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You have to ping someone to execute this command");
+            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
         }
     
         var mute = message.guild.member(message.mentions.users.first());
@@ -52,7 +52,7 @@ client.on(`message`, message =>{
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You have to ping someone to execute this command");
+            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
         }
     
         let membre = message.guild.member(message.mentions.users.first());
@@ -74,7 +74,7 @@ client.on(`message`, message =>{
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You have to ping someone to execute this command");
+            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
         }
     
         let membre = message.guild.member(message.mentions.users.first());
