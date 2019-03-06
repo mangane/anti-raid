@@ -91,19 +91,6 @@ client.on(`message`, message =>{
         }
         message.delete()
 }
-    if (message.content.startsWith(prefix + "help")) {
-  const poll = message.content.substring(5);
-      if (poll.lenght === 0) {
-         message.reply("Vous n'avez pas mis de question");
-      }
-  message.delete(1);
-  const pollembed = new Discord.RichEmbed()
-  .setTitle("help commandes")
-  .setColor("#5599ff")
-  .setDescription("Les commandes du bot : ```!mute (interdit à la personne mentionner de communiquer sur le serveur ``` ```!unmute : Enleve le mute sur la personne mentionner``` ```!allmute : Interdit a tous le serveur de parler sauf aux personnes avec le droit Administrateur``` ```!allunmute : Enleve l'interdiction de parler à tout le serveur```")
-  .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
-  message.channel.send(pollembed)
-    });
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
