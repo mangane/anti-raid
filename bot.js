@@ -95,7 +95,10 @@ client.on(`message`, message =>{
         return message.channel.send("Le bot est en Maintenance des commandes peuvent être indisponnible!");
     }
     if(message.content.startsWith(prefix + "clear")) {
-        message.delete(3);
+        message.delete()
+        message.delete()
+        message.delete()
+        message.delete();
     }
         
 });
