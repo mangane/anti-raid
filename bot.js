@@ -101,7 +101,7 @@ client.on(`message`, message =>{
      }
     if(message.content.startsWith(prefix + "help")) {
         message.delete()
-         return message.channel.send("```Voici les commandes disponnible :``` !help : Affiche les commandes");
+         return message.channel.send("```Voici les commandes disponnible :``` !help : Affiche les commandes ``|`` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ");
      }
 });
 // THIS  MUST  BE  THIS  WAY
