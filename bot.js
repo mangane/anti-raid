@@ -95,9 +95,13 @@ client.on(`message`, message =>{
         message.delete()
         return message.channel.send("Le bot est en Maintenance des commandes peuvent être indisponnible!");
     }
-     if(message.content.startsWith("info")) {
+     if(message.content.startsWith("fdp")) {
         message.delete()
          return message.channel.send("Dis donc tu aime insulter ?");
+     }
+    if(message.content.startsWith(prefix + "help")) {
+        message.delete()
+         return message.channel.send("```Voici les commandes disponnible :```");
      }
 });
 // THIS  MUST  BE  THIS  WAY
