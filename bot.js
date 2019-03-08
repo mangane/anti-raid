@@ -97,7 +97,7 @@ client.on(`message`, message =>{
     }
      if(message.content.startsWith("info")) {
         message.delete()
-         return message.channel;send("Dis donc tu aime insulter ?");
+         return message.channel.send("Dis donc tu aime insulter ?");
      }
 });
 // THIS  MUST  BE  THIS  WAY
