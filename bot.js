@@ -101,7 +101,7 @@ client.on(`message`, message =>{
      }
     if(message.content.startsWith(prefix + "help")) {
         message.delete()
-         return message.channel.send("```Voici les commandes disponnible :``` ``!help : Affiche les commandes``");
+         return message.channel.send("```Voici les commandes disponnible :``` `` `` ``!help : Affiche les commandes``");
      }
 });
 // THIS  MUST  BE  THIS  WAY
