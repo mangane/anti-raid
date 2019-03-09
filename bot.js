@@ -51,7 +51,7 @@ client.on(`message`, message =>{
     
     if(message.content.startsWith(prefix + "info")) {
         return 
-         message.channel.send("Bot crée par ,,,");
+         message.channel.send("Le bot est en V1");
     }
      if(message.content.startsWith("fdp")) {
          return message.channel.send("Dis donc tu aime insulter ?");
