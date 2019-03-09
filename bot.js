@@ -58,7 +58,7 @@ client.on(`message`, message =>{
         message.delete()
          return message.channel.send("Dis donc tu aime insulter ?");
      }
-     if(message.content.startsWith(prefix + "invite"")) {
+     if(message.content.startsWith(prefix + "invite")) {
         message.delete()
          return message.channel.send("Voici le lien pour m'inviter :");
          }
