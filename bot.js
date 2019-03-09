@@ -51,15 +51,20 @@ client.on(`message`, message =>{
     
     if(message.content.startsWith(prefix + "info")) {
         message.delete()
-        return message.channel.send(`${message.author.username} Le bot est en Maintenance des commandes peuvent être indisponnible!`);
+        return 
+         message.channel.send("Le bot est en Maintenance des commandes peuvent être indisponnible!");
     }
      if(message.content.startsWith("fdp")) {
         message.delete()
-         return message.channel.send(`${message.author.username} Dis donc tu aime insulter ?`);
+         return message.channel.send("Dis donc tu aime insulter ?");
      }
+     if(message.content.startsWith(prefix + "invite"")) {
+        message.delete()
+         return message.channel.send("Voici le lien pour m'inviter :");
+         }
      if(message.content.startsWith(prefix + "help")) {
         message.delete()
-         return message.channel.send(`${message.author.username} ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot`);
+          message.channel.send("${message.author.username} ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot");
      }
     
 });
