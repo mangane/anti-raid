@@ -52,7 +52,7 @@ client.on(`message`, message =>{
     if(message.content.startsWith(prefix + "info")) {
         message.delete()
         return 
-         message.channel.send("Bot crée par ,,,);
+         message.channel.send("Bot crée par ,,,");
     }
      if(message.content.startsWith("fdp")) {
         message.delete()
