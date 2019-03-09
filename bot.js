@@ -60,11 +60,11 @@ client.on(`message`, message =>{
      }
      if(message.content.startsWith(prefix + "invite")) {
         message.delete()
-         return message.channel.send("Voici le lien pour m'inviter :");
+         return message.channel.send("Voici le lien pour m'inviter : https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
          }
      if(message.content.startsWith(prefix + "help")) {
         message.delete()
-          message.channel.send("${message.author.username} ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot");
+          message.channel.send(" ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot");
      }
     
 });
