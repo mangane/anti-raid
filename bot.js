@@ -49,18 +49,19 @@ client.on(`message`, message =>{
         message.delete()
     }
      if(message.content.startsWith(prefix + "info")) {
-        
+        message.delete ()
          return message.channel.send("Le bot est en V1");
     }
      if(message.content.startsWith("fdp")) {
+         message.delete()
          return message.channel.send("Dis donc tu aime insulter ?");
      }
      if(message.content.startsWith(prefix + "invite")) {
-         
+         message.delete ()
 return message.channel.send("```Voici le lien pour m'inviter```: https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
          }
      if(message.content.startsWith(prefix + "help")) {
-        
+message.delete ()
         return message.channel.send(" ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot ``` 5 ``` !invite : Vous donne le lien pour inviter le bot ! ```Bot crée par ⏳Gaétan#2852```");
      }
     
