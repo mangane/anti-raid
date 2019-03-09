@@ -103,11 +103,7 @@ client.on(`message`, message =>{
         message.delete()
          return message.channel.send("```Voici les commandes disponnible :``` !help : Affiche les commandes ```| ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ");
      }
-    bot.setBadWordRun((event) -> {
-	event.getMessage().delete().complete();
-	Message message = event.getChannel().sendMessage("Watch your language " + event.getAuthor().getAsMention() + "!!").complete();
-	bot.addAction(() -> message.delete().queue(), 5);
-        }
+    
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
