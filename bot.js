@@ -48,8 +48,7 @@ client.on(`message`, message =>{
         })
         message.delete()
     }
-    
-    if(message.content.startsWith(prefix + "info")) {
+     if(message.content.startsWith(prefix + "info")) {
         return 
          message.channel.send("Le bot est en V1");
     }
