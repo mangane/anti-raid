@@ -52,7 +52,7 @@ client.on(`message`, message =>{
     if(message.content.startsWith(prefix + "info")) {
         message.delete()
         return 
-         message.channel.send("Le bot est en Maintenance des commandes peuvent être indisponnible!");
+         message.channel.send("Bot crée par ,,,);
     }
      if(message.content.startsWith("fdp")) {
         message.delete()
@@ -64,6 +64,7 @@ client.on(`message`, message =>{
          }
      if(message.content.startsWith(prefix + "help")) {
         message.delete()
+        return
           message.channel.send(" ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot ``` 5 ``` !invite : Vous donne le lien pour inviter le bot ! ```Bot crée par ⏳Gaétan#2852```");
      }
     
