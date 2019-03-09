@@ -48,49 +48,7 @@ client.on(`message`, message =>{
         })
         message.delete()
     }
-    if(message.content.startsWith(prefix + "allmute")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
     
-        if(message.mentions.users.size === 0) {
-            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
-        }
-    
-        let membre = message.guild.member(message.mentions.users.first());
-        if(!membre) {
-            return message.channel.send("l'utilisateur n'existent pas !");
-        }
-    
-        let mute = message.guild.roles.find("name", "muted");
-        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
-        
-        else{
-            membre.addRole(mute)
-            message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
-        }
-        message.delete()
-    }
-
-    if(message.content.startsWith(prefix + "allunmute")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
-    
-        if(message.mentions.users.size === 0) {
-            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
-        }
-    
-        let membre = message.guild.member(message.mentions.users.first());
-        if(!membre) {
-            return message.channel.send("l'utilisateur n'existent pas !");
-        }
-    
-        let mute = message.guild.roles.find("name", "muted");
-        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
-        
-        else{
-            membre.removeRole(mute)
-            message.channel.send(`${membre.user.username} has been unmuted by ${message.author.username} !`);
-        }
-        message.delete()
-}
     if(message.content.startsWith(prefix + "info")) {
         message.delete()
         return message.channel.send("Le bot est en Maintenance des commandes peuvent être indisponnible!");
@@ -101,7 +59,7 @@ client.on(`message`, message =>{
      }
     if(message.content.startsWith(prefix + "help")) {
         message.delete()
-         return message.channel.send("```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ```");
+         return message.channel.send("```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute.");
      }
     
 });
