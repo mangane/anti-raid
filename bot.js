@@ -50,7 +50,7 @@ client.on(`message`, message =>{
     }
      if(message.content.startsWith(prefix + "info")) {
         message.delete ()
-         return message.channel.send("Le bot est en V1");
+         return message.channel.send("La disponibilité du bot est de 100℅");
     }
      if(message.content.startsWith("fdp")) {
          message.delete()
