@@ -49,15 +49,15 @@ client.on(`message`, message =>{
         message.delete()
     }
      if(message.content.startsWith(prefix + "info")) {
-        return 
-         message.channel.send("Le bot est en V1");
+        
+         return message.channel.send("Le bot est en V1");
     }
      if(message.content.startsWith("fdp")) {
          return message.channel.send("Dis donc tu aime insulter ?");
      }
      if(message.content.startsWith(prefix + "invite")) {
-         return
-          message.channel.send("```Voici le lien pour m'inviter```: https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
+         
+return message.channel.send("```Voici le lien pour m'inviter```: https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
          }
      if(message.content.startsWith(prefix + "help")) {
         
