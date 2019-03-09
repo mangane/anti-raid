@@ -13,7 +13,7 @@ client.on("ready", () => {
 client.on(`message`, message =>{
     if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
-    }
+    
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
         }
@@ -32,7 +32,7 @@ client.on(`message`, message =>{
     
     if(message.content.startsWith(prefix + "unmute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
-    }
+    
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
         }
@@ -50,7 +50,7 @@ client.on(`message`, message =>{
     }
     if(message.content.startsWith(prefix + "allmute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
-    }
+    
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
         }
