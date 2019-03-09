@@ -107,9 +107,7 @@ client.on(`message`, message =>{
 	event.getMessage().delete().complete();
 	Message message = event.getChannel().sendMessage("Watch your language " + event.getAuthor().getAsMention() + "!!").complete();
 	bot.addAction(() -> message.delete().queue(), 5);
-        
-});
-    
+        }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
