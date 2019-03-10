@@ -76,7 +76,7 @@ return message.channel.send("```Voici le lien pour m'inviter```: https://discord
      		.setColor(0x954D23)
      		.setTitle("Pong")
      		.addField("Ping","180ms");
-     		message.channel.send({ping})
+     		message.channel.send({embed})
      		
      	}
     if(message.content.startsWith(prefix + "kick")) {
