@@ -67,7 +67,8 @@ return message.channel.send("```Voici le lien pour m'inviter```: https://discord
      .addField("!info", "Donne des informations sur le bot")		.addField("!invite", "Donne le lien pour me faire joindre votre serveur")		
      .addField("!mute", "Permer d'interdire à un membre de parler")	
      	.addField("!unmute", "Retire l'interdiction de parler")	
-     	.addField("Modérateur [Bêta] crée par ⏳Gaétan#2852");	message.channel.send({embed})	}
+     	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
+                                                       message.channel.send({embed})	}
     if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     
