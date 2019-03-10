@@ -60,10 +60,14 @@ client.on(`message`, message =>{
          message.delete ()
 return message.channel.send("```Voici le lien pour m'inviter```: https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
          }
-     if(message.content.startsWith(prefix + "help")) {
-message.delete ()
-        return message.channel.send(" ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot ``` 5 ``` !invite : Vous donne le lien pour inviter le bot ! ``` 6 ``` !kick [mention] Exclu une personne du serveur ```Bot crée par ⏳Gaétan#2852```");
-     }
+     if (message.content.startsWith(prefix + "hep")) {		const embed = new Discord.RichEmbed()		
+     .setColor(0x954D23)		
+     .setTitle("Liste des commandes :")		
+     .addField("!help", "Affiche les commandes")		
+     .addField("!info", "Donne des informations sur le bot")		.addField("!invite", "Donne le lien pour me faire joindre votre serveur")		
+     .addField("!mute", "Permer d'interdire à un membre de parler")	
+     	.addField("!unmute", "Retire l'interdiction de parler")	
+     	.addField("Modérateur [Bêta] crée par ⏳Gaétan#2852");	message.channel.send({embed})	}
     if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     
