@@ -77,7 +77,7 @@ return message.channel.send("```Voici le lien pour m'inviter```: https://discord
      		Discord.RichEmbed()
      		.setColor(0x954D23)
      		.setTitle("Pong")
-     		.addField("Ping","180ms");
+     		.addField("💬","180ms");
      		message.channel.send({embed})
      		
      	}
