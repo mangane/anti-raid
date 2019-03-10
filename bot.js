@@ -61,13 +61,13 @@ client.on(`message`, message =>{
 return message.channel.send("```Voici le lien pour m'inviter```: https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
          }
      if (message.content.startsWith(prefix + "help")) {		
-         const embed = new Discord.RichEmbed()		
+     const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
      .setTitle("Liste des commandes :")		
      .addField("!help", "Affiche les commandes")		
      .addField("!info", "Donne des informations sur le bot")		.addField("!invite", "Donne le lien pour me faire joindre votre serveur")		
      .addField("!mute [Mention]", "Permer d'interdire à un membre de parler")	
-     	.addField("!unmute[Mention]}", "Retire l'interdiction de parler")	
+     	.addField("!unmute[Mention]", "Retire l'interdiction de parler")	
      	.addField("!kick [Mention]","Exclure un membre du serveur")
      	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	message.channel.send({embed})	}
     if(message.content.startsWith(prefix + "kick")) {
