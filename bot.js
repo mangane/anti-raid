@@ -59,9 +59,10 @@ client.on(`message`, message =>{
          message.delete()
          return message.channel.send("Dis donc tu aime insulter ?");
      }
-     if(message.content.startsWith(prefix + "invite")) {
-         message.delete ()
-return message.channel.send("```Voici le lien pour m'inviter```: https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
+     if (message.content.startsWith(prefix + "invite")) {		
+     const embed = new Discord.RichEmbed()		
+     .setColor(0x954D23)		
+     .setTitle("Invitation :")		  message.channel.send("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
          }
      if (message.content.startsWith(prefix + "help")) {		
      const embed = new Discord.RichEmbed()		
