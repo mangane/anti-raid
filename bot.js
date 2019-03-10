@@ -48,9 +48,12 @@ client.on(`message`, message =>{
         })
         message.delete()
     }
-     if(message.content.startsWith(prefix + "info")) {
-        message.delete ()
-         return message.channel.send("La disponibilité du bot est de 100℅");
+     if (message.content.startsWith(prefix + "help")) {		
+     const embed = new Discord.RichEmbed()		
+     .setColor(0x954D23)		
+     .setTitle("Disponibilité du bot :")		 
+     .addField("La disponibilité du bot est de 100℅");
+     message.channel.send({embed})
     }
      if(message.content.startsWith("fdp")) {
          message.delete()
