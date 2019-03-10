@@ -48,7 +48,7 @@ client.on(`message`, message =>{
         })
         message.delete()
     }
-     if (message.content.startsWith(prefix + "help")) {		
+     if (message.content.startsWith(prefix + "info")) {		
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
      .setTitle("Disponibilité du bot :")		 
