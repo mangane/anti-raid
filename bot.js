@@ -65,10 +65,10 @@ message.delete ()
         return message.channel.send(" ```Voici les commandes disponnible :``` 1 ``` ``` !help : Affiche les commandes ```2 ``` !mute [Mention] : Permet de faire en sorte qu'une personne ne puisse parler sur le serveur ``` 3 ``` !unmute [Mention] : Désactive l'effet de la commande !mute. ``` 4 ``` !info : Vous informe de la disponnibilité du bot ``` 5 ``` !invite : Vous donne le lien pour inviter le bot ! ``` 6 ``` !kick [mention] Exclu une personne du serveur ```Bot crée par ⏳Gaétan#2852```");
      }
     if(message.content.startsWith(prefix + "kick")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     
         if(message.mentions.users.size === 0) {
-            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
+            return message.channel.send("Vous avez oublié de mention la personne à exclure !");
         }
        const member = message.mentions.members.first();
    message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`)
