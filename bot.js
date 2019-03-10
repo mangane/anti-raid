@@ -71,7 +71,7 @@ return message.channel.send("```Voici le lien pour m'inviter```: https://discord
      	.addField("!kick [Mention]","Exclure un membre du serveur")
      	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	message.channel.send({embed})	}
      	if(message.content.startsWith(prefix + "ping")) {
-     		const ping = new
+     		const embed = new1
      		Discord.RichEmbed()
      		.setColor(0x954D23)
      		.setTitle("Pong")
