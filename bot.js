@@ -102,7 +102,6 @@ client.on(`message`, message =>{
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous avez oublié de mention la personne à exclure !");
         }
-       const member = message.mentions.members.first();
    message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
         member.ban();
    }
