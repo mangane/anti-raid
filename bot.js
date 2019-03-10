@@ -97,14 +97,8 @@ client.on(`message`, message =>{
         member.kick();
    }
    if(message.content.startsWith(prefix + "ban")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
-    
-        if(message.mentions.users.size === 0) {
-            return message.channel.send("Vous avez oublié de mention la personne à exclure !");
-        }
-   message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
-        member.ban();
-   }
+        message.channel.send("Commandes indisponible")
+       }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
