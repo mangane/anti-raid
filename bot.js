@@ -60,7 +60,8 @@ client.on(`message`, message =>{
          message.delete ()
 return message.channel.send("```Voici le lien pour m'inviter```: https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot ");
          }
-     if (message.content.startsWith(prefix + "hep")) {		const embed = new Discord.RichEmbed()		
+     if (message.content.startsWith(prefix + "help")) {		
+         const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
      .setTitle("Liste des commandes :")		
      .addField("!help", "Affiche les commandes")		
