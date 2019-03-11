@@ -76,7 +76,7 @@ client.on(`message`, message =>{
      	.addField("!unmute[Mention]", "Retire l'interdiction de parler")	
      	.addField("!kick [Mention]","Exclure un membre du serveur")
      	.addField("!ping","Permet de voir la réaction du bot")
-     	.addFooter"texte","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
+     	.addFooter("texte","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
      	message.channel.send({embed})	}
      	if(message.content.startsWith(prefix + "ping")) {
      		const embed = new
