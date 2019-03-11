@@ -85,7 +85,7 @@ client.on(`message`, message =>{
      		
     if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
-    
+    const member = message.mentions.users.first();
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous avez oublié de mention la personne à exclure !");
         }
