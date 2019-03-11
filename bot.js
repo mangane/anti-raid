@@ -62,8 +62,7 @@ client.on(`message`, message =>{
      if (message.content.startsWith(prefix + "invite")) {		
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
-     .setTitle("Invitation :")		  .
-     addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
+     .setTitle("Invitation :")		  ..addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
      message.channel.send({embed})
          }
      if (message.content.startsWith(prefix + "help")) {		
@@ -97,6 +96,27 @@ client.on(`message`, message =>{
    message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`)
         member.kick();
    }
+   
+   if (message.content.startsWith(prefix + 'say) {
+if (content = args.join(" ")) {
+    message.channel.send(${content});
+    message.delete();
+    return;
+
+  } else {
+    message.channel.send(Vous devez entrer un message à écrire !)
+    return;
+  }
+  if(message.content.startsWith(prefix + "ban")) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
+    
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("Vous avez oublié de mention la personne à exclure !");
+        }
+   message.channel.send(${message.mentions.users.first()} à été banni par ${message.author.username})
+        member.ban();
+   }
+}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
