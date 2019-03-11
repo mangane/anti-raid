@@ -96,18 +96,6 @@ client.on(`message`, message =>{
    message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`)
         member.kick();
    }
-   
-   if (message.content.startsWith(prefix + 'say') {
-if (content = args.join(" ")) {
-    message.channel.send(${content});
-    message.delete();
-    return;
-
-  } else {
-    message.channel.send(Vous devez entrer un message à écrire !)
-    return;
-  }
-}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
