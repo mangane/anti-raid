@@ -103,9 +103,8 @@ client.on(`message`, message =>{
     const member = message.mentions.users.first();
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
         message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!")
-    }; 
-    
-        if(message.mentions.users.size === 0) {
+        
+            if(message.mentions.users.size === 0) {
             return message.channel.send("Vous avez oublié de mention la personne à exclure !");
         }
    message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
