@@ -2,6 +2,7 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "!";
+bot.user.setActivity("Test");
 
 client.on('ready', () => {
     console.log('I am ready!');
