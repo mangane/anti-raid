@@ -62,7 +62,8 @@ client.on(`message`, message =>{
      if (message.content.startsWith(prefix + "invite")) {		
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
-     .setTitle("Invitation :")		  ..`addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
+     .setTitle("Invitation :")		  
+     .addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
      message.channel.send({embed})
          }
      if (message.content.startsWith(prefix + "help")) {		
@@ -75,7 +76,7 @@ client.on(`message`, message =>{
      	.addField("!unmute[Mention]", "Retire l'interdiction de parler")	
      	.addField("!kick [Mention]","Exclure un membre du serveur")
      	.addField("!ping","Permet de voir la réaction du bot")
-     	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
+     	.addFooter"texte","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
      	message.channel.send({embed})	}
      	if(message.content.startsWith(prefix + "ping")) {
      		const embed = new
@@ -95,6 +96,16 @@ client.on(`message`, message =>{
        const member = message.mentions.members.first();
    message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`)
         member.kick();
+   }
+    if(message.content.startsWith(prefix + "ban")) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
+    
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("Vous avez oublié de mention la personne à exclure !");
+        }
+       const member = message.mentions.members.first();
+   message.channel.send(`${message.mentions.users.first())} à été banni par ${message.author.username}`)
+        member.ban();
    }
    
 });
