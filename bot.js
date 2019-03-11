@@ -97,7 +97,7 @@ client.on(`message`, message =>{
         member.kick();
    }
    
-   if (message.content.startsWith(prefix + 'say) {
+   if (message.content.startsWith(prefix + 'say') {
 if (content = args.join(" ")) {
     message.channel.send(${content});
     message.delete();
