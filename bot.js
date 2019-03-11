@@ -1,7 +1,7 @@
-const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "!";
+
 client.on('ready', () => {
     console.log('I am ready!');
 });
@@ -54,10 +54,7 @@ client.on(`message`, message =>{
      .addField("La disponibilité du bot est de 100℅");
      message.channel.send({embed})
     }
-     if(message.content.startsWith("fdp")) {
-         message.delete()
-         return message.channel.send("Dis donc tu aime insulter ?");
-     }
+   
      if (message.content.startsWith(prefix + "invite")) {		
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
@@ -84,9 +81,8 @@ client.on(`message`, message =>{
      		.setColor(0x954D23)
      		.setTitle("Pong")
      		.addField("💬","180ms");
-     		message.channel.send({embed})
+     		message.channel.send({embed});
      		
-     	}
     if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     
