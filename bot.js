@@ -107,6 +107,16 @@ client.on(`message`, message =>{
    message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
         member.ban();
    }
+   if(message.content.startsWith(prefix + "unban")) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
+    
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("Vous avez oublié de mention la personne à exclure !");
+        }
+       const member = message.mentions.members.first();
+   message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
+        member.unban();
+   }
    
 });
 // THIS  MUST  BE  THIS  WAY
