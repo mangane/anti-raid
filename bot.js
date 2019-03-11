@@ -98,16 +98,6 @@ client.on(`message`, message =>{
         member.kick();
    }
    
-   if (message.content.startsWith(prefix + 'say') {
-if (content = args.join(" ")) {
-    message.channel.send(${content});
-    message.delete();
-    return;
-
-  } else {
-    message.channel.send(Vous devez entrer un message à écrire !)
-    return;
-  }
   if(message.content.startsWith(prefix + "ban")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     
