@@ -2,6 +2,7 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "!";
+bot.user.setActivity("taper !help");
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -96,12 +97,6 @@ client.on(`message`, message =>{
    message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`)
         member.kick();
    }
-   
-   if (message.content.startsWith(prefix + 'say') {
-if (content = args.join(" ")) {
-    message.channel.send(${content});
-    message.delete();
-    }
   if(message.content.startsWith(prefix + "ban")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     const member = message.mentions.members.first();
