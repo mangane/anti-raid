@@ -98,18 +98,6 @@ client.on(`message`, message =>{
    message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`)
         member.kick();
    }
-   
-   if (message.content.startsWith(prefix + 'say')) {
-if (content = args.join(" ")) {
-    message.channel.send(`${content}`);
-    message.delete();
-    return;
-
-  } else {
-    message.channel.send("Vous devez entrer un message à écrire !")
-    return;
-  }
-};
   
   if(message.content.startsWith(prefix + "ban")) {
     const member = message.mentions.users.first();
