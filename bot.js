@@ -66,6 +66,18 @@ client.on(`message`, message =>{
         })
         message.delete()
     }
+    
+    if(message.content.startsWith(prefix + "ping")) {
+const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  }
+
+
+if(message.content.startsWith(prefix +"say") {
+ const sayMessage = args.join(" ");
+ message.delete().catch(O_o=>{}); 
+ message.channel.send(sayMessage);
+  }
      if (message.content.startsWith(prefix + "info")) {		
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
@@ -96,15 +108,15 @@ client.on(`message`, message =>{
      	.addField("!ping","Permet de voir la réaction du bot")
      	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
      	message.channel.send({embed})	}
-     	if(message.content.startsWith(prefix + "ping")) {
-     		const embed = new
-     		Discord.RichEmbed()
-     		.setColor(0x954D23)
-     		.setTitle("Pong")
-     		.addField("💬","180ms");
-     		message.channel.send({embed})
+
+
+
+
+
+
+
      		
-     	}
+
     if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     
