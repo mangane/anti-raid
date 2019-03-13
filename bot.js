@@ -62,12 +62,6 @@ client.on(`message`, message =>{
         })
         message.delete()
     }
-if(message.content.startsWith(prefix +"say") {
- const sayMessage = args.join(" ");
- message.delete().catch(O_o=>{}); 
- const args = message.content.split(" ").slice(1);
- message.channel.send(sayMessage);
-  }
      if (message.content.startsWith(prefix + "info")) {		
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
