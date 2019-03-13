@@ -25,6 +25,10 @@ client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Regarder ${client.guilds.size} servers`);
 });
+if(message.content.startsWith(prefix + "co")) {
+    client.user.setActivity(`Taper !help`);
+});
+
 
 client.on(`message`, message =>{
     if(message.content.startsWith(prefix + "mute")) {
