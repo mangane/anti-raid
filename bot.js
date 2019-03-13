@@ -12,19 +12,12 @@ client.on("ready", () => {
 
 client.on("ready", () => {
 console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-client.user.setActivity(`Surveile ${client.guilds.size} serveurs`);
+client.user.setActivity(`Surveille ${client.guilds.size} serveurs`);
 });
-
-
-
-
-
-
 client.on("guildCreate", guild => {
 console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-client.user.setActivity(`Surveile ${client.guilds.size} serveurs`);
+client.user.setActivity(`Surveille ${client.guilds.size} serveurs`);
 });
-
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
@@ -34,7 +27,7 @@ client.on("guildDelete", guild => {
 client.on(`message`, message =>{
     if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
-    
+        
         if(message.mentions.users.size === 0) {
             return message.channel.send("Vous n'avez pas mentionner de personne");
         }
@@ -79,6 +72,7 @@ const m = await message.channel.send("Ping?");
 if(message.content.startsWith(prefix +"say") {
  const sayMessage = args.join(" ");
  message.delete().catch(O_o=>{}); 
+ const args = message.content.split(" ").slice(1);
  message.channel.send(sayMessage);
   }
      if (message.content.startsWith(prefix + "info")) {		
@@ -104,22 +98,15 @@ if(message.content.startsWith(prefix +"say") {
      .setColor(0x954D23)		
      .setTitle("Liste des commandes :")		
      .addField("!help", "Affiche les commandes")		
-     .addField("!info", "Donne des informations sur le bot")		.addField("!invite", "Donne le lien pour me faire joindre votre serveur")		
+     .addField("!info", "Donne des informations sur le bot")		
+     .addField("!invite", "Donne le lien pour me faire joindre votre serveur")		
      .addField("!mute [Mention]", "Permer d'interdire à un membre de parler")	
      	.addField("!unmute[Mention]", "Retire l'interdiction de parler")	
      	.addField("!kick [Mention]","Exclure un membre du serveur")
      	.addField("!ping","Permet de voir la réaction du bot")
      	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
-     	message.channel.send({embed})	}
-
-
-
-
-
-
-
-     		
-
+     	message.channel.send({embed})
+     }
     if(message.content.startsWith(prefix + "kick")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
     
@@ -140,8 +127,6 @@ if(message.content.startsWith(prefix +"say") {
    message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
         member.ban();
    }
-   
-   
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
