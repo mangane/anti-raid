@@ -62,13 +62,6 @@ client.on(`message`, message =>{
         })
         message.delete()
     }
-    
-    if(message.content.startsWith(prefix + "ping")) {
-const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-  }
-
-
 if(message.content.startsWith(prefix +"say") {
  const sayMessage = args.join(" ");
  message.delete().catch(O_o=>{}); 
@@ -82,9 +75,6 @@ if(message.content.startsWith(prefix +"say") {
      .addField("La disponibilité du bot est de 100℅");
      message.channel.send({embed})
     }
-     if(message.content.startsWith("fdp")) {
-         message.delete()
-         return message.channel.send("Dis donc tu aime insulter ?");
      }
      if (message.content.startsWith(prefix + "invite")) {		
      const embed = new Discord.RichEmbed()		
