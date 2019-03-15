@@ -114,6 +114,10 @@ client.on(`message`, message =>{
    message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
         member.ban();
     }
+    if(message.channel.startsWith(prefix + "ping")) {
+        message.channel.send("Pong! Latency is ${message.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms");
+}
+        
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
