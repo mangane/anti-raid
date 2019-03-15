@@ -4,20 +4,15 @@ const client = new Discord.Client();
 var prefix = "&";
 
 client.on('ready', () => {
-    console.log('I am ready!');
-});
-client.on("ready", () => {
-    console.log("Connexion en cours ...");
+	console.log('I am ready!');
+	console.log("Connexion en cours ...");
+	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+	client.user.setGame(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help_______________________`);
+	setInterval(() => {
+		client.user.setGame(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help_______________________`);
+	}, 120000);
 });
 
-client.on("ready", () => {
-console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-setInterval(() => {
-    client.user.setActivity(`${client.users.size} Utilisateurs`)
-    (`${client.guilds.size} Serveurs`)
-   (`taper !help `);
-}, 120000);
- });
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
@@ -132,4 +127,4 @@ client.on(`message`, message =>{
 }
 });
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+client.login('Mzg0MTU1MDQzODczNTU0NDQ2.Du1vEw.cFtDWlTozTcWrgPOXF1CEKE2CMA');
