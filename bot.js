@@ -115,7 +115,7 @@ client.on(`message`, message =>{
         member.ban();
     }
     if(message.channel.startsWith(prefix + "ping")) {
-        message.channel.send("Pong! Latency is ${message.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms");
+        message.channel.send("Pong!${Math.round(client.ping)}");
 }
         
 });
