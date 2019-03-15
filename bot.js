@@ -72,14 +72,11 @@ client.on(`message`, message =>{
      .addField("La disponibilité du bot est de 100℅");
      message.channel.send({embed})
     }
-     if(message.content.startsWith("fdp")) {
-         message.delete()
-         return message.channel.send("Dis donc tu aime insulter ?");
-     }
      if (message.content.startsWith(prefix + "invite")) {		
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
      .setTitle("Invitation :")		  
+    .addField("Voici le site web","https://manganeg21.wixsite.com/overbot/")
      .addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
      message.channel.send({embed})
          }
