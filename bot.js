@@ -92,7 +92,7 @@ client.on(`message`, message =>{
      	.addField("&unmute[Mention]", "Retire l'interdiction de parler")	
      	.addField("&kick [Mention]","Exclure un membre du serveur")
      .addField("&sondage","Vous permet de faire un sondage")
-     	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
+     	.setFooter("Modérateur [Bêta] crée par ⏳Gaétan#2852");	
      	message.channel.send({embed})	}
                   
     if(message.content.startsWith(prefix + "kick")) {
