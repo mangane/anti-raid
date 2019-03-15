@@ -13,7 +13,7 @@ client.on("ready", () => {
 client.on("ready", () => {
 console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
 client.user.setActivity(`Regarder ${client.guilds.size} servers`);
-    client.user.setActivity(`Taper &help | V0.5.0`);
+    client.user.setActivity(`Taper &help | ${client.guilds.size} serveurs`);
 });
 
 client.on("guildCreate", guild => {
