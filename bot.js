@@ -18,14 +18,7 @@ setInterval(() => {
    (`taper !help `);
 }, 120000);
  });
-client.on(`message`, message =>{
-	const args = message.content.slice(prefix.length).trim().split(/ +/g);
-
-	if (message.content.startsWith(prefix + 'say')) {
-		let m = args.slice(1).join(' ');
-    message.delete(100);
-    message.channel.send(`${m}`);
-	}
+client.on(`message`, message => {
   if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
     
