@@ -2,6 +2,12 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+
+
+    let m = args.slice(0).join(' ');
+    message.delete(100);
+    message.channe.send(`${m}`);
 
 client.on('ready', () => {
     console.log('I am ready!');
