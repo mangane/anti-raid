@@ -13,7 +13,7 @@ client.on('ready', () => {
 	setInterval(() => {
 		messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
 		client.user.setActivity(`${messageACTIVITY}`);
-	}, 50000);
+	}, 60000);
 });
 
 client.on(`message`, message =>{
