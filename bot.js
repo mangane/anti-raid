@@ -7,10 +7,10 @@ client.on('ready', () => {
 	console.log('I am ready!');
 	console.log("Connexion en cours ...");
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-	client.user.setGame(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help_______________________`);
+	client.user.setActivity(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help !_______________________`);
 	setInterval(() => {
-		client.user.setGame(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help_______________________`);
-	}, 120000);
+		client.user.setActivity(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help !_______________________`);
+	}, 5000);
 });
 
 client.on(`message`, message =>{
