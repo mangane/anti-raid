@@ -122,8 +122,7 @@ client.on(`message`, message =>{
   const pollembed = new Discord.RichEmbed()
   .setTitle("Sondage")
   .setColor("#5599ff")
-  .setDescription(`${poll}`)
-  .setFooter(`StrawPoll de ${message.author.username}`, `${message.author.avatarURL}`)
+  .setFooter(`Sondage de ${message.author.username}`, `${message.author.avatarURL}`)
   message.channel.sendMessage(pollembed)
   .then(async function (message) {
     await message.react("✅")
