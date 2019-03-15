@@ -116,6 +116,10 @@ client.on(`message`, message =>{
    message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`)
         member.ban();
    }
+    if (message.content.startsWith(prefix + "patch")) {
+    message.delete()
+    message.channel.reply("```Voici les nouveaux patch de OverBot```");
+}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
