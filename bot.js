@@ -2,12 +2,6 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-
-
-    let m = args.slice(0).join(' ');
-    message.delete(100);
-    message.channe.send(`${m}`);
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -25,7 +19,14 @@ setInterval(() => {
 }, 120000);
  });
 client.on(`message`, message =>{
-    if(message.content.startsWith(prefix + "mute")) {
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+
+	if (message.content.startsWith(prefix + 'say')) {
+		let m = args.slice(1).join(' ');
+    message.delete(100);
+    message.channel.send(`${m}`);
+	}
+  if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas accès à cette commande");
     
         if(message.mentions.users.size === 0) {
@@ -131,4 +132,4 @@ client.on(`message`, message =>{
 }
 });
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+client.login('Mzg0MTU1MDQzODczNTU0NDQ2.Du1vEw.cFtDWlTozTcWrgPOXF1CEKE2CMA');
