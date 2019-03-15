@@ -19,13 +19,13 @@ client.user.setActivity(`Regarder ${client.guilds.size} servers`);
 client.on("guildCreate", guild => {
 console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
   client.user.setActivity(`Regarder ${client.guilds.size} servers`);
-     client.user.setActivity(`Taper &help | V0.5.0`);
+     client.user.setActivity(`Taper &help | ${client.guilds.size} serveurs`);
 });
 
 client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Regarder ${client.guilds.size} servers`);
-     client.user.setActivity(`Taper &help | V0.5.0`);
+     client.user.setActivity(`Taper &help | ${client.guilds.size} serveurs`);
 });
 client.on(`message`, message =>{
     if(message.content.startsWith(prefix + "mute")) {
