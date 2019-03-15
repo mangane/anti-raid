@@ -69,7 +69,7 @@ client.on(`message`, message =>{
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
      .setTitle("Disponibilité du bot :")		 
-     .addField("La disponibilité du bot est de 100℅");
+     .addField("commande en création","a")
      message.channel.send({embed})
     }
      if (message.content.startsWith(prefix + "invite")) {		
