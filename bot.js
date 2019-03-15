@@ -13,8 +13,9 @@ client.on("ready", () => {
 client.on("ready", () => {
 console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
 setInterval(() => {
-    client.user.setActivity(`${client.users.size}`)
-    (`${client.guilds.size}`);
+    client.user.setActivity(`${client.users.size} Utilisateurs`)
+    (`${client.guilds.size} Serveurs`)
+   (`taper !help `);
 }, 120000);
  });
 client.on(`message`, message =>{
