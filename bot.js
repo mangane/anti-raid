@@ -85,12 +85,12 @@ client.on(`message`, message =>{
      const embed = new Discord.RichEmbed()		
      .setColor(0x954D23)		
      .setTitle("Liste des commandes :")		
-     .addField("!help", "Affiche les commandes")		
-     .addField("!info", "Donne des informations sur le bot")		
-     .addField("!invite", "Donne le lien pour me faire joindre votre serveur")		
-     .addField("!mute [Mention]", "Permer d'interdire à un membre de parler")	
-     	.addField("!unmute[Mention]", "Retire l'interdiction de parler")	
-     	.addField("!kick [Mention]","Exclure un membre du serveur")
+     .addField("&help", "Affiche les commandes")		
+     .addField("&info", "Donne des informations sur le bot")		
+     .addField("&invite", "Donne le lien pour me faire joindre votre serveur")		
+     .addField("&mute [Mention]", "Permer d'interdire à un membre de parler")	
+     	.addField("&unmute[Mention]", "Retire l'interdiction de parler")	
+     	.addField("&kick [Mention]","Exclure un membre du serveur")
      	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
      	message.channel.send({embed})	}
                   
