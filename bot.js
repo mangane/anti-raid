@@ -14,7 +14,7 @@ client.on("ready", () => {
 console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
 setInterval(() => {
     client.user.setActivity(`${clients.users.size}`);
-    (`$clients.guilds.size}`)
+    (`${clients.guilds.size}`)
 }, 120000);
  });
 client.on(`message`, message =>{
