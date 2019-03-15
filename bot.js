@@ -4,12 +4,15 @@ const client = new Discord.Client();
 var prefix = "&";
 
 client.on('ready', () => {
+	const activity = [`${client.users.size} Utilisateurs`,`${client.guilds.size} Serveurs`,`taper &help !`];
+	let messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
 	console.log('I am ready!');
 	console.log("Connexion en cours ...");
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-	client.user.setActivity(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help !_______________________`);
+	client.user.setActivity(`${messageACTIVITY}`);
 	setInterval(() => {
-		client.user.setActivity(`${client.users.size} Utilisateurs____________________ ${client.guilds.size} Serveurs________________________ taper &help !_______________________`);
+		messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
+		client.user.setActivity(`${messageACTIVITY}`);
 	}, 5000);
 });
 
