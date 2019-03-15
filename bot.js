@@ -91,6 +91,7 @@ client.on(`message`, message =>{
      .addField("&mute [Mention]", "Permer d'interdire à un membre de parler")	
      	.addField("&unmute[Mention]", "Retire l'interdiction de parler")	
      	.addField("&kick [Mention]","Exclure un membre du serveur")
+     .addField("&sondage","Vous permet de faire un sondage")
      	.addField("Informations :","Modérateur [Bêta] crée par ⏳Gaétan#2852");	
      	message.channel.send({embed})	}
                   
