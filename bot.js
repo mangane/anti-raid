@@ -127,4 +127,4 @@ client.on(`message`, message =>{
 }
 });
 // THIS  MUST  BE  THIS  WAY
-client.login('Mzg0MTU1MDQzODczNTU0NDQ2.Du1vEw.cFtDWlTozTcWrgPOXF1CEKE2CMA');
+client.login(process.env.BOT_TOKEN);
