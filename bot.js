@@ -124,6 +124,7 @@ client.on(`message`, message =>{
   .setTitle("Sondage")
   .setColor("#5599ff")
   .setFooter(`Sondage de ${message.author.username}`, `${message.author.avatarURL}`)
+   .setDescription(`${poll}`)
   message.channel.sendMessage(pollembed)
   .then(async function (message) {
     await message.react("✅")
