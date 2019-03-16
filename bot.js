@@ -4,12 +4,6 @@ const client = new Discord.Client();
 var prefix = "&";
 var modo_id = ['516274923828805667','345951306055417857'];
 client.on('ready', () => {
-client.user.setStatus('dnd')
-  .then(console.log)
-  .catch(console.error);
-}
-});
-client.on('ready', () => {
 	const activity = [`${client.users.size} Utilisateurs`,`${client.guilds.size} Serveurs`,`taper &help !`];
 	let messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
 	console.log('I am ready!');
