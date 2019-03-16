@@ -3,6 +3,11 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
 var modo_id = ['516274923828805667','345951306055417857'];
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find(ch => ch.name === 'member-log');
+  if (!channel) return;
+  channel.send(`Welcome to the server, ${member}`);
+});
 client.on('ready', () => {
 client.user.setStatus('idle')
   .then(console.log)
