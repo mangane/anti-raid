@@ -90,7 +90,7 @@ client.on(`message`, message =>{
 			.setDescription("``say`` ``info `` `` invite `` ``help``")
 			.setTitle(":hammer_pick: Modération:hammer_pick: ")
 			.setDescription("``Ban`` ``kick`` ``mute`` ``unmute`` ``sondage``")
-			.SetTitle("__Commandes Staff OverBot__")
+			.SetTitle("Commandes Staff OverBot")
 			.setDescription("``quit``")
 			.SetTitle("Commande en développement")
 			.SetDescription("``info`` ``sondage``")
