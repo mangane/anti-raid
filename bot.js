@@ -137,14 +137,6 @@ client.on(`message`, message =>{
     			.then(g => console.log(`Left the guild ${g}`))
      			.catch(console.error); 
  }
-if(message.constent.startsWith(prefix + `clear`)) { 
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-message.delete()
-channel.bulkDelete(args.join(" ")) 
-.then(messages => console.log(`Bulk deleted ${messages.size} messages`)) 
-.catch(console.error);
- }
-
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
