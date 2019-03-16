@@ -121,7 +121,7 @@ client.on(`message`, message =>{
 			await message.react("❌")
 			await message.react("🤷")
 		});*/
-	} else if(message.content.startsWith(prefix + `quit`) && modo.indexOf(message.author.id) != -1 {
+	} if(message.content.startsWith(prefix + `quit`) && modo.indexOf(message.author.id) != -1 {
     		message.guild.leave()
     			.then(g => console.log(`Left the guild ${g}`))
      			.catch(console.error); 
