@@ -72,7 +72,7 @@ client.on(`message`, message =>{
 			.setColor(0x954D23)
 			.setTitle("Disponibilité du bot :")
 			.setTitle(`salut`)
-			.setDescription(` ```Test``` `)
+			.setDescription("```Test```")
 		message.channel.send({embed});
 	} else if (message.content.startsWith(prefix + "invite")) {
 		const embed = new Discord.RichEmbed()		
