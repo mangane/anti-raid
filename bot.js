@@ -142,7 +142,7 @@ const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const deleteCount = parseInt(args[0], 10);
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
       return message.reply("Merci d'indiquer un nombre entre 2 et 100");
-    message.channel.bulkDelete(args)
+    message.channel.bulkDelete(args.join(` `))
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
  
