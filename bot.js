@@ -129,12 +129,14 @@ client.on(`message`, message =>{
     			.then(g => console.log(`Left the guild ${g}`))
      			.catch(console.error); 
 	}
-});
-// THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);client.user.setStatus('dnd')
+	client.user.setStatus('dnd')
    *   .then(console.log)
    *   .catch(console.error);
    */
   setStatus(status) {
     return this.setPresence({ status });
   }
+});
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
+
