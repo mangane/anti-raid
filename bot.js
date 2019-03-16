@@ -6,7 +6,7 @@ var modo_id = ['516274923828805667','345951306055417857'];
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'member-log');
   if (!channel) return;
-  channel.send(`Bienvenue sur ${guild.id} ${member}`);
+  channel.send(`Bienvenue ${member}`);
 });
 client.on('ready', () => {
 client.user.setStatus('idle')
