@@ -25,7 +25,11 @@ client.on('ready', () => {
 		client.user.setActivity(`${messageACTIVITY}`);
 	}, 60000);
 });
-
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find(ch => ch.name === 'member-log');
+  if (!channel) return;
+  channel.send(`Bienvenue ${member}`);
+});
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
