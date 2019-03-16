@@ -70,8 +70,8 @@ client.on(`message`, message =>{
 	} else if (message.content.startsWith(prefix + "info")) {
 		const embed = new Discord.RichEmbed()
 			.setColor(0x954D23)
-			.setTitle("Disponibilité du bot :")
-			.addField("commande en création","a");
+			.setTitle(`en création`)
+		
 		message.channel.send({embed});
 	} else if (message.content.startsWith(prefix + "invite")) {
 		const embed = new Discord.RichEmbed()		
