@@ -88,11 +88,11 @@ client.on(`message`, message =>{
 			.setTitle("Liste des commandes :")
 			.setTitle("Utilisateurs :")
 			.setDescription("``say`` ``info `` `` invite `` ``help``")
-			.setTitle(":hammer_pick: **Modération**:hammer_pick: ")
+			.setTitle(":hammer_pick: Modération:hammer_pick: ")
 			.setDescription("``Ban`` ``kick`` ``mute`` ``unmute`` ``sondage``")
-			.SetTitle("**__Commandes Staff OverBot**__")
+			.SetTitle("__Commandes Staff OverBot__")
 			.setDescription("``quit``")
-			.SetTitle("**Commande en développement**")
+			.SetTitle("Commande en développement")
 			.SetDescription("``info`` ``sondage``")
 			.setFooter("OverBot crée par ⏳Gaétan#2852");
 		message.channel.send({embed});
