@@ -87,16 +87,13 @@ client.on(`message`, message =>{
 			.setColor(0x954D23)
 			.setTitle("Liste des commandes :")
 			.setTitle("Utilisateurs :")
-			.setDescription("```say : Vous permet de faire parler le bot``` ```info : vous donne des information suf le bot ``` ")
-			.addField("&help", "Affiche les commandes")
-			.addField("&say", "Faire parler le bot")
-			.addField("&info", "Donne des informations sur le bot")
-			.addField("&invite", "Donne le lien pour me faire joindre votre serveur")
-			.addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
-			.addField("&unmute[Mention]", "Retire l'interdiction de parler")
-			.addField("&kick [Mention]","Exclure un membre du serveur")
-			.addField("&sondage","Vous permet de faire un sondage")
-		        .addField("&quit","Commande réservé au Modérateur du bot")
+			.setDescription("``say`` ``info `` `` invite `` ``help``")
+			.setTitle(":hammer_pick: **Modération**:hammer_pick: ")
+			.setDescription("``Ban`` ``kick`` ``mute`` ``unmute`` ``sondage``")
+			.SetTitle("**__Commandes Staff OverBot**__")
+			.setDescription("``quit``")
+			.SetTitle("**Commande en développement**")
+			.SetDescription("``info`` ``sondage``")
 			.setFooter("OverBot crée par ⏳Gaétan#2852");
 		message.channel.send({embed});
 	} else if(message.content.startsWith(prefix + "kick")) {
