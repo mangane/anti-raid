@@ -136,15 +136,20 @@ client.on(`message`, message =>{
     		message.guild.leave()
     			.then(g => console.log(`Left the guild ${g}`))
      			.catch(console.error); 
-  }
-	if(message.content.startsWith(prefix + `clear`)) {
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const deleteCount = parseInt(args[0], 10);
-    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Merci d'indiquer un nombre entre 2 et 100");
-    message.channel.bulkDelete(args.join(` `))
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
-  }
+ }
+bot.on("message", message => {
+    if (!message.guild) return
+    let args = message.content.trim().split(/ +/g)
+ 
+    if (args[0].toLowerCase() === ".clear") {
+    	console.log(`Commande .clear par ${message.author.tag}`);
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("⚠ Tu dois avoir la permission: **MANAGE_MESSAGES**")
+        let count = args[1]
+        if (!count) return message.channel.send("❌ Veuillez indiquer un nombre de messages à supprimer")
+        if (isNaN(count)) return message.channel.send("❌ Veuillez indiquer un nombre valide")
+        if (count < 1 || count > 100) return message.channel.send("❌ Veuillez indiquer un nombre entre 1 et 100")
+        message.channel.bulkDelete(parseInt(count) + 1)
+    }
  
 });
 // THIS  MUST  BE  THIS  WAY
