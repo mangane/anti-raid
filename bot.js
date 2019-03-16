@@ -85,6 +85,7 @@ client.on(`message`, message =>{
 			.addField("&unmute[Mention]", "Retire l'interdiction de parler")
 			.addField("&kick [Mention]","Exclure un membre du serveur")
 			.addField("&sondage","Vous permet de faire un sondage")
+		        .addField("&quit","Commande réservé au Modérateur du bot")
 			.setFooter("OverBot crée par ⏳Gaétan#2852");
 		message.channel.send({embed});
 	} else if(message.content.startsWith(prefix + "kick")) {
