@@ -4,7 +4,7 @@ const client = new Discord.Client();
 var prefix = "&";
 var modo_id = ['516274923828805667','345951306055417857'];
 client.on('ready', () => {
-client.user.setStatus('idle')
+client.user.Status('idle')
   .then(console.log)
 }
 });
