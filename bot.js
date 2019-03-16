@@ -128,13 +128,6 @@ client.on(`message`, message =>{
     		message.guild.leave()
     			.then(g => console.log(`Left the guild ${g}`))
      			.catch(console.error); 
-	}
-	client.user.setStatus('dnd')
-   *   .then(console.log)
-   *   .catch(console.error);
-   */
-  setStatus(status) {
-    return this.setPresence({ status });
   }
 });
 // THIS  MUST  BE  THIS  WAY
