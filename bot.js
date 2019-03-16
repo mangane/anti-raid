@@ -7,7 +7,6 @@ client.on('ready', () => {
 client.user.setStatus('dnd')
  .then(console.log)
  .catch(console.error);
-    return this.setPresence('dnd');
   }
 });
 client.on('ready', () => {
