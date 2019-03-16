@@ -72,7 +72,7 @@ client.on(`message`, message =>{
 			.setColor(0x954D23)
 			.setTitle("Disponibilité du bot :")
 			.setTitle(`salut`)
-			.setDescription("```Test```")
+			.setDescription(` ```Test``` `)
 		message.channel.send({embed});
 	} else if (message.content.startsWith(prefix + "invite")) {
 		const embed = new Discord.RichEmbed()		
@@ -86,6 +86,8 @@ client.on(`message`, message =>{
 		const embed = new Discord.RichEmbed()
 			.setColor(0x954D23)
 			.setTitle("Liste des commandes :")
+			.setTitle("Utilisateurs :")
+			.setDescription("```say``` ```info```")
 			.addField("&help", "Affiche les commandes")
 			.addField("&say", "Faire parler le bot")
 			.addField("&info", "Donne des informations sur le bot")
