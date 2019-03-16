@@ -25,19 +25,6 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   channel.send(`Bienvenue ${member}`);
 });
-bot.on("message", message => {
-    if (!message.guild) return
-    let args = message.content.trim().split(/ +/g)
- 
-    if (args[0].toLowerCase() === ".clear") {
-    	console.log(`Commande .clear par ${message.author.tag}`);
-        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("⚠ Tu dois avoir la permission: **MANAGE_MESSAGES**")
-        let count = args[1]
-        if (!count) return message.channel.send("❌ Veuillez indiquer un nombre de messages à supprimer")
-        if (isNaN(count)) return message.channel.send("❌ Veuillez indiquer un nombre valide")
-        if (count < 1 || count > 100) return message.channel.send("❌ Veuillez indiquer un nombre entre 1 et 100")
-        message.channel.bulkDelete(parseInt(count) + 1);
-    }
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
@@ -152,5 +139,4 @@ client.on(`message`, message =>{
  }
 });
 // THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
-
+client.login(process.env.BOT_TOKEN)
