@@ -96,7 +96,7 @@ client.on(`message`, message =>{
 			.addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
 			.addField("&unmute[Mention]", "Retire l'interdiction de parler")
 			.addField("&kick [Mention]","Exclure un membre du serveur")
-			.setTitle("**Liste des commandes **")
+			.setTitle(":hammer_pick:**Liste des commandes **:hammer_pick:")
 		        .addField("&quit","Commande réservé au Modérateur du bot")
 			.setFooter("OverBot crée par ⏳Gaétan#2852");
 		message.channel.send({embed});
