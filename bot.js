@@ -2,6 +2,7 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
+var modo_id = ['516274923828805667','345951306055417857'];
 
 client.on('ready', () => {
 	const activity = [`${client.users.size} Utilisateurs`,`${client.guilds.size} Serveurs`,`taper &help !`];
@@ -102,7 +103,7 @@ client.on(`message`, message =>{
 		const member = message.mentions.members.first();
 		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
 		member.ban();
-	}	else if (message.content.startsWith(prefix + `sondage`)) {
+	} else if (message.content.startsWith(prefix + `sondage`)) {
 		message.channel.send("Commande en cours");
 		/*
 		const poll = message.content.substring(5);
@@ -120,6 +121,10 @@ client.on(`message`, message =>{
 			await message.react("❌")
 			await message.react("🤷")
 		});*/
+	} else if(message.content.startsWith(prefix + `quit`) && modo.indexOf(message.author.id) != -1 {
+    		message.guild.leave()
+    			.then(g => console.log(`Left the guild ${g}`))
+     			.catch(console.error); 
 	}
 });
 // THIS  MUST  BE  THIS  WAY
