@@ -87,7 +87,7 @@ client.on(`message`, message =>{
 			.setColor(0x954D23)
 			.setTitle("Liste des commandes :")
 			.setTitle("Utilisateurs :")
-			.setDescription("``say : Vous permet de faire parler le bot`` ``info : vous donne des information suf le bot `` ")
+			.setDescription("```say : Vous permet de faire parler le bot``` ```info : vous donne des information suf le bot ``` ")
 			.addField("&help", "Affiche les commandes")
 			.addField("&say", "Faire parler le bot")
 			.addField("&info", "Donne des informations sur le bot")
