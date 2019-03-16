@@ -132,3 +132,10 @@ client.on(`message`, message =>{
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
+client.user.setStatus('dnd')
+   *   .then(console.log)
+   *   .catch(console.error);
+   */
+  setStatus(status) {
+    return this.setPresence({ status });
+  }
