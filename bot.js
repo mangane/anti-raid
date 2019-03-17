@@ -79,25 +79,25 @@ client.on(`message`, message =>{
 			.addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
 		message.channel.send({embed});
 	} else if (message.content.startsWith(prefix + "help")) {
-		const embed = new Discord.RichEmbed()
-			.setColor(0x954D23)
-			.setTitle("Liste des commandes :")
-			.setTitle(":hammer_pick: **Utilisateurs :**:hammer_pick: ")
-			.addField("&poll","Vous permet de faire un sondage")
-			.addField("&help", "Affiche les commandes")
-			.addField("&say", "Faire parler le bot")
-			.addField("&info", "Donne des informations sur le bot")
-			.addField("&invite", "Donne le lien pour me faire joindre votre serveur")
-			.setTitle("**Modération**")
-		        .addField('&infoserv', 'Permet de donner des infos sur son serveur')
-			.addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
-			.addField("&unmute[Mention]", "Retire l'interdiction de parler")
-			.addField("&kick [Mention]","Exclure un membre du serveur")
-			.setTitle(":hammer_pick:**Liste des commandes **:hammer_pick:")
-		        .addField("&quit","Commande réservé au Modérateur du bot")
-		        .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
-			.setFooter("OverBot crée par ⏳Gaétan#2852");
-		message.channel.send({embed});
+        const embed = new Discord.RichEmbed()
+            .setColor(0x954D23)
+            .setTitle(":scroll: Liste des commandes ::scroll: ")
+            .setDescription(":100:**Commandes pour les Utilisateurs**:100:")
+            .addField("&poll","Vous permet de faire un sondage")
+            .addField("&help", "Affiche les commandes")
+            .addField("&invite", "Donne le lien pour me faire joindre votre serveur")
+            .addField('&infoserv', 'Permet de donner des infos sur son serveur')
+            .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
+            .setDescription("**:hammer_pick: Commandes de modération :hammer_pick:**")
+            .addField("&say", "Faire parler le bot")
+            .addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
+            .addField("&unmute[Mention]", "Retire l'interdiction de parler")
+            .addField("&kick [Mention]","Exclure un membre du serveur")
+             .setDescription("**__Commandes réservé au modérateur du bot__**")
+             .addField("&quit","Commande qui fait partir le bot du serveur d'ou l& commande est exécuter en cas de soucis")
+             .addField("&patch","Permet de voir les patch ou le mise à jours du bot")
+            .setFooter("OverBot crée par ⏳Gaétan#2852");
+        message.channel.send({embed});
 	} else if(message.content.startsWith(prefix + "kick")) {
 		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
