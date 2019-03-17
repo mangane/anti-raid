@@ -115,8 +115,6 @@ client.on(`message`, message =>{
 		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
 		member.ban();
 	} else if (message.content.startsWith(prefix + `sondage`)) {
-		message.channel.send("Commande en cours");
-		/*
 		const poll = message.content.substring(5);
 		if (poll.size === 0)
 			return message.reply("Vous n'avez pas mis de question");
@@ -131,7 +129,7 @@ client.on(`message`, message =>{
 			await message.react("✅")
 			await message.react("❌")
 			await message.react("🤷")
-		});*/
+		});
 	} else if(message.content.startsWith(prefix + `quit`) && modo_id.indexOf(message.author.id) != -1) {
 		message.delete();
 		message.channel.send('Je dois quitter sous l\'ordre des modérateur du bot!');
