@@ -119,6 +119,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                  .setDescription(":oncoming_police_car:  Les commandes des modérateurs du bot :oncoming_police_car:  :")
                  .addField("&quit","Commande qui fait partir le bot du serveur d'ou l& commande est exécuter en cas de soucis réservé au modérateur du bot")
                  .addField("&patch","Permet de voir les patch ou le mise à jours du bot réservé au modérateur du bot")
+                 
                  .setFooter("OverBot crée par ⏳Gaétan#2852");
                  message.channel.send({embed})
                  }
@@ -212,12 +213,13 @@ reportschannel.send(reportEmbed);
   }
 	if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
     message.delete()
-    message.member.addRole('511234383496085525')
+   message.channel.send("Ajout du rôle <@511234383496085525> à ${message.author.username}") message.member.addRole('511234383496085525')
   .then(console.log)
   .catch(console.error);
   }
   if(message.content.startsWith(prefix + `deop`) && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
+    message.channel.send("suppression du rôle <@511234383496085525> à ${message.author.username}")
 message.member.removeRole('511234383496085525')
   .then(console.log)
   .catch(console.error);
