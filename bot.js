@@ -2,6 +2,7 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
+var dev_id = ['516274923828805667'];
 var modo_id = ['516274923828805667','345951306055417857','390574128890904579'];
 client.on('ready', () => {
 client.user.setStatus('idle')
@@ -215,9 +216,21 @@ reportschannel.send(reportEmbed);
   .then(console.log)
   .catch(console.error);
   }
-  if(message.content.startsWith(prefix + `deop`) && modo_id.indexOf(message.author.id) != -1) {
+  if(message.content.startsWith(prefix + `deop`) && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
 message.member.removeRole('511234383496085525')
+  .then(console.log)
+  .catch(console.error);
+  }
+  if(message.content.startsWith(prefix + `undev`) && modo_id.indexOf(message.author.id) != -1) {
+    message.delete()
+message.member.removeRole('556911777405992971')
+  .then(console.log)
+  .catch(console.error);
+  }
+  if(message.content.startsWith(prefix + `dev`) && modo_id.indexOf(message.author.id) != -1) {
+    message.delete()
+message.member.addRole('556911777405992971')
   .then(console.log)
   .catch(console.error);
   }
