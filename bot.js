@@ -212,7 +212,8 @@ reportschannel.send(reportEmbed);
      return;
   }
 	if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
-    message.delete() message.member.addRole('511234383496085525')
+    message.delete() 
+		message.member.addRole('511234383496085525')
   .then(console.log)
   .catch(console.error);
   }
