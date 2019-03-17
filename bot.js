@@ -185,7 +185,10 @@ reportschannel.send(reportEmbed);
   }
 	if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
     message.delete()
-    message.member.addrole('511234383496085525');
+    message.member.addrole('511234383496085525')
+    
+    .then(console.log)
+    .catch(console.error);
   }
 });
 // THIS  MUST  BE  THIS  WAY
