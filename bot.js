@@ -194,6 +194,7 @@ reportschannel.send(reportEmbed);
 message.member.removeRole('511234383496085525')
   .then(console.log)
   .catch(console.error);
+  }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
