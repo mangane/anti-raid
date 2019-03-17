@@ -29,8 +29,7 @@ client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
 	if (message.content.startsWith(prefix + 'say')) {
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) {
-    return message.channel.send("Vous n'avez pas accès à cette commande")
+if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
     }
         let m = args.slice(1).join(' ');
         message.delete(100);
@@ -182,7 +181,7 @@ reportschannel.send(reportEmbed);
 	if(message.content.startsWith(prefix + `suggest`)) {
     let suggestchannel = message.guild.channels.find(`name`, "suggestion");
     if(!suggestchannel) return message.channel.send("Je ne trouve pas le salon de suggestion merci de le crée en l'appelant #suggestion")
-    suggestchannel.send(args.join(" "));
+    suggestchannel.send( de ${message.author.id} args.join(" "));
      return;
   }
 });
