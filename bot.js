@@ -70,13 +70,6 @@ client.on(`message`, message =>{
 				message.channel.send(`${umute.user.username} has been unmuted by ${message.author.username} !`);
 			});
 			message.delete();
-	} else if (message.content.startsWith(prefix + "info")) {
-		const embed = new Discord.RichEmbed()
-			.setColor(0x954D23)
-			.setTitle("Disponibilité du bot :")
-			.setTitle(`salut`)
-			.setDescription("```Test```")
-		message.channel.send({embed});
 	} else if (message.content.startsWith(prefix + "invite")) {
 		const embed = new Discord.RichEmbed()		
 			.setColor(0x954D23)
