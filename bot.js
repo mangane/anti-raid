@@ -29,7 +29,8 @@ client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
 	if (message.content.startsWith(prefix + 'say')) {
-        if(!message.guild.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas accès à cette commande");
+        if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) 
+		return message.channel.send("Vous n'avez pas accès à cette commande");
         let m = args.slice(1).join(' ');
         message.delete(100);
         message.channel.send(`${m}`);
