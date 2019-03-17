@@ -120,7 +120,7 @@ client.on(`message`, message =>{
 			return message.reply("Vous n'avez pas mis de question");
 		message.delete();
 		const pollembed = new Discord.RichEmbed()
-			.setTitle("Sondage")
+			.setTitle("poll")
 			.setColor("#5599ff")
 			.setFooter(`Sondage de ${message.author.username}`, `${message.author.avatarURL}`)
 			.setDescription(`${poll}`)
