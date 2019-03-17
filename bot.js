@@ -114,7 +114,7 @@ client.on(`message`, message =>{
 		const member = message.mentions.members.first();
 		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
 		member.ban();
-	} else if (message.content.startsWith(prefix + `sondage`)) {
+	} else if (message.content.startsWith(prefix + `poll`)) {
 		const poll = message.content.substring(5);
 		if (poll.size === 0)
 			return message.reply("Vous n'avez pas mis de question");
