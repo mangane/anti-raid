@@ -11,7 +11,7 @@ client.user.setStatus('idle')
 client.on('ready', () => {
 	const activity = [`${client.users.size} Utilisateurs`,`${client.guilds.size} Serveurs`,`taper &help !`];
 	let messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
-	console.log('I am ready!');
+	console.log('Je suis pret !');
 	console.log("Connexion en cours ...");
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 	client.user.setActivity(`${messageACTIVITY}`);
@@ -29,8 +29,8 @@ client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
 	if (message.content.startsWith(prefix + 'say')) {
-        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR"))
-                return message.channel.send("I don't the right to do this");
+        if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES"))
+                return message.channel.send("Vous n'avez pas accès à cette commande");
         let m = args.slice(1).join(' ');
         message.delete(100);
         message.channel.send(`${m}`);
@@ -140,7 +140,7 @@ client.on(`message`, message =>{
 		message.delete();
 		message.channel.send('Je dois quitter sous l\'ordre des modérateur du bot!');
     		message.guild.leave()
-    			.then(g => console.log(`Left the guild ${g}`))
+    			.then(g => console.log(`A quitté la guild: ${g}`))
      			.catch(console.error); 
  }
 });
