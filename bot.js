@@ -212,14 +212,12 @@ reportschannel.send(reportEmbed);
      return;
   }
 	if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
-    message.delete()
-   message.channel.send("Ajout du rôle !") message.member.addRole('511234383496085525')
+    message.delete() message.member.addRole('511234383496085525')
   .then(console.log)
   .catch(console.error);
   }
   if(message.content.startsWith(prefix + `deop`) && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
-    message.channel.send("suppression du rôle !")
 message.member.removeRole('511234383496085525')
   .then(console.log)
   .catch(console.error);
