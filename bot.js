@@ -234,7 +234,20 @@ message.member.removeRole('556911777405992971')
 message.member.addRole('556911777405992971')
   .then(console.log)
   .catch(console.error);
-  }
+  } else if(message.content.startsWith(prefix + `Notif`)) {
+    message.delete()
+    message.member.author.addrole(`554797816963399691`);
+    } else if(message.content.startsWith(prefix + "clear")) {
+  let chiffre = 100
+message.channel.bulkDelete(chiffre).then(() => {
+  let clearembed = new Discord.RichEmbed()
+  .setTimestamp(new Date())
+  .setColor("RANDOM")
+  .setTitle(`messages supprimé :wink:: **${chiffre}**`)
+  message.channel.send(clearembed)
+  message.delete(10000)
+  })
+}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
