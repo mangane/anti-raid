@@ -177,15 +177,10 @@ client.on(`message`, message =>{
     .addField("Raison", rreason);
 
     let reportschannel = message.guild.channels.find(`name`, "reports");
-    if(!reportschannel) return message.channel.send("je ne trouve pas le salon de report, crée en un qui s'appel "reports");
+    if(!reportschannel) return message.channel.send("je ne trouve pas le salon de report, crée en un qui s'appel  #reports");
+reportschannel.send(reportEmbed);
 
-
-    message.delete().catch(O_o=>{});
-    reportschannel.send(reportEmbed);
-
-    return;
   }
-
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
