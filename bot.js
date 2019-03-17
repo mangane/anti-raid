@@ -137,15 +137,15 @@ client.on(`message`, message =>{
     		message.guild.leave()
     			.then(g => console.log(`A quitté la guild: ${g}`))
      			.catch(console.error); 
- } else if(message.content.startsWith(prefix + `infoserv`)) {
+ } else if(message.content.startsWith(prefix + `infoserv`))} else if(message.content.startsWith(prefix + `infoserv`)) {
         message.delete()
         const count = new Discord.RichEmbed()
         .setColor(0x954D23)
-        .setTitle("**Information du serveur ")
-    .addField("Nom du serveur", "${message.guild.name}")
-        .addField("Date de création du serveur", "${message.guild.createdAt}")
-    .addField("Vous avez rejoin le serveur", "${message.member.joignedAt}")
-        .addField("Total des membres :", "${message.guild.memberCount}");
+        .setTitle("**Information du serveur **")
+    .addField("Nom du serveur", message.guild.name)
+        .addField("Date de création du serveur",  message.guild.createdAt)
+    .addField("Vous avez rejoin le serveur",  message.member.joignedAt)
+        .addField("Total des membres :",  message.guild.memberCount);
         return message.channel.send(count)
     }
 });
