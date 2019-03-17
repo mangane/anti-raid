@@ -119,9 +119,9 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                  .addField("&report","Permet de report une personne (il faut un salon spécial nommer #reports")
                  .addField("&patch","Permet de voir les patch ou le mise à jours du bot réservé au modérateur du bot")
                  .setFooter("OverBot crée par ⏳Gaétan#2852");
-                 message.channel.send({admin});
+                 message.channel.send({admin})
                  }
-	} else if(message.content.startsWith(prefix + "kick")) {
+	if(message.content.startsWith(prefix + "kick")) {
 		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		if(message.mentions.users.size === 0)
