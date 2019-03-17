@@ -145,7 +145,7 @@ client.on(`message`, message =>{
         .setTitle("**Information du serveur **")
     .addField("Nom du serveur", message.guild.name)
         .addField("Date de création du serveur",  message.guild.createdAt)
-    .addField("Vous avez rejoin le serveur",  message.member.joinedAt)
+    .addField("Vous avez rejoint le serveur",  message.member.joinedAt)
         .addField("Total des membres :",  message.guild.memberCount);
         return message.channel.send(count)
     }
