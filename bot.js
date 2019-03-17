@@ -146,7 +146,6 @@ client.on(`message`, message =>{
      			.catch(console.error); 
  } else if(message.content.startsWith(prefix + `infoserv`)) {
         message.delete()
-        let bicon = bot.user.displayAvatarURL;
         const count = new Discord.RichEmbed()
         .setColor(0x954D23)
         .setTitle("**Information du serveur ")
