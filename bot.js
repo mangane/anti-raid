@@ -96,6 +96,7 @@ client.on(`message`, message =>{
 			.addField("&info", "Donne des informations sur le bot")
 			.addField("&invite", "Donne le lien pour me faire joindre votre serveur")
 			.setTitle("**Modération**")
+		        .addField('&infoserv', 'Permet de donner des infos sur son serveur')
 			.addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
 			.addField("&unmute[Mention]", "Retire l'interdiction de parler")
 			.addField("&kick [Mention]","Exclure un membre du serveur")
