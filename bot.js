@@ -160,6 +160,32 @@ client.on(`message`, message =>{
      .setFooter("OverBot crée par ⏳Gaétan#2852");
      message.channel.send({embed})
 }
+	
+	if(message.content.startsWith(prefix + `report`)) {
+
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return message.channel.send("Je ne trouve pas l'utilisateur");
+    let rreason = args.join(" ").slice(22);
+
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Signalement")
+    .setColor("#15f153")
+    .addField("Signalement de l'utilisateur :", `${rUser} with ID: ${rUser.id}`)
+    .addField("Signalement par", `${message.author} with ID: ${message.author.id}`)
+    .addField("Channel", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Raison", rreason);
+
+    let reportschannel = message.guild.channels.find(`name`, "reports");
+    if(!reportschannel) return message.channel.send("je ne trouve pas le salon de report, crée en un qui s'appel "reports");
+
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send(reportEmbed);
+
+    return;
+  }
+
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
