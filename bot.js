@@ -101,7 +101,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 }
                 if(message.content.startsWith(prefix + `modo`)) {
                 message.delete()    
-                const modo = new Discord;RichEmbed()
+                const modo = new Discord.RichEmbed()
                 .setColor(0x954D23)
                 .setDescription(":hammer_pick: Les commandes de Modération :hammer_pick: :")
                 .addField("&say", "Faire parler le bot")
@@ -112,7 +112,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 }
                 if(message.content.startsWith(prefix + `admin`)) {
                 message.delete()    
-                const admin = new Discord;RichEmbed()
+                const admin = new Discord.RichEmbed()
                 .setColor(0x954D23)
                  .setDescription(":oncoming_police_car:  Les commandes des modérateurs du bot :oncoming_police_car:  :")
                  .addField("&quit","Commande qui fait partir le bot du serveur d'ou l& commande est exécuter en cas de soucis réservé au modérateur du bot")
