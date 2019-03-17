@@ -237,16 +237,37 @@ message.member.addRole('556911777405992971')
   } else if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
     message.member.author.addrole(`554797816963399691`);
-    } else if(message.content.startsWith(prefix + "clear")) {
-  let chiffre = 100
-message.channel.bulkDelete(chiffre).then(() => {
-  let clearembed = new Discord.RichEmbed()
-  .setTimestamp(new Date())
-  .setColor("RANDOM")
-  .setTitle(`messages supprimé :wink:: **${chiffre}**`)
-  message.channel.send(clearembed)
-  message.delete(10000)
-  })
+    } else if(message.content.startsWith(prefix + "purge")) {
+  if (message.member.hasPermission("MANAGE_MESSAGES")) {
+    message.channel.fetchMessages().then(function(list) {
+        message.channel.bulkDelete(list);
+  let purgeembed = new Discord.RichEmbed()
+    .setColor("00FFFF")
+    .setTitle("Tout les messages de ce channel on été supprimé avec succée")
+  message.channel.send(purgeembed)
+      }).catch(function() {
+      });
+  } else if (message.content.startsWith(prefix + "idée")) {
+
+
+    var auteur = message.author;
+    var gname = message.guild.name
+
+            var embed = new Discord.RichEmbed()
+            .setAuthor(`Idée pour améliorer le serveur: ${gname}`)
+            .setFooter("Idée fait par " + auteur.username, auteur.avatarURL)
+            .setColor("0x29e29e")
+            .addField(args.join(" "), "Répondre avec ✅(oui) ou ➖(je ne sais pas) ou ❌(non)")
+
+            message.channel.send(embed)
+
+            .then(function (message) {
+            message.react("✅")
+            message.react("➖")
+            message.react("❌")
+        });
+
+  }
 }
 });
 // THIS  MUST  BE  THIS  WAY
