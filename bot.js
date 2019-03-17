@@ -88,7 +88,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 message.channel.send({embed})
         }
                     if(message.content.startsWith(prefix + `user`)
-                    const user = new Discord.RichEmbed()
+                    const embed = new Discord.RichEmbed()
                 .setColor(0x954D23)
                 .setDescription(":100:**Commandes pour les Utilisateurs**:100:")
                 .addField("&poll","Vous permet de faire un sondage")
@@ -97,29 +97,29 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 .addField('&infoserv', 'Permet de donner des infos sur son serveur')
                 .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
                 .setFooter("OverBot crée par ⏳Gaétan#2852");
-                message.channel.send({user})
+                message.channel.send({embed})
                 }
                 if(message.content.startsWith(prefix + `modo`)
                 message.delete()    
-                const modo = new Discord;RichEmbed()
+                const embed = new Discord;RichEmbed()
                 .setColor(0x954D23)
                 .setDescription(":hammer_pick: Les commandes de Modération :hammer_pick: :")
                 .addField("&say", "Faire parler le bot")
                 .addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
                 .addField("&unmute[Mention]", "Retire l'interdiction de parler")
                 .addField("&kick [Mention]","Exclure un membre du serveur")
-                message.channel.send({modo})
+                message.channel.send({embed})
                 }
                 if(message.content.startsWith(prefix + `admin`)
                 message.delete()    
-                const admin = new Discord;RichEmbed()
+                const embed = new Discord;RichEmbed()
                 .setColor(0x954D23)
                  .setDescription(":oncoming_police_car:  Les commandes des modérateurs du bot :oncoming_police_car:  :")
                  .addField("&quit","Commande qui fait partir le bot du serveur d'ou l& commande est exécuter en cas de soucis réservé au modérateur du bot")
                  .addField("&report","Permet de report une personne (il faut un salon spécial nommer #reports")
                  .addField("&patch","Permet de voir les patch ou le mise à jours du bot réservé au modérateur du bot")
                  .setFooter("OverBot crée par ⏳Gaétan#2852");
-                 message.channel.send({admin})
+                 message.channel.send({embed})
                  }
 	} else if(message.content.startsWith(prefix + "kick")) {
 		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
