@@ -78,7 +78,7 @@ client.on(`message`, message =>{
 			.addField("Voici l'email :","zncznc47@gmail.com")
 			.addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
 		message.channel.send({embed});
- if (message.content.startsWith(prefix + "help")) {
+ } else if (message.content.startsWith(prefix + "help")) {
         const embed = new Discord.RichEmbed()
             .setColor(0x954D23)
             .setTitle(":scroll: Liste des commandes ::scroll: ")
@@ -185,6 +185,7 @@ client.on(`message`, message =>{
     let reportschannel = message.guild.channels.find(`name`, "reports");
     if(!reportschannel) return message.channel.send("je ne trouve pas le salon de report, crée en un qui s'appel  #reports");
 reportschannel.send(reportEmbed);
+	}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
