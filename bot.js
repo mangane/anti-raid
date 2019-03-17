@@ -185,7 +185,7 @@ reportschannel.send(reportEmbed);
   }
 	if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
     message.delete()
-    message.member.author.addrole(`name`, "OverBot [Bêta]");
+    message.member.author.addrole('511234383496085525');
   }
 });
 // THIS  MUST  BE  THIS  WAY
