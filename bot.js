@@ -189,6 +189,11 @@ reportschannel.send(reportEmbed);
   .then(console.log)
   .catch(console.error);
   }
+  if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
+    message.delete()
+message.member.removeRole('511234383496085525')
+  .then(console.log)
+  .catch(console.error);
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
