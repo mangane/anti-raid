@@ -88,9 +88,9 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 message.channel.send({embed})
         }
                     if(message.content.startsWith(prefix + `user`)
-        message.delete()    
-        const user = new Discord;RichEmbed()
-        .setColor(0x954D23)
+                    message.delete()    
+                    const user = new Discord;RichEmbed()
+                .setColor(0x954D23)
                 .setDescription(":100:**Commandes pour les Utilisateurs**:100:")
                 .addField("&poll","Vous permet de faire un sondage")
                 .addField("&help", "Affiche les commandes")
