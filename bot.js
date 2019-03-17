@@ -180,7 +180,7 @@ reportschannel.send(reportEmbed);
 	if(message.content.startsWith(prefix + `suggest`)) {
     let suggestchannel = message.guild.channels.find(`name`, "suggestion");
     if(!suggestchannel) return message.channel.send("Je ne trouve pas le salon de suggestion merci de le crée en l'appelant #suggestion")
-    suggestchannel.send( de ${message.author.id} args.join(" "));
+    suggestchannel.send(args.join(" "));
      return;
   }
 });
