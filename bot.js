@@ -95,6 +95,7 @@ client.on(`message`, message =>{
 			.addField("&kick [Mention]","Exclure un membre du serveur")
 			.setTitle(":hammer_pick:**Liste des commandes **:hammer_pick:")
 		        .addField("&quit","Commande réservé au Modérateur du bot")
+		        .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
 			.setFooter("OverBot crée par ⏳Gaétan#2852");
 		message.channel.send({embed});
 	} else if(message.content.startsWith(prefix + "kick")) {
@@ -148,6 +149,19 @@ client.on(`message`, message =>{
         .addField("Total des membres :",  message.guild.memberCount);
         return message.channel.send(count)
     }
+	if(message.content.startsWith(prefix + `patch`) && modo_id.indexOf(message.author.id) != -1) {
+    message.delete()
+    const embed = new Discord.RichEmbed()        
+     .setColor(0x954D23)        
+     .setTitle("**Les Mise à jour du bot :**")         
+     .addField("Mise à jour du 13/03/19 :","Suite à la demande de plusieurs utilisateurs, le statu du bot est maintenant : joue à taper &help +nombre de serveurs")
+     .addField("Commande retiré :","La commande &ping à été retiré pour une courte durée (elle reviendra normalement à la prochaine mise à jour")
+     .addField("Mise à jour du 15/03/19","deux commandes ont été rajouter, la commande &sondage, la commande &say")
+     .addField("Mise à jour du 16/03/19","Le bot passe en ce beau jour à la V1")
+     .addField("mention",`${message.mentions.roles.first()}`)
+     .setFooter("OverBot crée par ⏳Gaétan#2852");
+     message.channel.send({embed})
+}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
