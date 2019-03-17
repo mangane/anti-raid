@@ -29,9 +29,11 @@ client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
 	if (message.content.startsWith(prefix + 'say')) {
-		let m = args.slice(1).join(' ');
-		message.delete(100);
-		message.channel.send(`${m}`);
+        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR"))
+                return message.channel.send("I don't the right to do this");
+        let m = args.slice(1).join(' ');
+        message.delete(100);
+        message.channel.send(`${m}`);
 	} else if(message.content.startsWith(prefix + "mute")) {
 		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
 			return message.channel.send("Vous n'avez pas accès à cette commande");
