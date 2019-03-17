@@ -146,14 +146,16 @@ client.on(`message`, message =>{
      			.catch(console.error); 
  } else if(message.content.startsWith(prefix + `infoserv`)) {
         message.delete()
+        let bicon = bot.user.displayAvatarURL;
         const count = new Discord.RichEmbed()
         .setColor(0x954D23)
-        .setTitle("**Information du serveur**")
-        .addField("Nom du serveur", message.guild.name)
-        .addField("Date de création du serveur", message.guild.createdAt)
-        .addField("Vous avez rejoin le serveur", message.member.joignedAt)
-        .addField("Total des membres :", message.guild.memberCount);
- return message.channel.send(count)
+        .setTitle("**Information du serveur ")
+        .setThumbnail(bicon)
+    .addField("Nom du serveur", "${message.guild.name}")
+        .addField("Date de création du serveur", "${message.guild.createdAt}")
+    .addField("Vous avez rejoin le serveur", "${message.member.joignedAt}")
+        .addField("Total des membres :", "${message.guild.memberCount}");
+        return message.channel.send(count)
     }
 });
 // THIS  MUST  BE  THIS  WAY
