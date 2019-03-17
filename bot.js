@@ -30,7 +30,6 @@ client.on(`message`, message =>{
 
 	if (message.content.startsWith(prefix + 'say')) {
 if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
-    }
         let m = args.slice(1).join(' ');
         message.delete(100);
         message.channel.send(`${m}`);
