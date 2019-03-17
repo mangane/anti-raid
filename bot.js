@@ -97,7 +97,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 .addField('&infoserv', 'Permet de donner des infos sur son serveur')
                 .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
                 .addField("&report","Permet de report une personne (il faut un salon spécial nommer #reports")
-		tFooter("OverBot crée par ⏳Gaétan#2852");
+		.setFooter("OverBot crée par ⏳Gaétan#2852");
                 message.channel.send({embed})
                 }
                 if(message.content.startsWith(prefix + `modo`)) {
