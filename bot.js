@@ -83,7 +83,7 @@ client.on(`message`, message =>{
 			.setColor(0x954D23)
 			.setTitle("Liste des commandes :")
 			.setTitle(":hammer_pick: **Utilisateurs :**:hammer_pick: ")
-			.addField("&sondage","Vous permet de faire un sondage")
+			.addField("&poll","Vous permet de faire un sondage")
 			.addField("&help", "Affiche les commandes")
 			.addField("&say", "Faire parler le bot")
 			.addField("&info", "Donne des informations sur le bot")
