@@ -78,7 +78,7 @@ client.on(`message`, message =>{
 			.addField("Voici l'email :","zncznc47@gmail.com")
 			.addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
 		message.channel.send({embed});
- } else if (message.content.startsWith(prefix + "help")) {
+} else if (message.content.startsWith(prefix + "help")) {
         const embed = new Discord.RichEmbed()
             .setColor(0x954D23)
             .setTitle(":scroll: Liste des commandes ::scroll: ")
@@ -88,22 +88,15 @@ client.on(`message`, message =>{
             .addField("&invite", "Donne le lien pour me faire joindre votre serveur")
             .addField('&infoserv', 'Permet de donner des infos sur son serveur')
             .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
-            message.channel.send({embed})
-            const embed2 = new Discord.RichEmbed()
-            .setColor(0x954D23)
-            .setTitle("**:hammer_pick: Commandes de modération :hammer_pick:**")
             .addField("&say", "Faire parler le bot")
             .addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
             .addField("&unmute[Mention]", "Retire l'interdiction de parler")
             .addField("&kick [Mention]","Exclure un membre du serveur")
-             message.channel.send({embed2})
-             const embed3 = new Discord.RichEmbed()
-             .setColor(0x954D23)
-             .setTitle("**__Commandes réservé au modérateur du bot__**")
-             .addField("&quit","Commande qui fait partir le bot du serveur d'ou l& commande est exécuter en cas de soucis")
-             .addField("&patch","Permet de voir les patch ou le mise à jours du bot")
+             .addField("&quit","Commande qui fait partir le bot du serveur d'ou l& commande est exécuter en cas de soucis réservé au modérateur du bot")
+             .addField("&report","Permet de report une personne (il faut un salon spécial nommer #reports")
+             .addField("&patch","Permet de voir les patch ou le mise à jours du bot réservé au modérateur du bot")
             .setFooter("OverBot crée par ⏳Gaétan#2852");
-            message.channel.send({embed3})
+            message.channel.send({embed})
 	} else if(message.content.startsWith(prefix + "kick")) {
 		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
