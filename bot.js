@@ -144,8 +144,7 @@ client.on(`message`, message =>{
     		message.guild.leave()
     			.then(g => console.log(`A quitté la guild: ${g}`))
      			.catch(console.error); 
- }
-if(message.content.startsWith(prefix + `infoserv`)) {
+ } else if(message.content.startsWith(prefix + `infoserv`)) {
         message.delete()
         let bicon = bot.user.displayAvatarURL;
         const count = new Discord.RichEmbed()
