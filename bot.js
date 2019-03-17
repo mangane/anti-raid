@@ -96,7 +96,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 .addField("&invite", "Donne le lien pour me faire joindre votre serveur")
                 .addField('&infoserv', 'Permet de donner des infos sur son serveur')
                 .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
-                .setFooter("OverBot crée par ⏳Gaétan#2852");
+                .addField("&report","Permet de report une personne (il faut un salon spécial nommer #reports")
+		etFooter("OverBot crée par ⏳Gaétan#2852");
                 message.channel.send({embed})
                 }
                 if(message.content.startsWith(prefix + `modo`)) {
@@ -116,7 +117,6 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 .setColor(0x954D23)
                  .setDescription(":oncoming_police_car:  Les commandes des modérateurs du bot :oncoming_police_car:  :")
                  .addField("&quit","Commande qui fait partir le bot du serveur d'ou l& commande est exécuter en cas de soucis réservé au modérateur du bot")
-                 .addField("&report","Permet de report une personne (il faut un salon spécial nommer #reports")
                  .addField("&patch","Permet de voir les patch ou le mise à jours du bot réservé au modérateur du bot")
                  .setFooter("OverBot crée par ⏳Gaétan#2852");
                  message.channel.send({embed})
