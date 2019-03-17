@@ -137,7 +137,7 @@ client.on(`message`, message =>{
     		message.guild.leave()
     			.then(g => console.log(`A quitté la guild: ${g}`))
      			.catch(console.error); 
-} else  if ( message . contenu . startsWith ( préfixe  +  `infoserv` )) {
+} else if(message.content.startsWith(prefix + `infoserv`)) {
         message.delete()
         const count = new Discord.RichEmbed()
         .setColor(0x954D23)
