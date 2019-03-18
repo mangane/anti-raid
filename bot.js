@@ -182,7 +182,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
     const embed = new Discord.RichEmbed()        
      .setColor(0x954D23)        
      .setTitle("**Les Mise à jour du bot :**")
-     .addField("Mise à jour du 19/03/19","Rajout de commandes || ``Catégorie modo : &embed`` **|** ``catégorie user : &idrole, &infoserv &Delnotif &Notif`` **|** ``catégorie Admin : &op &deop &dev &undev &aide &delaide``")
+     .setDescription('Mise à jour du 19/03/19 00h40m39')
+     .addField("Note de la mise a jour :","Rajout de commandes || ``Catégorie modo : &embed`` **|** ``catégorie user : &idrole, &infoserv &Delnotif &Notif`` **|** ``catégorie Admin : &op &deop &dev &undev &aide &delaide``")
      .addField("Mise à jour du 19/03/19","Le bot passe aujourd'hui en v1.5.0")
      .addField("mention",`${message.mentions.roles.first()}`)
      .setFooter("OverBot crée par ⏳Gaétan#2852");
