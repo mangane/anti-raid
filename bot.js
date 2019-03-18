@@ -247,28 +247,18 @@ message.member.addRole('556911777405992971')
   message.channel.send(purgeembed)
       }).catch(function() {
       });
-  } else if (message.content.startsWith(prefix + "idée")) {
-
-
-    var auteur = message.author;
-    var gname = message.guild.name
-
-            var embed = new Discord.RichEmbed()
-            .setAuthor(`Idée pour améliorer le serveur: ${gname}`)
-            .setFooter("Idée fait par " + auteur.username, auteur.avatarURL)
-            .setColor("0x29e29e")
-            .addField(args.join(" "), "Répondre avec ✅(oui) ou ➖(je ne sais pas) ou ❌(non)")
-
-            message.channel.send(embed)
-
-            .then(function (message) {
-            message.react("✅")
-            message.react("➖")
-            message.react("❌")
-        });
-
-  }
-}
+if(message.content.startsWith(prefix + `embed`)) {
+    if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS"))
+                return message.channel.send("Vous n'avez pas accès");
+        let m = args.slice(1).join(' ');
+        message.delete(100);
+        const embed = new Discord.RichEmbed()
+        .setColor(`0x954D23`)
+        .setTitle("say Embed")
+        .setDescription(`${m}`)
+        .setFooter("OverBot crée par ⏳Gaétan#2852");
+        message.channel.send({emebed})
+        }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
