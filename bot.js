@@ -187,7 +187,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 }
 	
 	if(message.content.startsWith(prefix + `report`)) {
-    messsage.delete()
+    
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Je ne trouve pas l'utilisateur");
     let rreason = args.join(" ").slice(22);
