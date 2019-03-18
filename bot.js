@@ -248,7 +248,7 @@ if(message.content.startsWith(prefix + `embed`)) {
         .setTitle("say Embed")
         .setDescription(`${m}`)
         .setFooter("OverBot crée par ⏳Gaétan#2852");
-        message.channel.send({embed})
+        message.channel.send(embed)
         }
 });
 // THIS  MUST  BE  THIS  WAY
