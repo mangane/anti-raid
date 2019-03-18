@@ -237,16 +237,7 @@ message.member.addRole('556911777405992971')
   } else if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
     message.member.author.addrole(`554797816963399691`);
-    } else if(message.content.startsWith(prefix + "purge")) {
-  if (message.member.hasPermission("MANAGE_MESSAGES")) {
-    message.channel.fetchMessages().then(function(list) {
-        message.channel.bulkDelete(list);
-  let purgeembed = new Discord.RichEmbed()
-    .setColor("00FFFF")
-    .setTitle("Tout les messages de ce channel on été supprimé avec succée")
-  message.channel.send(purgeembed)
-      }).catch(function() {
-      });
+   
 if(message.content.startsWith(prefix + `embed`)) {
     if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS"))
                 return message.channel.send("Vous n'avez pas accès");
