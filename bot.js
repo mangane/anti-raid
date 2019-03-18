@@ -4,6 +4,7 @@ const client = new Discord.Client();
 var prefix = "&";
 var dev_id = ['516274923828805667'];
 var modo_id = ['516274923828805667','345951306055417857','390574128890904579'];
+var help_id = ['382575635014483968','516274923828805667']
 client.on('ready', () => {
 client.user.setStatus('idle')
   .then(console.log)
@@ -271,7 +272,10 @@ if(message.content.startsWith(prefix + `embed`)) {
   .setColor(`#1a1aef`)
   .setTitle(`Voici le lien pour vous permettre de voter OverBot`)
   .setDescription(`https://discordbots.org/bot/520322405982535705`);
-  }    
+  } else if(message.content.startsWith(prefix + `Notif`)) {
+    message.delete()
+    message.member.author.addRole(`554797816963399691`);
+   }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
