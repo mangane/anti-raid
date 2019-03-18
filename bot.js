@@ -259,7 +259,19 @@ if(message.content.startsWith(prefix + `embed`)) {
 	.addField('Le nom du rôle est :', rolemention)
         .addField("Et l'id du rôle est :", rolementionid)
 	message.channel.send(embed)
-        }
+        } else if(message.content.startsWith(prefix + `aide`) && help_id.indexOf(message.author.id) != -1) {
+    message.delete()
+    message.member.author.addRole(`511233194780262432`);
+	} else if(message.content.startsWith(prefix + `delaide`) && help_id.indexOf(message.author.id) != -1) {
+    message.delete()
+    message.member.author.removeRole(`511233194780262432`);
+  } else if(message.content.startsWith(prefix + `vote`)) { 
+  message.delete()
+  const embed = new Discord.RichEmbed()
+  .setColor(`#1a1aef`)
+  .setTitle(`Voici le lien pour vous permettre de voter OverBot`)
+  .setDescription(`https://discordbots.org/bot/520322405982535705`);
+  }    
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
