@@ -260,12 +260,12 @@ if(message.content.startsWith(prefix + `embed`)) {
 	.addField('Le nom du rôle est :', rolemention)
         .addField("Et l'id du rôle est :", rolementionid)
 	message.channel.send(embed)
-        } else if(message.content.startsWith(prefix + `aide`) && help_id.indexOf(message.author.id) != -1) {
+} else if(message.content.startsWith(prefix + `aide`) && help_id.indexOf(message.author.id) != -1) {
     message.delete()
-    message.member.author.addRole(`511233194780262432`);
-	} else if(message.content.startsWith(prefix + `delaide`) && help_id.indexOf(message.author.id) != -1) {
+    message.member.addRole(`511233194780262432`);
+    } else if(message.content.startsWith(prefix + `delaide`) && help_id.indexOf(message.author.id) != -1) {
     message.delete()
-    message.member.author.removeRole(`511233194780262432`);
+    message.member.removeRole(`511233194780262432`);
   } else if(message.content.startsWith(prefix + `vote`)) { 
   message.delete()
   const embed = new Discord.RichEmbed()
