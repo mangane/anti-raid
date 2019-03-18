@@ -238,7 +238,7 @@ message.member.addRole('556911777405992971')
   .catch(console.error);
   } else if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
-    message.member.author.addrole(`554797816963399691`);
+    message.member.addRole(`554797816963399691`);
    }
 if(message.content.startsWith(prefix + `embed`)) {
     if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS"))
