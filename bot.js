@@ -250,6 +250,15 @@ if(message.content.startsWith(prefix + `embed`)) {
         .setDescription(`${m}`)
         .setFooter("OverBot crée par ⏳Gaétan#2852");
         message.channel.send(embed)
+        } else if(message.content.startsWith(prefix + `idrole`)) {
+        message.delete()
+        let rolemention = message.mentions.roles.first()
+	let rolementionid = message.mentions.roles.first().id
+	let embed = new Discord.RichEmbed()
+	.setTitle('Information du rôle mentioné :')
+	.addField('Le nom du rôle est :', rolemention)
+        .addField("Et l'id du rôle est :", rolementionid)
+	message.channel.send(embed)
         }
 });
 // THIS  MUST  BE  THIS  WAY
