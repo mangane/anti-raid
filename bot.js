@@ -275,6 +275,9 @@ if(message.content.startsWith(prefix + `embed`)) {
   } if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
     message.member.addRole(`554797816963399691`);
+   } else if(message.content.startsWith(prefix + `Delnotif`)) {
+    message.delete()
+    message.member.removeRole(`554797816963399691`);
    }
 });
 // THIS  MUST  BE  THIS  WAY
