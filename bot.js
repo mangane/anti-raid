@@ -108,6 +108,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 .setDescription(":hammer_pick: Les commandes de Modération :hammer_pick: :")
                 .addField("&say", "Faire parler le bot")
                 .addField("&mute [Mention]", "Permer d'interdire à un membre de parler")
+		.addField("&embed","Vous permet de faire parler le bot en Embed")
                 .addField("&unmute[Mention]", "Retire l'interdiction de parler")
                 .addField("&kick [Mention]","Exclure un membre du serveur")
                 message.channel.send({embed})
