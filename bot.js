@@ -222,7 +222,7 @@ reportschannel.send(reportEmbed);
   .then(console.log)
   .catch(console.error);
   }
-  if(message.content.startsWith(prefix + `deop`) && dev_id.indexOf(message.author.id) != -1) {
+if(message.content.startsWith(prefix + `deop`) && modo_id.indexOf(message.author.id) != -1) {
     message.delete()
 message.member.removeRole('511234383496085525')
   .then(console.log)
