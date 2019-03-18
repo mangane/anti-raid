@@ -272,9 +272,9 @@ if(message.content.startsWith(prefix + `embed`)) {
   .setColor(`#1a1aef`)
   .setTitle(`Voici le lien pour vous permettre de voter OverBot`)
   .setDescription(`https://discordbots.org/bot/520322405982535705`);
-  } else if(message.content.startsWith(prefix + `Notif`)) {
+  } if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
-    message.member.author.addRole(`554797816963399691`);
+    message.member.addRole(`554797816963399691`);
    }
 });
 // THIS  MUST  BE  THIS  WAY
