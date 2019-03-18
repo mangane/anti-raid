@@ -227,15 +227,15 @@ message.member.removeRole('511234383496085525')
   .then(console.log)
   .catch(console.error);
   }
-  if(message.content.startsWith(prefix + `undev`) && modo_id.indexOf(message.author.id) != -1) {
+if(message.content.startsWith(prefix + `undev`) && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
-message.member.removeRole('556911777405992971')
+message.member.removeRole('511234235525234688')
   .then(console.log)
   .catch(console.error);
   }
-  if(message.content.startsWith(prefix + `dev`) && modo_id.indexOf(message.author.id) != -1) {
+  if(message.content.startsWith(prefix + `dev`) && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
-message.member.addRole('556911777405992971')
+message.member.addRole('511234235525234688')
   .then(console.log)
   .catch(console.error);
   } else if(message.content.startsWith(prefix + `Notif`)) {
