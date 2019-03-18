@@ -11,7 +11,7 @@ client.user.setStatus('idle')
   .catch(console.error);
 });
 client.on('ready', () => {
-	const activity = [`${client.users.size} Utilisateurs`,`${client.guilds.size} Serveurs`,`taper &help !`,`v1.5.0 🎉🎇🎆❕❕❕❕`];
+	const activity = [`${client.users.size} Utilisateurs`,`${client.guilds.size} Serveurs`,`taper &help !`,`v1.5.0`];
 	let messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
 	console.log('Je suis pret !');
 	console.log("Connexion en cours ...");
