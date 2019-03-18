@@ -237,7 +237,7 @@ message.member.addRole('556911777405992971')
   } else if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
     message.member.author.addrole(`554797816963399691`);
-   
+   }
 if(message.content.startsWith(prefix + `embed`)) {
     if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS"))
                 return message.channel.send("Vous n'avez pas accès");
@@ -248,7 +248,7 @@ if(message.content.startsWith(prefix + `embed`)) {
         .setTitle("say Embed")
         .setDescription(`${m}`)
         .setFooter("OverBot crée par ⏳Gaétan#2852");
-        message.channel.send({emebed})
+        message.channel.send({embed})
         }
 });
 // THIS  MUST  BE  THIS  WAY
