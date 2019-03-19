@@ -266,12 +266,13 @@ if(message.content.startsWith(prefix + `embed`)) {
     } else if(message.content.startsWith(prefix + `delaide`) && help_id.indexOf(message.author.id) != -1) {
     message.delete()
     message.member.removeRole(`511233194780262432`);
-  } else if(message.content.startsWith(prefix + `vote`)) { 
+} else if(message.content.startsWith(prefix + `vote`)) { 
   message.delete()
   const embed = new Discord.RichEmbed()
   .setColor(`#1a1aef`)
   .setTitle(`Voici le lien pour vous permettre de voter OverBot`)
   .setDescription(`https://discordbots.org/bot/520322405982535705`);
+message.channel.send({embed})
   } if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
     message.member.addRole(`554797816963399691`);
