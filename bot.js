@@ -200,7 +200,6 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
     .setColor("#15f153")
     .addField("Signalement de l'utilisateur :", `${rUser} qui à pour ID : ${rUser.id}`)
     .addField("Signalé par", `${message.author} qui à pour ID : ${message.author.id}`)
-
     .addField("Channel", message.channel)
     .addField("Date et Heure", message.createdAt)
     .addField("Raison", rreason);
