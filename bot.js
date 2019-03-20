@@ -22,6 +22,17 @@ client.on('ready', () => {
         client.user.setActivity(`${messageACTIVITY}`);
  }, 60000);  
 });
+client.on("guildCreate", guild => {
+  // This event triggers when the bot joins a guild.
+  console.log(`J'ai rejoin un nouveaux serveur : ${guild.name} (id: ${guild.id}). Le serveur à ${guild.memberCount} membre!`);
+  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+});
+
+client.on("guildDelete", guild => {
+  // this event triggers when the bot is removed from a guild.
+  console.log(`Je ne suis plus sur le serveur : ${guild.name} (id: ${guild.id})`);
+client.user.setActivity(`Serving ${client.guilds.size} servers`);
+});
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'Bienvenue');
   if (!channel) return;
