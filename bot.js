@@ -215,7 +215,7 @@ reportschannel.send(reportEmbed);
 	}
 if(message.content.startsWith(prefix + `suggest`)) {
 let rrsuggest = args.join(" ").slice(7);
-message.deleted()
+message.delete()
 
     const Embed = new Discord.RichEmbed()
     .setDescription("Suggestion")
