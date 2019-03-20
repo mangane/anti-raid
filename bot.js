@@ -20,7 +20,7 @@ client.on('ready', () => {
     setInterval(() => {
         messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
         client.user.setActivity(`${messageACTIVITY}`);
-    }, 60000);
+ }, 60000); }
 	client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`J'ai rejoin un nouveaux serveur : ${guild.name} (id: ${guild.id}). Le serveur à ${guild.memberCount} membre!`);
