@@ -211,7 +211,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 reportschannel.send(reportEmbed);
 	}
 if(message.content.startsWith(prefix + `suggest`)) {
-let rrsuggest = args.join(" ").slice(12);
+let rrsuggest = args.join(" ").slice(2);
 
     const Embed = new Discord.RichEmbed()
     .setDescription("Suggestion")
