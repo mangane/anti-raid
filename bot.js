@@ -213,7 +213,7 @@ reportschannel.send(reportEmbed);
 if(message.content.startsWith(prefix + `suggest`)) {
     let rrsuggest = args.join(" ").slice(22);
 
-    let suggestEmbed = new Discord.RichEmbed()
+    const Embed = new Discord.RichEmbed()
     .setDescription("Suggestion")
     .setColor("#15f153")
     .addField("Suggestion faite par", `${message.author}`)
