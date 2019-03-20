@@ -10,7 +10,18 @@ client.user.setStatus('idle')
   .then(console.log)
   .catch(console.error);
 });
-client.on("guildCreate", guild => {
+client.on('ready', () => {
+    const activity = [`${client.users.size} Utilisateurs`,`${client.guilds.size} Serveurs`,`taper &help !`,`v1.5.0`];
+    let messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
+    console.log('Je suis pret !');
+    console.log("Connexion en cours ...");
+    console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+    client.user.setActivity(`${messageACTIVITY}`);
+    setInterval(() => {
+        messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
+        client.user.setActivity(`${messageACTIVITY}`);
+    }, 60000);
+	client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`J'ai rejoin un nouveaux serveur : ${guild.name} (id: ${guild.id}). Le serveur à ${guild.memberCount} membre!`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
