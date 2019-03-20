@@ -193,8 +193,9 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 	
 	if(message.content.startsWith(prefix + `report`)) {
     message.delete()
- if(message.args.size === 0)
+if(message.size === 0)
 return message.channel.send("Vous avez oublié de dire un message");
+
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Je ne trouve pas l'utilisateur");
     let rreason = args.join(" ").slice(28);
