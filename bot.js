@@ -14,13 +14,13 @@ client.user.setStatus('idle')
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`J'ai rejoin un nouveaux serveur : ${guild.name} (id: ${guild.id}). Le serveur à ${guild.memberCount} membre!`);
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+  client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
 });
 
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`Je ne suis plus sur le serveur : ${guild.name} (id: ${guild.id})`);
-client.user.setActivity(`Serving ${client.guilds.size} servers`);
+  client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
 });
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'Bienvenue');
