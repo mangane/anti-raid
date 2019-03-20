@@ -215,7 +215,8 @@ reportschannel.send(reportEmbed);
 	}
 if(message.content.startsWith(prefix + `suggest`)) {
 let rrsuggest = args.join(" ").slice(7);
-
+ if(message.size === 0)
+return message.channel.send("Vous avez oublié de dire un message");
     const Embed = new Discord.RichEmbed()
     .setDescription("Suggestion")
     .setColor("#15f153")
