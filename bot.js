@@ -21,7 +21,6 @@ client.on("guildDelete", guild => {
   console.log(`Je ne suis plus sur le serveur : ${guild.name} (id: ${guild.id})`);
 client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
-});
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'Bienvenue');
   if (!channel) return;
