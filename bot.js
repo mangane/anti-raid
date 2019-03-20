@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
 var dev_id = ['516274923828805667'];
-var modo_id = ['516274923828805667','345951306055417857','390574128890904579'];
+var modo_id = ['516274923828805667','345951306055417857'];
 var help_id = ['382575635014483968','516274923828805667','447719995539980308']
 client.on('ready', () => {
 client.user.setStatus('idle')
