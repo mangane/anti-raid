@@ -10,7 +10,9 @@ client.user.setStatus('idle')
   .then(console.log)
   .catch(console.error);
 });
-
+client.on('ready', () => {
+client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
+});
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`J'ai rejoin un nouveaux serveur : ${guild.name} (id: ${guild.id}). Le serveur à ${guild.memberCount} membre!`);
