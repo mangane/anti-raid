@@ -210,11 +210,25 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
     if(!reportschannel) return message.channel.send("je ne trouve pas le salon de report, crée en un qui s'appel  #reports");
 reportschannel.send(reportEmbed);
 	}
-	if(message.content.startsWith(prefix + `suggest`)) {
+if(message.content.startsWith(prefix + `suggest`)) {
+    let rrsuggest = args.join(" ").slice(22);
+
+    let suggestEmbed = new Discord.RichEmbed()
+    .setDescription("Suggestion")
+    .setColor("#15f153")
+    .addField("Suggestion faite par", `${rUser}`)
+    .addField("Date et Heure", message.createdAt)
+    .addField("Suggestion :", rrsuggest);
+    
     let suggestchannel = message.guild.channels.find(`name`, "suggestion");
     if(!suggestchannel) return message.channel.send("Je ne trouve pas le salon de suggestion merci de le crée en l'appelant #suggestion")
     suggestchannel.send(args.join(" "));
      return;
+ 
+
+
+
+
   } else if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
     message.delete() 
 		message.member.addRole('511234383496085525')
