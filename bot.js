@@ -20,7 +20,8 @@ client.on('ready', () => {
     setInterval(() => {
         messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
         client.user.setActivity(`${messageACTIVITY}`);
- }, 60000); 
+ }, 60000);  
+});
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'Bienvenue');
   if (!channel) return;
