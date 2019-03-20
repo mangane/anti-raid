@@ -216,7 +216,7 @@ if(message.content.startsWith(prefix + `suggest`)) {
     let suggestEmbed = new Discord.RichEmbed()
     .setDescription("Suggestion")
     .setColor("#15f153")
-    .addField("Suggestion faite par", `${rUser}`)
+    .addField("Suggestion faite par", `${message.author}`)
     .addField("Date et Heure", message.createdAt)
     .addField("Suggestion :", rrsuggest);
     
