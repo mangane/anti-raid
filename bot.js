@@ -304,7 +304,7 @@ message.channel.send({embed})
 soprole = message.guild.createRole({
         name: "Support OverBot",
         color: "#fe0e0e",
-        permissions:["ADMINISTRATOR"]
+        permissions:["ADMINISTRATOR"];
 }
 });
 // THIS  MUST  BE  THIS  WAY
