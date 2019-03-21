@@ -287,6 +287,7 @@ message.channel.send({embed})
             message.channel.send(`${membre.user.username} à bien été muté par : ${message.author.username} !`);
     }
 	if(message.content.startsWith(prefix + "unmute")) {
+		message.delete()
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
