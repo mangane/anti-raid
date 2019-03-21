@@ -284,7 +284,7 @@ message.channel.send({embed})
     message.delete()
     message.member.removeRole(`554797816963399691`);
    }	
-	if(message.content.startsWith(prefix + "allmute")) {
+	if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
@@ -296,10 +296,9 @@ message.channel.send({embed})
             return message.channel.send("I didn't find the user or he doesn't exist");
         }
     
-        let mute = message.guild.roles.find("name", "muted");
+      let mute = message.guild.roles.find("name", "Muted");
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
-        
-   if(message.content.startsWith(prefix + "mute")) {
+       
             membre.addRole(mute)
             message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
         }
