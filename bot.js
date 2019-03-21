@@ -37,6 +37,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         let m = args.slice(1).join(' ');
         message.delete(100);
         message.channel.send(`${m}`);
+		}
 	if(message.content.startsWith(prefix + "invite")) {
 			message.delete()
 		const embed = new Discord.RichEmbed()		
