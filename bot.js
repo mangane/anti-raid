@@ -283,7 +283,7 @@ message.channel.send({embed})
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
        
             membre.addRole(mute)
-            message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
+            message.channel.send(`${membre.user.username} à bien été muté par : ${message.author.username} !`);
     }
 	if(message.content.startsWith(prefix + "unmute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
@@ -301,7 +301,7 @@ message.channel.send({embed})
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
        
             membre.removeRole(mute)
-            message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
+            message.channel.send(`${membre.user.username}à bien été démuter par : ${message.author.username} !`);
     }
 });
 // THIS  MUST  BE  THIS  WAY
