@@ -45,7 +45,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 			.setColor(0x954D23)
 			.setTitle("Invitation :")
 			.addField("Voici le site web","https://manganeg21.wixsite.com/overbot/")
-			.addField("Voici l'email :","zncznc47@gmail.com")
+			.addField("Voici l'email :","gaetanoverbot@gmail.com")
 			.addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
 		message.channel.send({embed});
 } else if (message.content.startsWith(prefix + "help")) {
