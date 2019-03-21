@@ -27,7 +27,8 @@ client.on("guildDelete", guild => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if (!channel) return;
-    channel.send(`Bienvenue ${member} pour voir mes commandes tape &help `);
+     channel.send(`Bienvenue ${member} pour voir mes commandes tape &help) 
+channel.send(`https://media.discordapp.net/attachments/532537522077564928/558308048427548692/Webp.net-gifmaker.gif`);
 });
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
