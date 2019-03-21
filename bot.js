@@ -301,4 +301,5 @@ message.channel.send({embed})
             membre.removeRole(mute)
             message.channel.send(`${membre.user.username}à bien été démuter par : ${message.author.username} !`);
     }
+	});
 client.login(process.env.BOT_TOKEN)
