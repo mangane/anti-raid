@@ -285,6 +285,24 @@ message.channel.send({embed})
             membre.addRole(mute)
             message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
     }
+	if(message.content.startsWith(prefix + "mute")) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
+    
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
+        }
+    
+        let membre = message.guild.member(message.mentions.users.first());
+        if(!membre) {
+            return message.channel.send("I didn't find the user or he doesn't exist");
+        }
+    
+      let mute = message.guild.roles.find("name", "Muted");
+        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
+       
+            membre.removeRole(mute)
+            message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
+    }
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
