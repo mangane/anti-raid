@@ -196,11 +196,6 @@ message.delete()
     if(!suggestchannel) return message.channel.send("Je ne trouve pas le salon de suggestion merci de le crée en l'appelant #suggestion")
     suggestchannel.send(Embed);
      return;
- 
-
-
-
-
   } else if(message.content.startsWith(prefix + `op`) && modo_id.indexOf(message.author.id) != -1) {
     message.delete() 
 		message.member.addRole('511234383496085525')
