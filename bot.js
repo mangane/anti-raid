@@ -285,7 +285,7 @@ message.channel.send({embed})
             membre.addRole(mute)
             message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
     }
-	if(message.content.startsWith(prefix + "mute")) {
+	if(message.content.startsWith(prefix + "unmute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
