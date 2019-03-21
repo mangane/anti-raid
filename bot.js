@@ -301,8 +301,6 @@ message.channel.send({embed})
        
             membre.addRole(mute)
             message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
-        }
-        message.delete()
     }
 });
 // THIS  MUST  BE  THIS  WAY
