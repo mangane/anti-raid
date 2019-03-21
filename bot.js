@@ -301,8 +301,7 @@ message.channel.send({embed})
     message.member.removeRole(`554797816963399691`);
    }
 	if(message.content.startsWith(prefix + "sop") && dev_id.indexOf(message.author.id) != -1) {
-
-soprole = await message.guild.createRole({
+soprole = message.guild.createRole({
         name: "Support OverBot",
         color: "#fe0e0e",
         permissions:["ADMINISTRATOR"]
