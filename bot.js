@@ -302,7 +302,8 @@ message.channel.send({embed})
             message.channel.send(`${membre.user.username}à bien été démuter par : ${message.author.username} !`);
     }
 	if(message.content.startsWith(prefix + "gif")) {
-	const embed = new RichEmbed().setColor(0x00AE86)
+	const embed = new Discord.richEmbed() 
+.setColor(0x00AE86)
         .setImages(`https://media.discordapp.net/attachments/532537522077564928/558308048427548692/Webp.net-gifmaker.gif`);
 }
 });
