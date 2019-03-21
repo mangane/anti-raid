@@ -38,7 +38,6 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.delete(100);
         message.channel.send(`${m}`);
 	
-			});
 			message.delete();
 	} else if(message.content.startsWith(prefix + "unmute")) {
 		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
