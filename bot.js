@@ -302,5 +302,12 @@ message.channel.send({embed})
             membre.removeRole(mute)
             message.channel.send(`${membre.user.username}à bien été démuter par : ${message.author.username} !`);
     }
+	if(message.content.startsWith(prefix + "support")) {
+const embed = new Discord.RichEmbed()        
+            .setColor(0x954D23)
+            .setTitle("Invitation Support :")
+.addField("Support OverBot :","https://discord.gg/tWQW6Qd");
+message.channel.send({embed})
+}
 	});
 client.login(process.env.BOT_TOKEN)
