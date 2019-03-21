@@ -114,7 +114,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		member.ban();
 	} else if (message.content.startsWith(prefix + `poll`)) {
 		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
-            return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
+            return message.channel.send("Vous n'avez pas accès à cette commande, il vous faut l'accès KICK_MEMBERS!");
 		const poll = message.content.substring(5);
 		if (poll.size === 0)
 			return message.reply("Vous n'avez pas mis de question");
