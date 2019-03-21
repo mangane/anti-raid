@@ -51,7 +51,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 
 			if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR"))
 				return message.channel.send("I don't the right to do this");
-			message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
+			message.guild.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
 				message.channel.send(`${mute.user.username} has been muted by ${message.author.username} !`);
 			});
 			message.delete();
