@@ -71,6 +71,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
                 .addField("&infoserv","Commande qui vous donne les informations du serveur sur le quelle la commande est exécuter ")
 		.addField("&Notif","Uniquement sur le serveur de support, vous permet de prendre le rôle de notification")
                 .addField("&report","Permet de report une personne (il faut un salon spécial nommer #reports")
+		.addField("&support","Vous donne l'invitation pour rejoindre le serveur de OverBot")
 		.setFooter("OverBot crée par ⏳Gaétan#2852");
                 message.channel.send({embed})
                 }
