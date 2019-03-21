@@ -268,6 +268,7 @@ message.channel.send({embed})
     message.member.removeRole(`554797816963399691`);
    }	
 	if(message.content.startsWith(prefix + "mute")) {
+		message.delete()
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
         if(message.mentions.users.size === 0) {
@@ -285,6 +286,7 @@ message.channel.send({embed})
             membre.addRole(mute)
             message.channel.send(`${membre.user.username} à bien été muté par : ${message.author.username} !`);
     }
+	message.delete()
 	if(message.content.startsWith(prefix + "unmute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't the right to do this");
     
