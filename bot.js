@@ -300,6 +300,26 @@ message.channel.send({embed})
     message.delete()
     message.member.removeRole(`554797816963399691`);
    }
+	if(message.content.startsWith(prefix + "role")) {
+
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Désolée vous ne pouvez pas !");
+  let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  if(!rMember) return message.reply("Je ne trouve aps l'utilisateur");
+  let role = args.join(" ").slice(22);
+  if(!role) return message.reply("Merci de Spécifier un rôle");
+  let gRole = message.guild.roles.find(`name`, role);
+  if(!gRole) return message.reply("Je ne trouve pas le rôle")
+
+  if(rMember.roles.has(gRole.id)) return message.reply("They already have that role.");
+  await(rMember.addRole(gRole.id));
+
+  try{
+    await rMember.send(`Bravo vous avez gagnezle rôle ${gRole.name}`)
+  }catch(e){
+    console.log(e.stack);
+    message.channel.send(`Bravo  <@${rMember.id}>, Vous avez obtenu le rôle : ${gRole.name}.`);
+  }
+}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
