@@ -37,22 +37,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         let m = args.slice(1).join(' ');
         message.delete(100);
         message.channel.send(`${m}`);
-	} else if(message.content.startsWith(prefix + "mute")) {
-		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
-			return message.channel.send("Vous n'avez pas accès à cette commande");
-			if(message.mentions.users.size === 0) {
-				return message.channel.send("Vous n'avez pas mentionner de personne");
-			}
-
-			var mute = message.guild.member(message.mentions.users.first());
-			if(!mute) {
-				return message.channel.send("l'utilisateur n'existent pas !");
-			}
-
-			if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR"))
-				return message.channel.send("I don't the right to do this");
-			message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
-				message.channel.send(`${mute.user.username} has been muted by ${message.author.username} !`);
+	
 			});
 			message.delete();
 	} else if(message.content.startsWith(prefix + "unmute")) {
@@ -315,7 +300,7 @@ message.channel.send({embed})
         let mute = message.guild.roles.find("name", "muted");
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
         
-        else{
+   if(message.content.startsWith(prefix + "mute")) {
             membre.addRole(mute)
             message.channel.send(`${membre.user.username} has been muted by ${message.author.username} !`);
         }
