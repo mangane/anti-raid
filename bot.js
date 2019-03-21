@@ -226,7 +226,7 @@ message.member.addRole('511234235525234688')
     message.member.addRole(`554797816963399691`);
    }
 if(message.content.startsWith(prefix + `embed`)) {
-    if(!message.guild.member(client.user).hasPermission("ADMINISTRATORS"))
+    if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR"))
                 return message.channel.send("Vous n'avez pas accès");
         let m = args.slice(1).join(' ');
         message.delete(100);
