@@ -27,7 +27,7 @@ client.on("guildDelete", guild => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if (!channel) return;
-  `channel.send(`Bienvenue ${member} sûr ${guild.name} qui comporte maintenant ${guild.memberCount}`);
+  channel.send(`Bienvenue ${member} sûr ${guild.name} qui comporte maintenant ${guild.memberCount}`);
 });
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
