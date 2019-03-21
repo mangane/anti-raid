@@ -302,7 +302,6 @@ message.channel.send({embed})
     
       let mute = message.guild.roles.find("name", "Muted");
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
-       
             membre.removeRole(mute)
             message.channel.send(`${membre.user.username}à bien été démuter par : ${message.author.username} !`);
     }
