@@ -309,3 +309,5 @@ soprole = message.guild.createRole({
 message.member.addRole(soprole);
 }
 }):
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN)
