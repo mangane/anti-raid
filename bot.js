@@ -301,13 +301,6 @@ message.channel.send({embed})
             membre.removeRole(mute)
             message.channel.send(`${membre.user.username}à bien été démuter par : ${message.author.username} !`);
     }
-if(message.content.startsWith(prefix + "gif")) { 
-message.delete()
-const embed = new Discord.RichEmbed()
-.setColor(`#f40e0e`)
-setImage(`https://media.discordapp.net/attachments/532537522077564928/558308048427548692/Webp.net-gifmaker.gif`);
-message.channel.send({embed})
-}
 });
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN)
