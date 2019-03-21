@@ -39,24 +39,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.channel.send(`${m}`);
 	
 			message.delete();
-	} else if(message.content.startsWith(prefix + "unmute")) {
-		if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
-			return message.channel.send("Vous n'avez pas accès à cette commande");
-			if(message.mentions.users.size === 0) {
-				return message.channel.send("Vous devez mentionner une personne pour éxecuter la commande");
-			}
-
-			var umute = message.guild.member(message.mentions.users.first());
-			if(!umute) {
-				return message.channel.send("l'utilisateur n'existent pas !");
-			}
-			if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR"))
-				return message.channel.send("I don't the right to do this");
-			message.channel.overwritePermissions(umute, { SEND_MESSAGES: true}).then(member => {
-				message.channel.send(`${umute.user.username} has been unmuted by ${message.author.username} !`);
-			});
-			message.delete();
-	} else if (message.content.startsWith(prefix + "invite")) {
+	
 		const embed = new Discord.RichEmbed()		
 			.setColor(0x954D23)
 			.setTitle("Invitation :")
