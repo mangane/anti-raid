@@ -25,9 +25,9 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
 });
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'Bienvenue');
+  const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if (!channel) return;
-  channel.send(`Bienvenue ${member}`);
+  channel.send(`Bienvenue ${member} sûr ${message.guild.name} qui comporte maintenant ${message.guild.memberCount}`);
 });
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
