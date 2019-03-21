@@ -113,6 +113,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
 		member.ban();
 	} else if (message.content.startsWith(prefix + `poll`)) {
+		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
+            return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		const poll = message.content.substring(5);
 		if (poll.size === 0)
 			return message.reply("Vous n'avez pas mis de question");
