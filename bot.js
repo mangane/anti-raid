@@ -29,7 +29,7 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Bienvenue sur le serveur :", "${member})
+    .addField("Bienvenue sur le serveur :", "${member}")
     .addField("Le serveur possède :","${message.guild.memberCount} de membre")
 });
 client.on(`message`, message =>{
