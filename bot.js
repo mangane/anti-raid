@@ -29,9 +29,8 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Bienvenue sur le serveur :", guild.name)
+    .addField("Bienvenue sur le serveur :", "${member})
     .addField("Le serveur possède :","${message.guild.memberCount} de membre")
-    .addField("Le créateur du serveur est :", guild.ownerID)
 });
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
