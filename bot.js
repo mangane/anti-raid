@@ -27,8 +27,11 @@ client.on("guildDelete", guild => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if (!channel) return;
-     channel.send(`Bienvenue ${member} pour voir mes commandes tape &help  :OverBotGif:`)
-channel.send(`https://media.discordapp.net/attachments/532537522077564928/558308048427548692/Webp.net-gifmaker.gif`);
+    const embed = new Discord.RichEmbed()
+    .setColor("#3ad729")
+    .addField("Bienvenue sur le serveur :",message.guild.name)
+    .addField("Le serveur possède :","${message.guild.memberCount} de membre")
+    .addField("Le créateur du serveur est :",message.guild.ownerID)
 });
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
