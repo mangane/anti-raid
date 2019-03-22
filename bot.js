@@ -24,15 +24,12 @@ client.on("guildDelete", guild => {
   console.log(`Je ne suis plus sur le serveur : ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
 }); 
+client.on("guildAdd", guild => {
+  // this event triggers when the bot is removed from a guild.
+  console.log(`Je suis désormais sur le serveur : ${guild.name} (id: ${guild.id})`);
+  client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
+}); 
 client.on('guildMemberRemove', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
-  if (!channel) return;
-    const embed = new Discord.RichEmbed()
-    .setColor("#3ad729")
-    .addField("Au revoir :", `${member}`)
-    .setTitle(":sob: Une personne est partie du serveur :sob: ");
-channel.send({embed})
-});{
   const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if (!channel) return;
     const embed = new Discord.RichEmbed()
