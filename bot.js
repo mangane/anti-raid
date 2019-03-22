@@ -24,7 +24,7 @@ client.on("guildDelete", guild => {
   console.log(`Je ne suis plus sur le serveur : ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
 }); 
-client.on('guildMemberLeft, member => {
+client.on('guildMemberLeft', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if (!channel) return;
     const embed = new Discord.RichEmbed()
