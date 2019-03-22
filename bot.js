@@ -23,8 +23,7 @@ client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`Je ne suis plus sur le serveur : ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
-});
-client.on('guildMemberDel', membremplace ce que tu à mis en : 
+}); 
 client.on('guildMemberLeft, member => {
   const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if (!channel) return;
