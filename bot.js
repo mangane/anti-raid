@@ -204,6 +204,7 @@ message.member.addRole('511234235525234688')
   .catch(console.error);
   } else if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
+	  message.reply("Vous avez bien reçu le rôle de Notification")
     message.member.addRole(`554797816963399691`);
    }
 if(message.content.startsWith(prefix + `embed`)) {
@@ -243,6 +244,7 @@ message.channel.send({embed})
     message.delete()
     message.member.addRole(`554797816963399691`);
    } else if(message.content.startsWith(prefix + `Delnotif`)) {
+	   message.reply("Le rôle Notification vous à bien été retiré !")
     message.delete()
     message.member.removeRole(`554797816963399691`);
    }	
