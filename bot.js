@@ -334,7 +334,7 @@ if(message.content.startsWith(prefix + "stats")) {
     const embed = new Discord.RichEmbed()
     .setColor("#2e1fe6")
     .setTitle("Serveur anti-raid")
-    .addField("Admin Support","https://discord.gg/Z3zXabV");
+    .addField("Armin Support","https://discord.gg/Z3zXabV");
     message.channel.send({embed})
     }
 });
