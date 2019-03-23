@@ -329,7 +329,7 @@ if(message.content.startsWith(prefix + "stats")) {
     .addField("Nombre d'utilisateurs :", client.users.size);
     message.channel.send({embed})
 }
-	if(message.content.startsWith(prefix + "anti-raid")
+	if(message.content.startsWith(prefix + "anti-raid")) {
         message.delete()
     const embed = new Discord.RichEmbed()
     .setColor("#2e1fe6")
