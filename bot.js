@@ -330,5 +330,13 @@ if(message.content.startsWith(prefix + "stats")) {
     .addField("Nombre d'utilisateurs :", client.users.size);
     message.channel.send({embed})
 }
+	if(message;content.startsWith(prefix + "Anti-raid")
+        message.delete()
+    const embed = new Discord.RichEmbed()
+    .setColor("#2e1fe6")
+    .setTitle("Serveur anti-raid")
+    .addField("Armin Support","https://discord.gg/Z3zXabV");
+    message.channel.send({embed})
+    }
 });
 client.login(process.env.BOT_TOKEN)
