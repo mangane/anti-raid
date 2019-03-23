@@ -291,4 +291,13 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed})
 }
 	});
+if(message.content.startsWith(prefix + "site")) {
+        message.delete()
+        const site = new Discord.RichEmbed()
+        .setColor("#2e1fe6")
+        .setTitle("Voici le site web de OverBot")
+        .addField("Site web :","https://overbot.webnode.fr/")
+        .setFooter("OverBot crée par ⏳Gaétan#2852");
+        message.channel.send({site})
+    }
 client.login(process.env.BOT_TOKEN)
