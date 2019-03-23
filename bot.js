@@ -317,7 +317,7 @@ if(message.content.startsWith(prefix + "site")) {
 if(message.content.startsWith(prefix + "reco") && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
     message.reply("Je me déconnecte")
-    client.user.setStatus(`idle`);
+    message.delete()
 }
 });
 client.login(process.env.BOT_TOKEN)
