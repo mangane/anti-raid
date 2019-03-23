@@ -287,7 +287,7 @@ message.channel.send({embed})
 const embed = new Discord.RichEmbed()        
             .setColor(0x954D23)
             .setTitle("Invitation Support :")
-.addField("Support OverBot :","https://discord.gg/tWQW6Qd");
+.addField("Support OverBot :","https://www.invite.gg/OverBot");
 message.channel.send({embed})
 }
 if(message.content.startsWith(prefix + "site")) {
