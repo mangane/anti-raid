@@ -321,5 +321,13 @@ if(message.content.startsWith(prefix + "reco") && dev_id.indexOf(message.author.
     message.reply("Je me déconnecte")
     message.delete()
 }
+	if(message.content.startsWith(prefix + "stats")) {
+    message.delete()
+    const embed = new Discord.RichEmbed()
+    .setColor("#2e1fe6")
+    .setTitle("Statistiques")
+    .addField("Nombre de serveur :", message.guilds.size);
+    message.channel.send({embed})
+}
 });
 client.login(process.env.BOT_TOKEN)
