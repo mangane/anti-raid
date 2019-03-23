@@ -307,6 +307,7 @@ if(message.content.startsWith(prefix + "site")) {
         if (count < 1 || count > 100) return message.channel.send("Veuillez indiquer un nombre entre 1 et 100")
         message.channel.bulkDelete(parseInt(count) + 1)
         message.channel.send ("J'ai supprimé " + count + " message(s) :white_check_mark:");
+		message.delete(20)
     }
 	if(message.content.startsWith(prefix + "deco") && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
