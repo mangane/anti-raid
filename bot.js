@@ -201,6 +201,7 @@ message.member.removeRole('511234235525234688')
 message.member.addRole('511234235525234688')
   .then(console.log)
   .catch(console.error);
+}
   if(message.guild.id === "511230356150812673"){
    if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
