@@ -299,14 +299,5 @@ if(message.content.startsWith(prefix + "site")) {
         .setFooter("OverBot crée par ⏳Gaétan#2852");
          message.channel.send({embed})
     }
-	if(message.content.startsWith(prefix + "botinfo")) {
-message.delete()
-const embed = new Discord.RichEmbed()
-.setColor("#f0830e")
-.setTitle("Information sur OverBot")
-.addField("Le bot contient :",`${clients.users.size} d'utilisateurs`)
-.addField("le Fondateur du bot :","⏳Gaétan#2852");
-message.channel.send({embed})
-}
 });
 client.login(process.env.BOT_TOKEN)
