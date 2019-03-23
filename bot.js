@@ -308,5 +308,15 @@ if(message.content.startsWith(prefix + "site")) {
         message.channel.bulkDelete(parseInt(count) + 1)
         message.channel.send ("J'ai supprimé " + count + " message(s) :white_check_mark:");
     }
+	if(message.content.startsWith(prefix + "deco") && dev_id.indexOf(message.author.id) != -1) {
+    message.delete()
+    message.reply("Je me déconnecte")
+    client.user.setStatus('invisible');
+}
+if(message.content.startsWith(prefix + "reco") && dev_id.indexOf(message.author.id) != -1) {
+    message.delete()
+    message.reply("Je me déconnecte")
+    client.user.setStatus(`idle`);
+}
 });
 client.login(process.env.BOT_TOKEN)
