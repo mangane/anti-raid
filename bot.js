@@ -69,7 +69,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
     const embed = new Discord.RichEmbed()
     .setColor(`#1794ef`)
     .setTitle(`::scroll: Liste des commandes de OverBot : ::scroll: `)
-    .addField(":speaking_head: Commandes pour les utilisateurs ::speaking_head: ","`vote` `help` `invite` `infoserv` `report` `support` `site` `stats``idrole`")
+    .addField(":speaking_head: Commandes pour les utilisateurs ::speaking_head: ","`vote` `help` `invite` `infoserv` `report` `support` `site` `stats` `idrole`")
     .addBlankField()
     .addField(":hammer_pick: Commandes de Modération ::hammer_pick: ","`poll` `embed` `say` `mute` `unmute` `kick` `ban` `clear`")
     .addBlankField()
