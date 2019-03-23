@@ -71,11 +71,11 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
     .setTitle(`::scroll: Liste des commandes de OverBot : ::scroll: `)
     .addField(":speaking_head: Commandes pour les utilisateurs ::speaking_head: ","`vote` `help` `invite` `infoserv` `report` `support` `site`")
     .addBlankField()
-    .addField(":hammer_pick: Commandes de Modération ::hammer_pick: ","`poll` `embed` `say` `mute` `unmute` `kick` `ban`")
+    .addField(":hammer_pick: Commandes de Modération ::hammer_pick: ","`poll` `embed` `say` `mute` `unmute` `kick` `ban` `clear`")
     .addBlankField()
     .addField(":paperclips: Commande Des utilisateurs disponible uniquement sur le support ::paperclips: ","`Notif` `Delnotif`")
     .addBlankField()
-    .addField(":oncoming_police_car: Commande disponnible Uniquement aux Modérateur du bot ! ::oncoming_police_car: ","`patch` `quit`");
+    .addField(":oncoming_police_car: Commande disponnible Uniquement aux Modérateur du bot ! ::oncoming_police_car: ","`patch` `quit``deco` `reco`");
     message.channel.send({embed})
 }
 	if(message.content.startsWith(prefix + "kick")) {
