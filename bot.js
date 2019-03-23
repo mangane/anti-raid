@@ -67,7 +67,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		message.channel.send({embed});
 } else if(message.content.startsWith(prefix + "help")) {
     message.delete()
-    const embed = new Discord.RicheEmbed()
+    const embed8 = new Discord.RicheEmbed()
     .setColor(`#1794ef`)
     .setTitle(`Liste des commandes de OverBot :`)
     .addField("Commandes pour les utilisateurs :","`vote` `help` `invite` `infoserv` `report` `support`")
