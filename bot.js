@@ -31,7 +31,7 @@ client.on("guildAdd", guild => {
 }); 
 client.on('guildMemberRemove', member => {
   if(message.content.startsWith(prefix + "anti-raid")
-  if (!channel) return;
+  if(!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
     .addField("Au revoir :", `${member}`)
