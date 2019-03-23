@@ -279,6 +279,15 @@ message.channel.send({embed})
         }
     
       let mute = message.guild.roles.find("name", "Muted");
+		if(message.content.startsWith(prefix + "botinfo")) {
+message.delete()
+const embed = new Discord.RichEmbed()
+.setColor("#f0830e")
+.setTitle("Information sur OverBot")
+.addField("Le bot contient :",`${clients.users.size} d'utilisateurs`)
+.addField("le Fondateur du bot :","⏳Gaétan#2852");
+message.channel.send({embed})
+}
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
             membre.removeRole(mute)
             message.channel.send(`${membre.user.username}à bien été démuter par : ${message.author.username} !`);
