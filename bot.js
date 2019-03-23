@@ -306,8 +306,7 @@ if(message.content.startsWith(prefix + "site")) {
         if (isNaN(count)) return message.channel.send("Veuillez indiquer un nombre valide")
         if (count < 1 || count > 100) return message.channel.send("Veuillez indiquer un nombre entre 1 et 100")
         message.channel.bulkDelete(parseInt(count) + 1)
-        message.channel.send ("J'ai supprimé " + count + " message(s) :white_check_mark:
-")
+        message.channel.send ("J'ai supprimé " + count + " message(s) :white_check_mark:");
     }
 });
 client.login(process.env.BOT_TOKEN)
