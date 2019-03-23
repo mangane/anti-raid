@@ -30,6 +30,7 @@ client.on("guildAdd", guild => {
    client.user.setActivity(`Taper &help |${client.guilds.size} serveurs | V2.5.0`);
 }); 
 client.on('guildMemberRemove', member => {
+	 const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if(!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
