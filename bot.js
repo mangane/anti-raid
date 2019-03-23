@@ -299,12 +299,6 @@ if(message.content.startsWith(prefix + "site")) {
         .setFooter("OverBot crée par ⏳Gaétan#2852");
          message.channel.send({embed})
     }
-	if(message.content.startsWith(prefix + "reboot") && dev_id.indexOf(message.author.id) != -1) {
-    message.delete()
-    message.reply("J'ai bient été déco reco de discord !")
-    client.user.setStatus('invisible')
-    client.user.setStatus(`idle`);
-}
 	if(message.content.startsWith(prefix + "clear")) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande")
         let count = args[1]
@@ -312,7 +306,8 @@ if(message.content.startsWith(prefix + "site")) {
         if (isNaN(count)) return message.channel.send("Veuillez indiquer un nombre valide")
         if (count < 1 || count > 100) return message.channel.send("Veuillez indiquer un nombre entre 1 et 100")
         message.channel.bulkDelete(parseInt(count) + 1)
-        message.channel.send ("J'ai supprimé " + count + " message(s)")
+        message.channel.send ("J'ai supprimé " + count + " message(s) :white_check_mark:
+")
     }
 });
 client.login(process.env.BOT_TOKEN)
