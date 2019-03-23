@@ -30,7 +30,6 @@ client.on("guildAdd", guild => {
    client.user.setActivity(`Taper &help |${client.guilds.size} serveurs | V2.5.0`);
 }); 
 client.on('guildMemberRemove', member => {
-  if(message.content.startsWith(prefix + "anti-raid")
   if(!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
