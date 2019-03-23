@@ -301,7 +301,7 @@ if(message.content.startsWith(prefix + "site")) {
     }
 	if(message.content.startsWith(prefix + "reboot") && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
-    message.reply("Je me déconnecte")
+    message.reply("J'ai bient été déco reco de discord !")
     client.user.setStatus('invisible')
     client.user.setStatus(`idle`);
 }
