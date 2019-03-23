@@ -30,7 +30,7 @@ client.on("guildAdd", guild => {
    client.user.setActivity(`Taper &help |${client.guilds.size} serveurs | V2.5.0`);
 }); 
 client.on('guildMemberRemove', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
+  if(message.content.startsWith(prefix + "anti-raid")
   if (!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
@@ -330,12 +330,12 @@ if(message.content.startsWith(prefix + "stats")) {
     .addField("Nombre d'utilisateurs :", client.users.size);
     message.channel.send({embed})
 }
-	if(message;content.startsWith(prefix + "Anti-raid")
+	if(message;content.startsWith(prefix + "anti-raid")
         message.delete()
     const embed = new Discord.RichEmbed()
     .setColor("#2e1fe6")
     .setTitle("Serveur anti-raid")
-    .addField("Armin Support","https://discord.gg/Z3zXabV");
+    .addField("Admin Support","https://discord.gg/Z3zXabV");
     message.channel.send({embed})
     }
 });
