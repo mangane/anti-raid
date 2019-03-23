@@ -305,7 +305,7 @@ if(message.content.startsWith(prefix + "site")) {
     client.user.setStatus('invisible')
     client.user.setStatus(`idle`);
 }
-	if (args[0].toLowerCase() === prefix + "clear"){
+	if(message.content.startsWith(prefix + "clear")) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Vous n'avez pas la permission d'utiliser cette commande")
         let count = args[1]
         if (!count) return message.channel.send("Veuillez indiquer un nombre de messages à supprimer")
