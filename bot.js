@@ -300,4 +300,4 @@ if(message.content.startsWith(prefix + "site")) {
         message.channel.send({site})
     }
 });
-client.login(p});rocess.env.BOT_TOKEN)
+client.login(process.env.BOT_TOKEN)
