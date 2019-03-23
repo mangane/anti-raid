@@ -326,7 +326,7 @@ if(message.content.startsWith(prefix + "stats")) {
     const embed = new Discord.RichEmbed()
     .setColor("#2e1fe6")
     .setTitle("Statistiques")
-    .addField("Nombre de serveur :", message.guilds.size);
+    .addField("Nombre de serveur :", message.guild.size);
     message.channel.send({embed})
 }
 });
