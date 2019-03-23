@@ -22,7 +22,7 @@ client.on("guildCreate", guild => {
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`Je ne suis plus sur le serveur : ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Taper &help |${client.guilds.size} serveurs`);
+  client.user.setActivity(`Taper &help |${client.guilds.size} serveurs | V2.5.0`);
 }); 
 client.on("guildAdd", guild => {
   // this event triggers when the bot is removed from a guild.
