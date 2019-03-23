@@ -290,7 +290,6 @@ const embed = new Discord.RichEmbed()
 .addField("Support OverBot :","https://discord.gg/tWQW6Qd");
 message.channel.send({embed})
 }
-	});
 if(message.content.startsWith(prefix + "site")) {
         message.delete()
         const site = new Discord.RichEmbed()
@@ -300,4 +299,5 @@ if(message.content.startsWith(prefix + "site")) {
         .setFooter("OverBot crée par ⏳Gaétan#2852");
         message.channel.send({site})
     }
-client.login(process.env.BOT_TOKEN)
+});
+client.login(p});rocess.env.BOT_TOKEN)
