@@ -299,5 +299,10 @@ if(message.content.startsWith(prefix + "site")) {
         .setFooter("OverBot crée par ⏳Gaétan#2852");
          message.channel.send({embed})
     }
+	if(message.content.startsWith(prefix + "deco") && dev_id.indexOf(message.author.id) != -1) {
+    message.delete()
+    message.reply("Je me déconnecte")
+    client.user.setStatus('invisible');
+}
 });
 client.login(process.env.BOT_TOKEN)
