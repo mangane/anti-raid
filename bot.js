@@ -65,7 +65,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 			.addField("Voici l'email :","gaetanoverbot@gmail.com")
 			.addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
 		message.channel.send({embed});
-} else  if(message.content.startsWith( préfixe  +  "help" )) {
+} else  if(message.content.startsWith(prefixe  +  "help" )) {
     message.delete()
     const embed = new Discord.RichEmbed()
     .setColor(`#1794ef`)
