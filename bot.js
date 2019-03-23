@@ -65,18 +65,18 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 			.addField("Voici l'email :","gaetanoverbot@gmail.com")
 			.addField("Voici le lien pour m'inviter","https://discordapp.com/api/oauth2/authorize?client_id=520322405982535705&permissions=8&scope=bot");
 		message.channel.send({embed});
-} else if(message.content.startsWith(prefix + "help")) {
-    message.delete()
+} else  if ( message . content . startsWith ( préfixe  +  "aide" ))} else  if ( message . contenu . startsWith ( préfixe  +  "aide" )) {
+    message . delete ()
     const embed = new Discord.RichEmbed()
     .setColor(`#1794ef`)
-    .setTitle(`Liste des commandes de OverBot :`)
-    .addField("Commandes pour les utilisateurs :","`vote` `help` `invite` `infoserv` `report` `support`")
+    .setTitle(`::scroll: Liste des commandes de OverBot : ::scroll: `)
+    .addField(":speaking_head: Commandes pour les utilisateurs ::speaking_head: ","`vote` `help` `invite` `infoserv` `report` `support`")
     .addBlankField()
-    .addField("Commandes de Modération :","`poll` `embed` `say` `mute` `unmute` `kick` `ban`")
+    .addField(":hammer_pick: Commandes de Modération ::hammer_pick: ","`poll` `embed` `say` `mute` `unmute` `kick` `ban`")
     .addBlankField()
-    .addField("Commande Des utilisateurs disponible uniquement sur le support :","`Notif` `Delnotif`")
+    .addField(":paperclips: Commande Des utilisateurs disponible uniquement sur le support ::paperclips: ","`Notif` `Delnotif`")
     .addBlankField()
-    .addField("Commande disponnible Uniquement aux Modérateur du bot ! :","`patch` `quit`");
+    .addField(":oncoming_police_car: Commande disponnible Uniquement aux Modérateur du bot ! ::oncoming_police_car: ","`patch` `quit`");
     message.channel.send({embed})
 }
 	if(message.content.startsWith(prefix + "kick")) {
