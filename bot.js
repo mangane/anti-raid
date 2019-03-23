@@ -202,16 +202,11 @@ message.member.addRole('511234235525234688')
   .then(console.log)
   .catch(console.error);
 }
-  if(message.guild.id === "511230356150812673"){
-   if(message.content.startsWith(prefix + `Notif`)) {
+ if(message.content.startsWith(prefix + `Notif`)) {
     message.delete()
       message.reply("Vous avez bien reçu le rôle de Notification")
     message.member.addRole(`554797816963399691`);
    }
-}else{
-message.channel.send("La commande fonctionne Seulement sur le serveur support");
-message.delete()
-}
 if(message.content.startsWith(prefix + `embed`)) {
     if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR"))
                 return message.channel.send("Vous n'avez pas accès");
