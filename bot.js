@@ -314,6 +314,5 @@ if(message.content.startsWith(prefix + "site")) {
         message.channel.bulkDelete(parseInt(count) + 1)
         message.channel.send ("J'ai supprimé " + count + " message(s)")
     }
-})
 });
 client.login(process.env.BOT_TOKEN)
