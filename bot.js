@@ -312,7 +312,6 @@ if(message.content.startsWith(prefix + "site")) {
         message.channel.send ("J'ai supprimé " + count + " message(s) :white_check_mark:");
 		message.delete(20)
 	}
-}
 if(message.content.startsWith(prefix + "reboot") && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
 	 client.user.setStatus('invisible')
