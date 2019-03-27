@@ -315,7 +315,7 @@ if(message.content.startsWith(prefix + "site")) {
 }
 if(message.content.startsWith(prefix + "reboot") && dev_id.indexOf(message.author.id) != -1) {
     message.delete()
-	 client.user.setStatus('invisible');
+	 client.user.setStatus('invisible')
     message.reply("Je me déconnecte")
 	message.reply("je me reconnecte")
 	 client.user.setStatus('idle');
