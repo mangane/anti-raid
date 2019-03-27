@@ -329,7 +329,7 @@ if(message.content.startsWith(prefix + "stats")) {
     .addField("Armin Support","https://discord.gg/Z3zXabV");
     message.channel.send({embed})
     }
-	if(message.content.startsWith("ping")){
+	if(message.content.startsWith(prefix + "ping")){
   	const m =  message.channel.send("Pinging...");
   	m.edit(`Latency is ${m.createdTimestamp - msg.createdTimestamp}ms.`);
   	return;
