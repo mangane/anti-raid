@@ -309,8 +309,8 @@ if(message.content.startsWith(prefix + "reboot") && dev_id.indexOf(message.autho
     message.delete()
 	 client.user.setStatus('invisible')
 	message.reply("je me reconnecte")
-	 client.user.setStatus('idle');
     message.delete()
+	client.user.setStatus(`idle`);
 }
 if(message.content.startsWith(prefix + "stats")) {
     message.delete()
