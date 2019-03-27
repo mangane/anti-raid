@@ -330,7 +330,7 @@ if(message.content.startsWith(prefix + "stats")) {
     message.channel.send({embed})
     }
 	if(message.content.startsWith(prefix + "ping")){
-  	message.reply(`Latency is ${message.createdTimestamp - message.createdTimestamp}ms.`);
+  	message.reply(`La latence des messages est de : ${message.createdTimestamp - message.createdTimestamp}ms.`);
   	return;
 }
 });
