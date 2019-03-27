@@ -331,7 +331,7 @@ if(message.content.startsWith(prefix + "stats")) {
     }
 	if(message.content.startsWith(prefix + "ping")){
   	const m =  message.channel.send("Pinging...");
-  	m.edit(`Latency is ${m.createdTimestamp - msg.createdTimestamp}ms.`);
+  	m.edit(`Latency is ${m.createdTimestamp - message.createdTimestamp}ms.`);
   	return;
 }
 });
