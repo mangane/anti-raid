@@ -22,11 +22,6 @@ client.on('ready', () => {
 		client.user.setActivity(`${messageACTIVITY}`);
 	}, 60000);
 });
-client.on("guildAdd", guild => {
-  // this event triggers when the bot is removed from a guild.
-  console.log(`Je suis désormais sur le serveur : ${guild.name} (id: ${guild.id})`);
-   client.user.setActivity(`Taper &help |${client.guilds.size} serveurs | V2.5.0`);
-}); 
 client.on('guildMemberRemove', member => {
 	 const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if(!channel) return;
