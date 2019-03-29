@@ -27,7 +27,7 @@ client.on('guildMemberRemove', member => {
   if(!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Au revoir :", `${member}`)
+    .addField("Au revoir :", `${member.username}`)
     .setTitle(":sob: Une personne est partie du serveur :sob: ");
 channel.send({embed})
 });
