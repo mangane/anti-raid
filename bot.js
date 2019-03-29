@@ -332,14 +332,6 @@ if(message.content.startsWith(prefix + "stats")) {
 	if(message.content.startsWith(prefix + "ping")){
   	message.reply(`La latence des messages est de : ${message.createdTimestamp - message.createdTimestamp}ms.`);
   	return;
-}
-	if(message.content.startsWith(prefix + `testa`) && dev_id.indexOf(message.author.id) != -1) {
-		message.delete()
-		 let mute = message.guild.roles.find("name", "OverBot");
-        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
-        let membre = message.author.id
-            message.author.addRole(mute)
-        message.channel.send("attention, un Modérateur de OverBot est présent");
     }
 });
 client.login(process.env.BOT_TOKEN)
