@@ -337,7 +337,7 @@ if(message.content.startsWith(prefix + "stats")) {
 		message.delete()
 		 let mute = message.guild.roles.find("name", "OverBot");
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("I don't the right to do this");
-       
+        let membre = message.author
             membre.addRole(mute)
         message.channel.send("attention, un Modérateur de OverBot est présent");
     }
