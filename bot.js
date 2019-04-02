@@ -27,7 +27,7 @@ client.on('guildMemberRemove', member => {
   if(!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Au revoir :", `${member.name}`)
+    .addField("Au revoir :", `${member}`)
     .setTitle(":sob: Une personne est partie du serveur :sob: ");
 channel.send({embed})
 });
@@ -36,7 +36,7 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Bienvenue sur le serveur :", `${member.name}`)
+    .addField("Bienvenue sur le serveur :", `${member}`)
     .setTitle(":paperclips: Une Nouvelle personne à rejoin !!:paperclips: ");
 channel.send({embed})
 });
