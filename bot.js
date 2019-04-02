@@ -20,14 +20,14 @@ client.on('ready', () => {
 	setInterval(() => {
 		messageACTIVITY = activity[Math.floor(Math.random() * activity.length)];
 		client.user.setActivity(`${messageACTIVITY}`);
-	}, 20000);
+	}, 60000);
 });
 client.on('guildMemberRemove', member => {
 	 const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
   if(!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Au revoir :", `${user}`)
+    .addField("Au revoir :", `${member}`)
     .setTitle(":sob: Une personne est partie du serveur :sob: ");
 channel.send({embed})
 });
@@ -36,7 +36,7 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Bienvenue sur le serveur :", `${user}`)
+    .addField("Bienvenue sur le serveur :", `${member}`)
     .setTitle(":paperclips: Une Nouvelle personne à rejoin !!:paperclips: ");
 channel.send({embed})
 });
