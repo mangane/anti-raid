@@ -330,11 +330,11 @@ if(message.content.startsWith(prefix + "stats")) {
     .addField("Armin Support","https://discord.gg/Z3zXabV");
     message.channel.send({embed})
     }
-	if(message.content.startsWith(prefix + "ping")){
+	if(message.content.startsWith(prefix + "ping")) {
   	message.reply(`La latence des messages est de : ${message.createdTimestamp - message.createdTimestamp}ms.`);
   	return;
     }
-	if (message.content.startsWith (prefix +'rip') {
+	if (message.content.startsWith (prefix + "rip")) {
         // Create the attachment using Attachment
         const attachment = new Attachment('./rip.png');
         // Send the attachment in the message channel with a content
