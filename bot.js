@@ -334,5 +334,12 @@ if(message.content.startsWith(prefix + "stats")) {
   	message.reply(`La latence des messages est de : ${message.createdTimestamp - message.createdTimestamp}ms.`);
   	return;
     }
+	if (message.content.startsWith (prefix +'rip') {
+        // Create the attachment using Attachment
+        const attachment = new Attachment('./rip.png');
+        // Send the attachment in the message channel with a content
+        message.channel.send(`${message.author},`, attachment);
+    }
+});
 });
 client.login(process.env.BOT_TOKEN)
