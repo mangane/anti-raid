@@ -341,5 +341,4 @@ if(message.content.startsWith(prefix + "stats")) {
         message.channel.send(`${message.author},`, attachment);
     }
 });
-});
 client.login(process.env.BOT_TOKEN)
