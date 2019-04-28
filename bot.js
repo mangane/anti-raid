@@ -23,22 +23,23 @@ client.on('ready', () => {
 	}, 60000);
 });
 client.on('guildMemberRemove', member => {
-	 const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
-  if(!channel) return;
+	 const channel = member.guild.channels.find(ch => ch.name === 'départ-arrivé');
+	if(!channel)return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Au revoir :", `${member}`)
-    .setTitle(":sob: Une personne est partie du serveur :sob: ");
-channel.send({embed})
+    .addField("Au revoir", `${member}`)
+    .setTitle(":outbox_tray: Une personne est partie, reviendra-t-elle ?:outbox_tray:");
+	channel.send({embed})
 });
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'bienvenue');
-  if (!channel) return;
+	
+  const channel = member.guild.channels.find(ch => ch.name === 'départ-arrivé');
+	if (!channel)return;
     const embed = new Discord.RichEmbed()
     .setColor("#3ad729")
-    .addField("Bienvenue sur le serveur :", `${member}`)
-    .setTitle(":paperclips: Une Nouvelle personne à rejoin !!:paperclips: ");
-channel.send({embed})
+    .addField("Bienvenue", `${member}`)
+    .setTitle(":inbox_tray: Bienvenue sur le serveur :inbox_tray:");
+	channel.send({embed})
 });
 client.on(`message`, message =>{
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
