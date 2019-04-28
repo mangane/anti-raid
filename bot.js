@@ -336,6 +336,7 @@ if(message.content.startsWith(prefix + "stats")) {
     }
 	if (message.content.startsWith (prefix + "rip")) {
    const embed = new Discord.RichEmbed()
+   .setDescription("test")
    .setFooter (`${message.author.avatarURL}`,`${message.author.id}`);
 		message.channel.send ({embed})
     }
