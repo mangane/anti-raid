@@ -69,7 +69,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
     .addBlankField()
     .addField(":paperclips: Commande Des utilisateurs disponible uniquement sur le support ::paperclips: ","`Notif` `Delnotif`")
     .addBlankField()
-    .addField(":oncoming_police_car: Commande disponnible Uniquement aux Modérateur du bot ! ::oncoming_police_car: ","```patch\n quit```");
+    .addField(":oncoming_police_car: Commande disponnible Uniquement aux Modérateur du bot ! ::oncoming_police_car: ","```patch\nquit```");
     message.channel.send({embed})
 }
 	if(message.content.startsWith(prefix + "kick")) {
