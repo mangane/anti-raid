@@ -335,10 +335,9 @@ if(message.content.startsWith(prefix + "stats")) {
   	return;
     }
 	if (message.content.startsWith (prefix + "rip")) {
-        // Create the attachment using Attachment
-        const attachment = new Attachment('./rip.png');
-        // Send the attachment in the message channel with a content
-        message.channel.send(`${message.author},`, attachment);
+   const embed = new Discord.RichEmbed()
+   .setFooter (`${message.author.avatarURL}`);
+		message.channel.send ({embed})
     }
 });
 client.login(process.env.BOT_TOKEN)
