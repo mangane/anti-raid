@@ -32,7 +32,9 @@ var answers = [
   "http://imgur.com/h0JJPsf.gif",
   "https://m.imgur.com/r/4k_porn/yICToXm",
   "https://m.imgur.com/r/4k_porn/et14DLy",
-  "http://imgur.com/l1fnLbb.gif"
+  "http://imgur.com/l1fnLbb.gif",
+"https://i.imgur.com/HPSdwrq.png"
+	
 ]
 
 let boobs = answers[Math.floor(Math.random() * answers.length)];
