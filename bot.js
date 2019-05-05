@@ -34,7 +34,13 @@ var answers = [
   "https://m.imgur.com/r/4k_porn/et14DLy",
   "http://imgur.com/l1fnLbb.gif",
 "https://i.imgur.com/HPSdwrq.png",
-	"https://i.imgur.com/xQCHQ8h.png"
+	"https://i.imgur.com/xQCHQ8h.png",
+	"https://m.imgur.com/iCHKXQ1?r",
+	"https://m.imgur.com/mIW9OvJ?r",
+"https://m.imgur.com/iYR7v8U?r",
+"https://m.imgur.com/dHcLSn5?r",
+"https://m.imgur.com/ZBmHnDw?r"
+	
 	
 ]
 
