@@ -3,8 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
 const cooldown = new Set ();
-ontent.slice(prefix.length).trim().split(/ +/g);
-
+client.on("message", async message => {
 	if (message.content.startsWith(prefix + 'say')) {
 if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
         let m = args.slice(1).join(' ');
