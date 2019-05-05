@@ -23,7 +23,7 @@ var answers = [
   "http://imgur.com/DAkdAHg.jpg",
   "http://imgur.com/7ogUA4m.jpg",
   "http://imgur.com/G8QK7oL.jpg",
-  "http://imgur.com/YwRMbRV.jpg"
+  "http://imgur.com/YwRMbRV.jpg",
   "http://imgur.com/qYfw9Kq.gif",
   "http://imgur.com/HEXiMXy.gif",
   "http://imgur.com/h0JJPsf.gif",
