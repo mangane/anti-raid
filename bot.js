@@ -11,8 +11,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.delete(100);
         message.channel.send(`${m}`);
 		}
-ldown.has(message.author.id)) {
-if (message.content.startsWith(prefix + "nsfw")){
+if (cooldown.has(message.author.id)) {
+if (message.content.startsWith(prefix + "nsfw")) {
 if (!message.channel.nsfw) {
                 return message.channel.send("⚠️ Tu n'est pas dans un salon `nsfw` !");
             }
