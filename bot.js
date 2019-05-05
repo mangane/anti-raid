@@ -24,8 +24,8 @@ var answers = [
   "http://imgur.com/h0JJPsf.gif",
   "https://m.imgur.com/r/4k_porn/yICToXm",
   "https://m.imgur.com/r/4k_porn/et14DLy",
-  "http://imgur.com/l1fnLbb.gif"
-"http://imgur.com/AhwWf7i.jpg",
+  "http://imgur.com/l1fnLbb.gif",
+  "http://imgur.com/AhwWf7i.jpg",
   "http://imgur.com/C4MUksY.jpg",
   "http://imgur.com/DAkdAHg.jpg",
   "http://imgur.com/7ogUA4m.jpg",
