@@ -12,7 +12,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.channel.send(`${m}`);
 		}
 ldown.has(message.author.id)) {
-if (message.content.startsWith(prefix + "nsfw-4k")){
+if (message.content.startsWith(prefix + "nsfw")){
 if (!message.channel.nsfw) {
                 return message.channel.send("⚠️ Tu n'est pas dans un salon `nsfw` !");
             }
@@ -41,7 +41,7 @@ message.channel.send(nsfw_4k)
 }; 
 ]
 } else {
-if (message.content === prefix + "nsfw") { // Vérification. Est-ce que le membre est dans le cooldown.
+if (message.content.startsWith(prefix + "nsfw")) { // Vérification. Est-ce que le membre est dans le cooldown.
     message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
     }
 }
