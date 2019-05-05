@@ -2,6 +2,7 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "&";
+const cooldown = new Set ();
 var dev_id = ['516274923828805667'];
 var modo_id = ['516274923828805667','345951306055417857'];
 var help_id = ['382575635014483968','516274923828805667','447719995539980308']
@@ -334,11 +335,59 @@ if(message.content.startsWith(prefix + "stats")) {
   	message.reply(`La latence des messages est de : ${message.createdTimestamp - message.createdTimestamp}ms.`);
   	return;
     }
-	if (message.content.startsWith (prefix + "rip")) {
-   const embed = new Discord.RichEmbed()
-   .setDescription("test")
-   .setFooter (`${message.author.avatarURL}`,`${message.author.id}`);
-		message.channel.send ({embed})
+	if (cooldown.has(message.author.id)) {
+if (message.content.startsWith(prefix + "nsfw-4k")){
+if (!message.channel.nsfw) {
+                return message.channel.send("⚠️ Tu n'est pas dans un salon `nsfw` !");
+            }
+
+var answers = [ 
+
+  "http://imgur.com/qYfw9Kq.gif",
+  "http://imgur.com/HEXiMXy.gif",
+  "http://imgur.com/h0JJPsf.gif",
+  "https://m.imgur.com/r/4k_porn/yICToXm",
+  "https://m.imgur.com/r/4k_porn/et14DLy",
+  "http://imgur.com/l1fnLbb.gif"
+  
+]
+
+let nsfwone = answers[Math.floor(Math.random() * answers.length)];
+var nsfw_4k = new Discord.RichEmbed()
+.setImage(`${nsfwone}`)
+message.channel.send(nsfw_4k)
+}; 
+if (message.content === prefix + "nsfw-boobs"){
+if (!message.channel.nsfw) {
+                return message.channel.send("⚠️ Tu n'est pas dans un salon `nsfw` !");
+            }
+
+var answers = [ 
+
+  "http://imgur.com/AhwWf7i.jpg",
+  "http://imgur.com/C4MUksY.jpg",
+  "http://imgur.com/DAkdAHg.jpg",
+  "http://imgur.com/7ogUA4m.jpg",
+  "http://imgur.com/G8QK7oL.jpg",
+  "http://imgur.com/YwRMbRV.jpg"
+  
+]
+
+let boobs = answers[Math.floor(Math.random() * answers.length)];
+var boobsfr = new Discord.RichEmbed()
+.setImage(`${boobs}`)
+message.channel.send(boobsfr)
+};
+} else {
+if (message.content === prefix + "nsfw-boobs" || message.content === prefix + "nsfw-4k") { // Vérification. Est-ce que le membre est dans le cooldown.
+    message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
     }
+}
+cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id); 
+}, 60000);
+ 
+	
 });
 client.login(process.env.BOT_TOKEN)
