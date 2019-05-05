@@ -48,7 +48,6 @@ cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id); 
 }, 60000);
- }
 	
 });
 client.login(process.env.BOT_TOKEN)
