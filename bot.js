@@ -39,13 +39,13 @@ message.channel.send(boobsfr)
 };
 } else {
 if (message.content.startsWith (prefix + "nsfw")) { // Vérification. Est-ce que le membre est dans le cooldown.
-    message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
+    message.channel.send("⚠️ Le cooldown est activé pendant 10seconds! ");
     }
 }
 cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id); 
-}, 60000);
+}, 10000);
  
 });
 client.login(process.env.BOT_TOKEN)
