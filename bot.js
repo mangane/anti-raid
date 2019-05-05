@@ -37,9 +37,7 @@ var answers = [
 let nsfwone = answers[Math.floor(Math.random() * answers.length)];
 var nsfw_4k = new Discord.RichEmbed()
 .setImage(`${nsfwone}`)
-message.channel.send(nsfw_4k)
-}; 
-]
+message.channel.send(nsfw_4k);
 } else {
 if (message.content.startsWith(prefix + "nsfw")) { // Vérification. Est-ce que le membre est dans le cooldown.
     message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
