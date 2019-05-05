@@ -33,7 +33,8 @@ var answers = [
   "https://m.imgur.com/r/4k_porn/yICToXm",
   "https://m.imgur.com/r/4k_porn/et14DLy",
   "http://imgur.com/l1fnLbb.gif",
-"https://i.imgur.com/HPSdwrq.png"
+"https://i.imgur.com/HPSdwrq.png",
+	"https://i.imgur.com/xQCHQ8h.png"
 	
 ]
 
