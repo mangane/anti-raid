@@ -11,7 +11,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.channel.send(`${m}`);
 		}
 if (cooldown.has(message.author.id)) {
-if (message.content === prefix + "nsfw"){
+if (message.content.startsWith(prefix + "nsfw")) {
 if (!message.channel.nsfw) {
                 return message.channel.send("⚠️ Tu n'est pas dans un salon `nsfw` !");
             }
@@ -38,7 +38,7 @@ var boobsfr = new Discord.RichEmbed()
 message.channel.send(boobsfr)
 };
 } else {
-if (message.content === prefix + "nsfw-boobs" || message.content === prefix + "nsfw-4k") { // Vérification. Est-ce que le membre est dans le cooldown.
+if (message.content.startsWith (prefix + "nsfw")) { // Vérification. Est-ce que le membre est dans le cooldown.
     message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
     }
 }
