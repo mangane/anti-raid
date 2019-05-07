@@ -49,7 +49,7 @@ var boobsfr = new Discord.RichEmbed()
 .setImage(`${boobs}`)
 message.channel.send(boobsfr)
 };
-	if (message.content.startsWith === prefix + "globalchat") {
+	if (message.content.startsWith (prefix + "globalchat")) {
 let xoargs = message.content.split(" ").slice(1);
     let xo03 = xoargs.join(" ")
     var xo02 = message.guild.channels.find('name', 'inter-trak');
