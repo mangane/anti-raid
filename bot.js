@@ -66,7 +66,7 @@ let xoargs = message.content.split(" ").slice(1);
                         .addField("Message :", "**-----------------------------------------------------------**")
                         .addField(`${xo03}`, `**------------------------------------------------------------**`)
                         .setTimestamp()
-                    bot.channels.findAll('name', 'inter-trak').map(channel => channel.send(tchat_embed))
+                    message.channels.findAll('name', 'inter-trak').map(channel => channel.send(tchat_embed))
 }
 });
 client.login(process.env.BOT_TOKEN)
