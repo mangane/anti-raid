@@ -14,7 +14,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.delete(100);
         message.channel.send(`${m}`);
 		}
-if(message.content.startsWith === prefix + "globalchat") {
+if(message.content.startsWith ("'") {
 let xoargs = message.content.split(" ").slice(1);
     let xo03 = xoargs.join(" ")
     var xo02 = message.guild.channels.find('name', 'inter-trak');
