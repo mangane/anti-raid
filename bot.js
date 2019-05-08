@@ -33,6 +33,10 @@ let xoargs = message.content.split(" ").slice(1);
                         .setTimestamp()
                     client.channels.findAll('name', 'inter-trak').map(channel => channel.send(tchat_embed))
 }
+if (message.content.startsWith (prefix + "gl")) {
+	message.guild.createChannel(`Global`, "text")
+message.channel.send(`✅ Le salon pour le global chat est créé avec succès !`);
+}; 
 	
 });
 client.login(process.env.BOT_TOKEN)
