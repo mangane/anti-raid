@@ -1,7 +1,7 @@
 const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "porn!";
+var prefix = "'";
 const cooldown = new Set ();
 
 client.on('ready', () => {
