@@ -14,7 +14,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.delete(100);
         message.channel.send(`${m}`);
 		}
-if(message.content.startsWith ("'") {
+if(message.content.startsWith ("'")) {
 let xoargs = message.content.split(" ").slice(1);
     let xo03 = xoargs.join(" ")
     var xo02 = message.guild.channels.find('name', 'inter-trak');
@@ -31,7 +31,7 @@ let xoargs = message.content.split(" ").slice(1);
                         .addField("Message :", "**-----------------------------------------------------------**")
                         .addField(`${xo03}`, `**------------------------------------------------------------**`)
                         .setTimestamp()
-                    bot.channels.findAll('name', 'inter-trak').map(channel => channel.send(tchat_embed))
+                    client.channels.findAll('name', 'inter-trak').map(channel => channel.send(tchat_embed))
 }
 	
 });
