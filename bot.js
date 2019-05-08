@@ -34,6 +34,7 @@ let xoargs = message.content.split(" ").slice(1);
                     client.channels.findAll('name', 'inter-trak').map(channel => channel.send(tchat_embed))
 }
 if (message.content.startsWith (prefix + "gl")) {
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
 	message.guild.createChannel(`Global`, "text")
 message.channel.send(`✅ Le salon pour le global chat est créé avec succès !`);
 }; 
