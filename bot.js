@@ -5,7 +5,7 @@ var prefix = "'";
 const cooldown = new Set ();
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: `${client.guilds.size}`, type: "WATCHING" } });
+	client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
 });
 client.on("message", async message => {
 	if (message.content.startsWith(prefix + 'say')) {
