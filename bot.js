@@ -5,19 +5,19 @@ var prefix = "g!";
 const cooldown = new Set ();
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
+	client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.user.setPresence({ game:` ${client.guilds.size} serveurs`, type: "WATCHING"} });
+    client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 });
 
 // Listener - Bot leaves server
 client.on("guildDelete", guild => {
     // This event triggers when the bot is removed from a guild.
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-    client.user.setPresence({ game:` ${client.guilds.size} serveurs`, type: "WATCHING"} });
+    client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 });
 
 client.on("message", async message => {
