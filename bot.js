@@ -23,7 +23,7 @@ if (message.content.startsWith (prefix + "gl")) {
 	message.guild.createChannel(`staff`, "text")
 	message.guild.createChannel(`Général`, "category")
 	message.guild.createChannel(`réunion`, "voice")
-message.channel.send("<a:la:575843629449478165> Votre serveur est maintenant pret, il ne vous restera plus qu'à mettre les salons au bonne endroit !`);
+message.channel.send(`<a:la:575843629449478165> Votre serveur est maintenant pret, il ne vous restera plus qu'à mettre les salons au bonne endroit !`);
 }; 
 	
 });
