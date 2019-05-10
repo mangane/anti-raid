@@ -43,6 +43,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
    });
+
 	message.guild.createChannel(`réunion`, "voice").then(c => {
 	let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
@@ -55,7 +56,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 READ_MESSAGES: false
             });
 		   }).catch(console.error); // Send errors to console
-}
+})
 if(message.content.startsWith (prefix + "role")) {
 if (!message.author.member.owner) return message.channel.send("Tu ne peux pas executer la commande demander");
 message.guild.createRole({
