@@ -76,7 +76,5 @@ message.channel.send(`<a:la:575843629449478165> Votre serveur est maintenant pre
                     });
             });
     }
-
-});		
 });
 client.login(process.env.BOT_TOKEN)
