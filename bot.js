@@ -21,9 +21,9 @@ if (message.content.startsWith (prefix + "gl")) {
 	message.guild.createChannel(`général`, "text")
 	message.guild.createChannel(`général`, "voice")
 	message.guild.createChannel(`staff`, "text")
-	message.guild.createChannel(`test`, "category")
+	message.guild.createChannel(`Général`, "category")
 	message.guild.createChannel(`réunion`, "voice")
-message.channel.send(`✅ Votre serveur est maintenant pret !`);
+message.channel.send(`✅ Votre serveur est maintenant pret, il ne vous restera plus qu'à mettre les salons au bonne endroit !`);
 }; 
 	
 });
