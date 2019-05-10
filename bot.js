@@ -22,7 +22,8 @@ if (message.content.startsWith (prefix + "gl")) {
 	message.guild.createChannel(`général`, "voice")
 	message.guild.createChannel(`staff`, "text")
 	message.guild.createChannel(`réunion`, "voice")
-message.channel.send(`✅ Le salon pour le global chat est créé avec succès !`);
+	message.guild.createCategory(`test`)
+message.channel.send(`✅ Votre serveur est maintenant pret !`);
 }; 
 	
 });
