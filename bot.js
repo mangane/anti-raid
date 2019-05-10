@@ -7,6 +7,19 @@ const cooldown = new Set ();
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
 });
+client.on("guildCreate", guild => {
+    // This event triggers when the bot joins a guild.
+    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    client.user.setPresence({ game:` ${client.guilds.size} serveurs`, type: "WATCHING"} });
+});
+
+// Listener - Bot leaves server
+client.on("guildDelete", guild => {
+    // This event triggers when the bot is removed from a guild.
+    console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
+    client.user.setPresence({ game:` ${client.guilds.size} serveurs`, type: "WATCHING"} });
+});
+
 client.on("message", async message => {
 	if (message.content.startsWith(prefix + 'say')) {
 if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
