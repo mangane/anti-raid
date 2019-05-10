@@ -41,8 +41,17 @@ if (message.content.startsWith (prefix + "gl")) {
 }
 if(message.content.startsWith (prefix + "role")) {
 message.guild.createRole({
-                  name: "68",
+                  name: "membres",
                     color: "#032c23",
+                    permissions: []
+     })     
+	message.guild.createRole({
+                  name: "Administrateurs",
+                    color: "#ffe200",
+                    permissions: []
+     })     message.guild.createRole({
+                  name: "Modérateurs",
+                    color: "#801d1d",
                     permissions: []
      })     
 }
