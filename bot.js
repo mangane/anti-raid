@@ -22,7 +22,7 @@ if (message.content.startsWith (prefix + "gl")) {
 	message.guild.createChannel(`général`, "voice")
 	message.guild.createChannel(`staff`, "text")
 	message.guild.createChannel(`réunion`, "voice")
-	message.guild.createCategory(`test`)
+	message.guild.createChannel(`test`, "category")
 message.channel.send(`✅ Votre serveur est maintenant pret !`);
 }; 
 	
