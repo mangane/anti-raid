@@ -89,7 +89,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 READ_MESSAGES: false
             });
 })
-		message.guild.createChannel(`Général`, "category").then(c => {
+		message.guild.createChannel(`Staff`, "category").then(c => {
 		let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
@@ -97,8 +97,8 @@ if (message.content.startsWith (prefix + "gl")) {
                 READ_MESSAGES: true
             });
             c.overwritePermissions(role2, {
-                SEND_MESSAGES: true,
-                READ_MESSAGES: true
+                SEND_MESSAGES: false,
+                READ_MESSAGES: false
    });
 	}).catch(console.error); // Send errors to console
 }
