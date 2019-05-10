@@ -8,10 +8,10 @@ client.on('ready', () => {
 	client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
-        }, 1*5000);
+        }, 1*20000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `g!setup `, type: "WATCHING" } });
-        }, 1*10000);
+        }, 1*20000);
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
