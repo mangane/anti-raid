@@ -137,7 +137,7 @@ if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjout, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 2 commandes!")
-.setDescription("Tout d'abord executer la commande ``g!role``(configuration des rôles) Pour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)");
+.setDescription("Tout d'abord executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)");
 message.channel.send({embed})
 }
 });
