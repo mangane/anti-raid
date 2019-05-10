@@ -49,7 +49,8 @@ message.guild.createRole({
                   name: "Administrateurs",
                     color: "#ffe200",
                     permissions: []
-     })     message.guild.createRole({
+     })    
+	message.guild.createRole({
                   name: "Modérateurs",
                     color: "#801d1d",
                     permissions: []
