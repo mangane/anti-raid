@@ -28,7 +28,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.channel.send(`${m}`);
 		}
 if (message.content.startsWith (prefix + "gl")) {
-	if (!message.author.guild.owner) return message.channel.send("Tu ne peux pas executer la commande demander");	message.guild.createChannel(`information`, "text")
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");	message.guild.createChannel(`information`, "text")
 	message.guild.createChannel(`général`, "text").then(c => {
 		let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
@@ -103,7 +103,7 @@ if (message.content.startsWith (prefix + "gl")) {
 	}).catch(console.error); // Send errors to console
 }
 if(message.content.startsWith (prefix + "role")) {
-if (!message.member.owner) return message.channel.send("Tu ne peux pas executer la commande demander");
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");
 message.guild.createRole({
                   name: "membres",
                     color: "#032c23",
