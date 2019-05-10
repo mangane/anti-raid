@@ -140,5 +140,8 @@ const embed = new Discord.RichEmbed()
 .setDescription("Tout d'abord executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)");
 message.channel.send({embed})
 }
+if (message.content.startsWith (prefix + "salon")) {
+message.channel.send ("__**```Commande en cours de fabrication```**__");
+}
 });
 client.login(process.env.BOT_TOKEN)
