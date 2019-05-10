@@ -29,10 +29,31 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		}
 if (message.content.startsWith (prefix + "gl")) {
 	if (!message.author.member.owner) return message.channel.send("Tu ne peux pas executer la commande demander");	message.guild.createChannel(`information`, "text")
-	message.guild.createChannel(`général`, "text")
-	message.guild.createChannel(`général`, "voice")
-	message.guild.createChannel(`staff`, "text")
-	message.guild.createChannel(`Général`, "category").then(c => {
+	message.guild.createChannel(`général`, "text").then(c => {
+		let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+   });
+})
+	message.guild.createChannel(`général`, "voice").then(c => {
+		let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+   });
+})
+	message.guild.createChannel(`staff`, "text").then(c => {
 		let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
@@ -42,6 +63,18 @@ if (message.content.startsWith (prefix + "gl")) {
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
+   });
+})
+	message.guild.createChannel(`Général`, "category").then(c => {
+		let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
    });
 })
 	message.guild.createChannel(`réunion`, "voice").then(c => {
@@ -55,6 +88,18 @@ if (message.content.startsWith (prefix + "gl")) {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
             });
+})
+		message.guild.createChannel(`Général`, "category").then(c => {
+		let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+   });
 	}).catch(console.error); // Send errors to console
 }
 if(message.content.startsWith (prefix + "role")) {
