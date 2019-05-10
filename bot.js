@@ -15,14 +15,14 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.channel.send(`${m}`);
 		}
 if (message.content.startsWith (prefix + "gl")) {
-	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
+	if(!message.member.hasPermission("OWNER")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
 	message.guild.createChannel(`Bienvenue`, "text")
 	message.guild.createChannel(`information`, "text")
 	message.guild.createChannel(`général`, "text")
 	message.guild.createChannel(`général`, "voice")
 	message.guild.createChannel(`staff`, "text")
+	message.guild.createCategorie(`test`, "category")
 	message.guild.createChannel(`réunion`, "voice")
-	message.guild.createChannel(`test`, "category")
 message.channel.send(`✅ Votre serveur est maintenant pret !`);
 }; 
 	
