@@ -5,7 +5,6 @@ var prefix = "g!";
 const cooldown = new Set ();
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
         }, 1*10000);
