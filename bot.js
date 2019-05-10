@@ -25,6 +25,23 @@ if (message.content.startsWith (prefix + "gl")) {
 	message.guild.createChannel(`réunion`, "voice")
 message.channel.send(`<a:la:575843629449478165> Votre serveur est maintenant pret, il ne vous restera plus qu'à mettre les salons au bonne endroit !`);
 }; 
-	
+if (message.content.startsWith (prefix + "new")) {
+	if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
+message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
+            let role = message.guild.roles.find("name", "Support Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: false
+            });
+            c.overwritePermissions(message.author, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+            });
+            message.channel.send(`:white_check_mark: Your ticket has, #${c.name}.`);
 });
 client.login(process.env.BOT_TOKEN)
