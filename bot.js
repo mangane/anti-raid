@@ -43,6 +43,6 @@ message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
                 READ_MESSAGES: true
             });
 	message.channel.send(`<a:la:575843629449478165> Ton ticket est bien créé , #${c.name}.`);
-}}									
+}								
 });
 client.login(process.env.BOT_TOKEN)
