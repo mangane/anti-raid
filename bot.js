@@ -103,7 +103,7 @@ if (message.content.startsWith (prefix + "gl")) {
 	}).catch(console.error); // Send errors to console
 }
 if(message.content.startsWith (prefix + "role")) {
-if (!message.author.guild.owner) return message.channel.send("Tu ne peux pas executer la commande demander");
+if (!message.author.owner) return message.channel.send("Tu ne peux pas executer la commande demander");
 message.guild.createRole({
                   name: "membres",
                     color: "#032c23",
