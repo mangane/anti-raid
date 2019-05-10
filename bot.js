@@ -40,7 +40,11 @@ if (message.content.startsWith (prefix + "gl")) {
 		   }).catch(console.error); // Send errors to console
 }
 if(message.content.startsWith (prefix + "role")) {
-message.guild.createRole("name", "test");
+message.guild.createRole({
+                  name: "68",
+                    color: "#032c23",
+                    permissions: []
+     })     
 }
 });
 client.login(process.env.BOT_TOKEN)
