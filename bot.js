@@ -101,6 +101,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 READ_MESSAGES: false
    });
 	}).catch(console.error); // Send errors to console
+message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 if(message.content.startsWith (prefix + "role")) {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");
