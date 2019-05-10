@@ -42,7 +42,5 @@ message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
-            message.channel.send(`:white_check_mark: Your ticket has, #${c.name}.`);
-}
 });
 client.login(process.env.BOT_TOKEN)
