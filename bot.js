@@ -37,6 +37,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
-message.channel.send(`<a:la:575843629449478165> Votre serveur est maintenant pret, il ne vous restera plus qu'à mettre les salons au bonne endroit !`);
+		   }).catch(console.error); // Send errors to console
+}
 });
 client.login(process.env.BOT_TOKEN)
