@@ -37,7 +37,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		}
 if (message.content.startsWith (prefix + "gl")) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");	message.guild.createChannel(`information`, "text")
-	message.guild.createChannel(`général`, "text").then(c => {
+	message.guild.createChannel(`Général`, "text").then(c => {
 		let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
@@ -49,7 +49,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 READ_MESSAGES: true
    });
 })
-	message.guild.createChannel(`général`, "voice").then(c => {
+	message.guild.createChannel(`Général`, "voice").then(c => {
 		let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
@@ -61,7 +61,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 READ_MESSAGES: true
    });
 })
-	message.guild.createChannel(`staff`, "text").then(c => {
+	message.guild.createChannel(`Staff`, "text").then(c => {
 		let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
@@ -85,7 +85,7 @@ if (message.content.startsWith (prefix + "gl")) {
                 READ_MESSAGES: true
    });
 })
-	message.guild.createChannel(`réunion`, "voice").then(c => {
+	message.guild.createChannel(`Réunion`, "voice").then(c => {
 	let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
@@ -114,7 +114,7 @@ message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à met
 if(message.content.startsWith (prefix + "role")) {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");
 message.guild.createRole({
-                  name: "membres",
+                  name: "Membres",
                     color: "#032c23",
                     permissions: []
      })     
