@@ -28,7 +28,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.channel.send(`${m}`);
 		}
 if (message.content.startsWith (prefix + "gl")) {
-	if(!message.member.hasPermission("GUILD_OWNER")) return message.channel.send("Tu ne peux pas executer la commande demander");	message.guild.createChannel(`information`, "text")
+	if (!message.author.member.owner) return message.channel.send("Tu ne peux pas executer la commande demander");	message.guild.createChannel(`information`, "text")
 	message.guild.createChannel(`général`, "text")
 	message.guild.createChannel(`général`, "voice")
 	message.guild.createChannel(`staff`, "text")
