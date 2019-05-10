@@ -24,7 +24,7 @@ if (message.content.startsWith (prefix + "gl")) {
 	message.guild.createChannel(`Général`, "category")
 	message.guild.createChannel(`réunion`, "voice")
 message.channel.send(`<a:la:575843629449478165> Votre serveur est maintenant pret, il ne vous restera plus qu'à mettre les salons au bonne endroit !`);
-}; 
+}
 if (message.content.startsWith (prefix + "new")) {
 	if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
 message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
@@ -42,5 +42,6 @@ message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
+	message.channel.send(`<a:la:575843629449478165> Ton ticket est bien créé , #${c.name}.`);
 });
 client.login(process.env.BOT_TOKEN)
