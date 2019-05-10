@@ -32,9 +32,8 @@ if (message.content.startsWith (prefix + "gl")) {
 	message.guild.createChannel(`général`, "text")
 	message.guild.createChannel(`général`, "voice")
 	message.guild.createChannel(`staff`, "text")
-	message.guild.createChannel(`Général`, "category")
-	message.guild.createChannel(`réunion`, "voice").then(c => {
-	let role = message.guild.roles.find("name", "Support Staff");
+	message.guild.createChannel(`Général`, "category").then(c => {
+		let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
@@ -44,9 +43,16 @@ if (message.content.startsWith (prefix + "gl")) {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
             });
-            c.overwritePermissions(message.author, {
+	message.guild.createChannel(`réunion`, "voice").then(c => {
+	let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: false
             });
 		   }).catch(console.error); // Send errors to console
 }
@@ -66,6 +72,10 @@ message.guild.createRole({
                   name: "Modérateurs",
                     color: "#801d1d",
                     permissions: []
+     })     
+		message.guild.createRole({
+                  name: "Staff",
+                    permissions: ["KICK_MEMBERS"]
      })     
 }
 });
