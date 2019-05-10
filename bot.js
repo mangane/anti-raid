@@ -42,7 +42,7 @@ if (message.content.startsWith (prefix + "gl")) {
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
-            });
+   });
 	message.guild.createChannel(`réunion`, "voice").then(c => {
 	let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
