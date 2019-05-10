@@ -30,18 +30,19 @@ if (message.content.startsWith (prefix + "new")) {
 message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
             let role = message.guild.roles.find("name", "Support Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
-            c.overwritePermissions(role, {
+            channel.overwritePermissions(role, {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
-            c.overwritePermissions(role2, {
+            channel.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
             });
-            c.overwritePermissions(message.author, {
+            channel.overwritePermissions(message.author, {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true
             });
             message.channel.send(`:white_check_mark: Your ticket has, #${c.name}.`);
+}
 });
 client.login(process.env.BOT_TOKEN)
