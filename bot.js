@@ -8,7 +8,7 @@ client.on('ready', () => {
 	client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
-        }, 1*20000);
+        }, 1*10000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `g!setup `, type: "WATCHING" } });
         }, 1*20000);
