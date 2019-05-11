@@ -211,8 +211,8 @@ if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjout, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 2 commandes!")
-.setDescription("Tout d'abord inviter le bot : \n<a:la:575843629449478165>[Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)\n  Quand le bot est sur votre serveur, executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)")
-.setFooter ("Par la suite **Vous pourrez choisir entre plusieurs type de serveurs**");
+.setDescription("Quand le bot est sur votre serveur, executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)")
+.setFooter ("<a:la:575843629449478165>[Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)\n  Quand le bot est sur votre serveur, executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)");
 message.channel.send({embed})
 }
 //if (message.content.startsWith (prefix + "salon")) {
