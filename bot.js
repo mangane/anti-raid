@@ -247,5 +247,10 @@ const embed = new Discord.RichEmbed()
 .addField ("Ajouter le bot :","<a:la:575843629449478165> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
 }
+if(message.content.startsWith(prefix + "delete")) {
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+message.channel.bulkdelete()
+  .then(console.log)
+  .catch(console.error);
 });
 client.login(process.env.BOT_TOKEN)
