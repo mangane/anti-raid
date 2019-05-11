@@ -3,12 +3,11 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "g!";
 const cooldown = new Set ();
-client.on('ready', () => {
+client.on('ready', guild => {
 var memberCount = guild.memberCount;
-var channel = client.channels.exists("name", `membres :` + memberCount);
 var interval = setInterval(function () {
-client.channels.get("channel").setName(`membres :` + memberCount)
-}, 1*10000);
+client.channels.get("name",`membres : ${memberCount}`).setName("membres : ${memberCount} ")
+}, 1*30000);
 });
 client.on('ready', () => {
 	setInterval(() => {
