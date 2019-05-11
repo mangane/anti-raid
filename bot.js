@@ -3,35 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "g!";
 const cooldown = new Set ();
-function clean(text) {
-    if (typeof(text) === "string")
-    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-  else
-      return text;
-      const clean = text => {
-          if (typeof(text) === "string")
-            return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-          else
-              return text;
-        }
-}
 
-  if (message.content.startsWith("g!eval")) {
-    if(message.author.id === "516274923828805667") {
-     let args = message.content.split(" ").slice(1);
-    try {
-      const code = args.join(" ");
-      let evaled = eval(code);
-
-      if (typeof evaled !== "string")
-        evaled = require("util").inspect(evaled);
-      message.channel.send(clean(evaled), {code:"xl"});
-    } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
-    }
-  } else {
-  }
-}
 client.on('ready', () => {
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
@@ -77,6 +49,34 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
+	function clean(text) {
+    if (typeof(text) === "string")
+    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+  else
+      return text;
+      const clean = text => {
+          if (typeof(text) === "string")
+            return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+          else
+              return text;
+        }
+}
+let args = message.content.split(" ").slice(1);
+  if (message.content.startsWith("g!eval")) {
+    if(message.author.id === "516274923828805667") {
+     try {
+      const code = args.join(" ");
+      let evaled = eval(code);
+
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
+      message.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
+    }
+  } else {
+  }
+}
 	if (message.content.startsWith(prefix + 'say')) {
 if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
         let m = args.slice(1).join(' ');
