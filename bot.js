@@ -219,22 +219,10 @@ message.channel.send({embed})
 var memberCount = message.guild.memberCount;
 var channel = message.guild.channels.exists("name", `membres : ${memberCount}`);
 if (message.guild.channels.exists("name", `membres : ${memberCount}`)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
-message.guild.createChannel(`membres : ${memberCount}`, "voice").then(c => {
-	let role = message.guild.roles.find("name", "Staff");
-            let role2 = message.guild.roles.find("name", "@everyone");
-            c.overwritePermissions(role, {
-                SEND_MESSAGES: true,
-                READ_MESSAGES: true
-            });
-            c.overwritePermissions(role2, {
-                SEND_MESSAGES: false,
-                READ_MESSAGES: true,
-		    MENTION_EVERYONE: false
-            });
-})
-		var interval = setInterval(function () {
+message.guild.createChannel(`membres : ${memberCount}`, "voice").then(c => setInterval(() => {
 channel.setName(`membres : ${memberCount}`)
-}, 1*10000)
+        }, 1*10000);
+})
 }
 //if (message.content.startsWith (prefix + "salon")) {
 //message.channel.send ("__**```Commande en cours de fabrication```**__");
