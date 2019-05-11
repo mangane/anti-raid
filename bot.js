@@ -404,7 +404,7 @@ const embed = new Discord.RichEmbed()
 .addField(" Communautaire :","<:en_ligne:576662449734811659>``g!commu``", true)
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``", true)
 .addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``")
-.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\\<:offline:576662534585712640>``g!kick``\\<:offline:576662534585712640>``g!ban``")
+.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\n<:offline:576662534585712640>``g!kick``\n<:offline:576662534585712640>``g!ban``")
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`);
 message.channel.send ({embed})
 }
