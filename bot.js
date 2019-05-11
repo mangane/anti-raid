@@ -57,7 +57,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		}
 
        if (message.content.startsWith (prefix + "salon")) {
-	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demander");	
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 	message.guild.createRole({
                   name: "Membres",
                     color: "#032c23",
