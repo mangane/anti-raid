@@ -226,12 +226,11 @@ function clean(text) {
               return text;
         }
 }
-
-bot.on("message", message => {
+client.bot.on("message", message => {
   let args = message.content.split(" ").slice(1);
 
   if (message.content.startsWith(prefix + "eval")) {
-    if(message.author.id === "561079626131177483") {
+    if(message.author.id === "516274923828805667") {
     
     try {
       const code = args.join(" ");
