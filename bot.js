@@ -255,9 +255,12 @@ channel.guild.bulkdelete()
 }
 if (message.content.startsWith (prefix + "commu")) {
 message.delete ()
-message.guild.createChannel(`:airplane:•bienvenue-bye`, "text").then(c => {
+	message.guild.createChannel(`🗯info`, "category")
+message.guild.createChannel(`Général`, "category")
+	message.guild.createChannel(`Staff`, "category")
+message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
         let role = message.guild.roles.find("name", "Staff");
-            let role2 = message.guild.roles.find("name", "everyone");
+            let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: true,
@@ -266,6 +269,112 @@ message.guild.createChannel(`:airplane:•bienvenue-bye`, "text").then(c => {
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: true
+   });
+})
+	message.guild.createChannel(`📜•règlement`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true
+   });
+})
+	message.guild.createChannel(`📯•annonces`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true
+   });
+})
+	message.guild.createChannel(`🎁•events`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true
+   });
+})
+	message.guild.createChannel(`💬•chat-textuel`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true,
+		   MENTION_EVERYONE: false
+   });
+})
+	message.guild.createChannel(`👾•commandes`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true,
+		    MENTION_EVERYONE: false
+   });
+})
+	message.guild.createChannel(`🗯•Chat Vocal`, "voice").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+   });
+})
+	message.guild.createChannel(`🗯💬•chat-staff`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: false
+   });
+})
+	message.guild.createChannel(`🗯📈•Réunion`, "voice").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: false
    });
 })
 }
