@@ -16,11 +16,9 @@ function clean(text) {
         }
 }
 
-  let args = message.content.split(" ").slice(1);
-
   if (message.content.startsWith("g!eval")) {
     if(message.author.id === "516274923828805667") {
-    
+     let args = message.content.split(" ").slice(1);
     try {
       const code = args.join(" ");
       let evaled = eval(code);
