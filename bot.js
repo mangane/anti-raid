@@ -242,7 +242,7 @@ message.guild.createRole({
 if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
-.setTitle("Bonjout, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 2 commandes!")
+.setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 2 commandes!")
 .setDescription("Quand le bot est sur votre serveur, executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)")
 .addField ("Ajouter le bot :","<a:la:575843629449478165> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
@@ -255,6 +255,26 @@ channel.guild.bulkdelete()
 }
 if (message.content.startsWith (prefix + "commu")) {
 message.delete ()
+	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+	message.guild.createRole({
+                  name: "Membres",
+                    color: "#032c23",
+                    permissions: []
+     })     
+	message.guild.createRole({
+                  name: "Administrateurs",
+                    color: "#ffe200",
+                    permissions: ["ADMINISTRATOR"]
+     })    
+	message.guild.createRole({
+                  name: "Modérateurs",
+                    color: "#801d1d",
+                    permissions: ["KICK_MEMBERS","BAN_MEMBERS"]
+     })     
+		message.guild.createRole({
+                  name: "Staff",
+                    permissions: ["KICK_MEMBERS"]
+     })     
 	message.guild.createChannel(`🗯info`, "category")
 message.guild.createChannel(`Général`, "category")
 	message.guild.createChannel(`Staff`, "category")
@@ -376,7 +396,8 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
                 SEND_MESSAGES: true,
                 READ_MESSAGES: false
    });
-})
+}).catch(console.error); // Send errors to console
+message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 });
 client.login(process.env.BOT_TOKEN)
