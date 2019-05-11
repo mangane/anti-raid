@@ -425,7 +425,7 @@ const embed = new Discord.RichEmbed()
 .addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**", true)
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`)
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)")
-.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**", true);
+.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**", true);
 message.channel.send({embed})
 }
 if (message.content.startsWith (":")) {
@@ -450,6 +450,11 @@ if(message.content.startsWith(prefix + "kick")) {
 		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
 		member.ban();
 	}
+	if (message.content.startsWoth (prefix + "ping")) {
+    message.delete();
+    message.reply("Pong! (Calcul en cours...)").then(m => m.edit(`${message.author}:ping_pong: Pong!__\n La latence actuelle est de ${m.createdTimestamp - message.createdTimestamp}ms__`) );
+    message.react("✅");
+  }
 
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
