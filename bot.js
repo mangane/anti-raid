@@ -19,6 +19,16 @@ client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
     client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
+	const embed = new Discord.RichEmbed()
+        .setDescription(`<:en_ligne:576662449734811659> Merci à **${guild.name}** d'avoir ajouté DanPub.`)
+        .addField("📋 __Nom du serveur__", guild.name, true)
+        .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
+        .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
+        .addField("👤 __Propriétaire__ :", guild.owner, true)
+        .addField("🌍 __Région du serveur__ :", guild.region, true)
+        .addField("📝 __ID du serveur__ :", guild.id, true)
+        .setColor("RANDOM")
+      client.channels.get('576665756389867520').send(embed);
 });
 
 // Listener - Bot leaves server
@@ -26,6 +36,16 @@ client.on("guildDelete", guild => {
     // This event triggers when the bot is removed from a guild.
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
+	const embed = new Discord.RichEmbed()
+        .setDescription(`<a:non:576666508571312138> **${guild.name}** Nous à retiré.`)
+        .addField("📋 __Nom du serveur__", guild.name, true)
+        .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
+        .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
+        .addField("👤 __Propriétaire__ :", guild.owner, true)
+        .addField("🌍 __Région du serveur__ :", guild.region, true)
+        .addField("📝 __ID du serveur__ :", guild.id, true)
+        .setColor("RANDOM")
+      client.channels.get('576665756389867520').send(embed);
 });
 
 client.on("message", async message => {
