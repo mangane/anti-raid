@@ -86,7 +86,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
             });
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: true,
-                READ_MESSAGES: true
+                READ_MESSAGES: true,
+		MENTION_EVERYONE: false
    });
 })
 	message.guild.createChannel(`Général`, "voice").then(c => {
@@ -98,7 +99,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
             });
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: true,
-                READ_MESSAGES: true
+                READ_MESSAGES: true,
+		MENTION_EVERYONE: false
    });
 })
 	message.guild.createChannel(`Staff`, "text").then(c => {
@@ -110,7 +112,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
             });
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
-                READ_MESSAGES: false
+                READ_MESSAGES: false,
+		    MENTION_EVERYONE: false
    });
 })
 	message.guild.createChannel(`Général`, "category").then(c => {
@@ -122,7 +125,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
             });
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: true,
-                READ_MESSAGES: true
+                READ_MESSAGES: true,
+		    MENTION_EVERYONE: false
    });
 })
 	message.guild.createChannel(`Réunion`, "voice").then(c => {
@@ -134,7 +138,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
             });
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
-                READ_MESSAGES: false
+                READ_MESSAGES: false,
+		    MENTION_EVERYONE: false
             });
 })
 		message.guild.createChannel(`Staff`, "category").then(c => {
@@ -154,7 +159,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: false,
-                READ_MESSAGES: true
+                READ_MESSAGES: true,
+		    MENTION_EVERYONE: false
             });
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
