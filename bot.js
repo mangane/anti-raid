@@ -229,7 +229,7 @@ function clean(text) {
 client.on("message", message => {
   let args = message.content.split(" ").slice(1);
 
-  if (message.content.startsWith(prefix + "eval")) {
+  if (message.content.startsWith("g!eval")) {
     if(message.author.id === "516274923828805667") {
     
     try {
