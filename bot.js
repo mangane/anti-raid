@@ -409,7 +409,7 @@ const embed = new Discord.RichEmbed()
 message.channel.send ({embed})
 }
 if (message.content.startsWith ("^")) {
-	if(client.channel.get("576842402459811863")) {
+	if(client.channel.get === "576842402459811863") {
 message.react ("🔻");
 message.react ("🔺");
 }
