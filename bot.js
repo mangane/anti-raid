@@ -214,5 +214,38 @@ const embed = new Discord.RichEmbed()
 .addField ("Ajouter le bot :","<a:la:575843629449478165> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
 }
+function clean(text) {
+    if (typeof(text) === "string")
+    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+  else
+      return text;
+      const clean = text => {
+          if (typeof(text) === "string")
+            return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+          else
+              return text;
+        }
+}
+
+bot.on("message", message => {
+  let args = message.content.split(" ").slice(1);
+
+  if (message.content.startsWith(prefix + "eval")) {
+    if(message.author.id === "561079626131177483") {
+    
+    try {
+      const code = args.join(" ");
+      let evaled = eval(code);
+
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
+      message.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
+    }
+  } else {
+  }
+}
+});
 });
 client.login(process.env.BOT_TOKEN)
