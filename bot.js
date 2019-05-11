@@ -203,8 +203,9 @@ if (message.content.startsWith (prefix + "salon")) {
 message.channel.send ("__**```Commande en cours de fabrication```**__");
 }
 	if(message.content.startsWith (prefix + "test")) {
-message.guild.createChannel(`information`, "category").then (c => {
+message.guild.createChannel(`information`, "category").then(c => {
 c.createChannel(`test`,`texte`)
+})
 }
 });
 client.login(process.env.BOT_TOKEN)
