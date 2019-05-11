@@ -32,7 +32,6 @@ client.on("message", message => {
       message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
     }
   } else {
-message.channel.send ("Tu n'a pas les permissions requise");
   }
 }
 });
