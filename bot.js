@@ -9,7 +9,7 @@ client.on('ready', () => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
         }, 1*30000);
 	setInterval(() => {
-            client.user.setPresence({ game: { name: `g!setup `, type: "WATCHING" } });
+            client.user.setPresence({ game: { name: `g!setup | V1`, type: "PLAYING" } });
         }, 1*40000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
@@ -186,7 +186,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 if(message.content.startsWith (prefix + "role")) {
-if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demandé");
 message.guild.createRole({
                   name: "Membres",
                     color: "#032c23",
