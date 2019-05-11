@@ -219,7 +219,7 @@ message.channel.send({embed})
 var memberCount = message.guild.memberCount;
 var channel = message.guild.channels.exists("name", `membres : ${memberCount}`);
 if (message.guild.channels.exists("name", `membres : ${memberCount}`)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
-message.guild.createChannel(`membres : ${memberCount}`, "voice").then(c => setInterval(() => {
+message.guild.createChannel(`membres : ${memberCount}`, "voice")setInterval(() => {
 channel.setName(`membres : ${memberCount}`);
         }, 1*10000);
 })
