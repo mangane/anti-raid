@@ -413,7 +413,13 @@ if (message.content.startsWith (":")) {
 message.react ("🔻");
 message.react ("🔺");
 }
-
+if(message.content.startsWith(prefix + "uptime")) {
+const embed = new Discord.RichEmbed();
+.setColor ("RANDOM")
+.setTitle("Je suis connecté depuis :")
+.setDescription(client.uptime /60000 + "minutes");
+message.channel.send ({embed})
+}
 
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
