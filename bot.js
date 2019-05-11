@@ -217,6 +217,7 @@ message.channel.send({embed})
 }
 	if (message.content.startsWith (prefix + "count")) {
 var memberCount = message.guild.memberCount;
+var channel = message.guild.channels.exists("name", `membres : ${memberCount}`);
 if (message.guild.channels.exists("name", `membres : ${memberCount}`)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
 message.guild.createChannel(`membres : ${memberCount}`, "voice").then(c => {
 	let role = message.guild.roles.find("name", "Staff");
