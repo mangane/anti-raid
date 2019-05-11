@@ -4,10 +4,10 @@ const client = new Discord.Client();
 var prefix = "g!";
 const cooldown = new Set ();
 client.on('ready', () => {
-	var memberCount = message.guild.memberCount;
-var channel = message.guild.channels.exists("name", `membres : ${memberCount}`);
-if (message.guild.channels.exists("name", `membres : ${memberCount}`)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
-var interval = setInterval(function () {
+	var memberCount = guild.memberCount;
+var channel = guild.channels.exists("name", `membres : ${memberCount}`);
+if (guild.channels.exists("name", `membres : ${memberCount}`)) 
+	var interval = setInterval(function () {
 client.channels.get("channel").setName(`membres : ${memberCount}`)
 }, 1*10000);
 });
