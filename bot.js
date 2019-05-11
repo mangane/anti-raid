@@ -231,6 +231,9 @@ message.guild.createChannel(`membres : ${memberCount}`, "voice").then(c => {
 		    MENTION_EVERYONE: false
             });
 })
+		var interval = setInterval(function () {
+message.guild.channels.get("name",`membres : ${memberCount}`).setName(`membres : ${memberCount}`)
+}, 1*60000)
 }
 //if (message.content.startsWith (prefix + "salon")) {
 //message.channel.send ("__**```Commande en cours de fabrication```**__");
