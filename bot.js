@@ -2,6 +2,7 @@ const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "g!";
+var prefix2 = "G!";
 const cooldown = new Set ();
 
 client.on('ready', () => {
@@ -413,7 +414,7 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
 }).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
-	if (message.content.startsWith (prefix + "help")) {
+	if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle (`Bienvenue ${message.author.name} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
