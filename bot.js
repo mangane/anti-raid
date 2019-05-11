@@ -37,7 +37,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		}
 
        if (message.content.startsWith (prefix + "gl")) {
-	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");	message.guild.createChannel(`information`, "text")
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demander");	
 	message.guild.createRole({
                   name: "Membres",
                     color: "#032c23",
@@ -127,6 +127,18 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: false
+   });
+})
+	       message.guild.createChannel(`information`, "text").then(c => {
+		let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true
    });
 	}).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
