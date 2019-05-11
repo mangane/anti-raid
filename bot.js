@@ -24,7 +24,7 @@ let minutes = Math.floor(totalSeconds / 60);
 let seconds = Math.round(totalSeconds % 60);
 let uptime = `${hours} heures, ${minutes} minutes et ${seconds} secondes`;
 var embed220 = new Discord.RichEmbed()
-.setTitle("UpTime")
+.setTitle("je ne me suis pas redémarré depuis :")
 .setDescription(uptime)
 .setFooter(`Discord créateur sur ${client.guilds.size}\ Serveurs`)
 .setColor("#ff0000")
