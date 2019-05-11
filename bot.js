@@ -71,7 +71,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 	message.guild.createRole({
                   name: "Modérateurs",
                     color: "#801d1d",
-                    permissions: ["KICK_MEMBERS, BAN_MEMBERS"]
+                    permissions: ["KICK_MEMBERS","BAN_MEMBERS"]
      })     
 		message.guild.createRole({
                   name: "Staff",
