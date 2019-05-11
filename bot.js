@@ -52,7 +52,7 @@ client.on("guildCreate", guild => {
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
     client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 	const embed = new Discord.RichEmbed()
-        .setDescription(`<:en_ligne:576662449734811659> Merci à **${guild.name}** d'avoir ajouté DanPub.`)
+        .setDescription(`<:en_ligne:576662449734811659> Merci à **${guild.name}** d'avoir ajouté __Discord créateur__.`)
         .addField("📋 __Nom du serveur__", guild.name, true)
         .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
         .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
