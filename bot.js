@@ -230,6 +230,7 @@ message.guild.createChannel(`membres-` + guild.memberCount, "voice").then(c => {
 		    MENTION_EVERYONE: false
             });
 })
+}
 //if (message.content.startsWith (prefix + "salon")) {
 //message.channel.send ("__**```Commande en cours de fabrication```**__");
 //}
