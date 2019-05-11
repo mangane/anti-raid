@@ -204,7 +204,7 @@ message.channel.send ("__**```Commande en cours de fabrication```**__");
 }
 	if(message.content.startsWith (prefix + "test")) {
 message.guild.createChannel(`information`, "category").then(c => {
-c.guild.createChannel(`test`,`texte`)
+c.channel.createChannel(`test`,`texte`)
 })
 }
 });
