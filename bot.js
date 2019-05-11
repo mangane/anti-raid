@@ -170,7 +170,7 @@ const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjout, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 2 commandes!")
 .setDescription("Tout d'abord executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)")
-.setFooter ("Par la suite **Vous pourrez choisir entre plusieurs type de serveurs");
+.setFooter ("Par la suite **Vous pourrez choisir entre plusieurs type de serveurs**");
 message.channel.send({embed})
 }
 if (message.content.startsWith (prefix + "salon")) {
