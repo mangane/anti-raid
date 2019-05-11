@@ -3,12 +3,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "g!";
 const cooldown = new Set ();
-client.on('ready', guild => {
-//var memberCount = guild.memberCount;
-var interval = setInterval(function () {
-client.channels.get("name","membres : "+ guild.memberCount).setName("membres :" + guild.memberCount)
-}, 1*30000);
-});
 client.on('ready', () => {
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
@@ -220,16 +214,5 @@ const embed = new Discord.RichEmbed()
 .addField ("Ajouter le bot :","<a:la:575843629449478165> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
 }
-//if (message.content.startsWith (prefix + "count")) {
-//var memberCount = message.guild.memberCount;
-//var channel = message.guild.channels.exists("name", `membres : ${memberCount}`);
-//if (message.guild.channels.exists("name", `membres : ${memberCount}`)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
-//message.guild.createChannel(`membres : ${memberCount}`, "voice").then (c => setInterval(() => {
-//channel.setName(`membres : ${memberCount}`);
-   //     }, 1*10000);
-//}
-//if (message.content.startsWith (prefix + "salon")) {
-//message.channel.send ("__**```Commande en cours de fabrication```**__");
-//}
 });
 client.login(process.env.BOT_TOKEN)
