@@ -426,7 +426,6 @@ const embed = new Discord.RichEmbed()
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`)
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)")
 .addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**", true);
-.addField(
 message.channel.send({embed})
 }
 if (message.content.startsWith (":")) {
