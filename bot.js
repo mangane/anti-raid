@@ -252,5 +252,6 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(
 message.channel.bulkdelete()
   .then(console.log)
   .catch(console.error);
+}
 });
 client.login(process.env.BOT_TOKEN)
