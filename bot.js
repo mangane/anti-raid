@@ -450,7 +450,7 @@ if(message.content.startsWith(prefix + "kick")) {
 		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
 		member.ban();
 	}
-	if (message.content.startsWoth (prefix + "ping")) {
+	if (message.content.startsWith (prefix + "ping")) {
     message.delete();
     message.reply("Pong! (Calcul en cours...)").then(m => m.edit(`${message.author}:ping_pong: Pong!__\n La latence actuelle est de ${m.createdTimestamp - message.createdTimestamp}ms__`) );
     message.react("✅");
