@@ -15,6 +15,22 @@ client.on('ready', () => {
             client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
         }, 1*50000);
 });
+bot.on('message', message => {
+if (message.content.startsWith ('g!uptime')) {
+let totalSeconds = (client.uptime / 1000);
+let hours = Math.floor(totalSeconds / 3600);
+totalSeconds %= 3600; 
+let minutes = Math.floor(totalSeconds / 60);
+let seconds = Math.round(totalSeconds % 60);
+let uptime = `${hours} heures, ${minutes} minutes et ${seconds} secondes`;
+var embed220 = new Discord.RichEmbed()
+.setTitle("UpTime")
+.setDescription(uptime)
+.setFooter('youtube bot - index (principal)')
+.setColor("#ff0000")
+.setTimestamp()
+message.channel.sendEmbed(embed220)
+});
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -412,13 +428,6 @@ message.channel.send({embed})
 if (message.content.startsWith (":")) {
 message.react ("🔻");
 message.react ("🔺");
-}
-if(message.content.startsWith(prefix + "uptime")) {
-const embed = new Discord.RichEmbed()
-.setColor ("RANDOM")
-.setTitle("Je suis connecté depuis :")
-.setDescription(`${client.uptime /60000} minutes`);
-message.channel.send ({embed})
 }
 
 //<:en_ligne:576662449734811659>
