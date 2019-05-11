@@ -232,7 +232,7 @@ message.guild.createChannel(`membres : ${memberCount}`, "voice").then(c => {
             });
 })
 		var interval = setInterval(function () {
-message.guild.channels.get("name",`membres : ${memberCount}`).then(c => channel.setName(`membres : ${memberCount}`);
+channel.setName(`membres : ${memberCount}`)
 }, 1*60000)
 }
 //if (message.content.startsWith (prefix + "salon")) {
