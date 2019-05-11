@@ -242,8 +242,8 @@ message.guild.createRole({
 if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
-.setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 2 commandes!")
-.setDescription("Quand le bot est sur votre serveur, executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)")
+.setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 1 commandes!")
+.setDescription("Quand le bot est sur votre serveur, executer la commande du panel ``g!help`` ")
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
 }
@@ -399,5 +399,18 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
 }).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
+	if (message.content.startsWith (prefix + "help")) {
+cons embed = new Discord.RichEmbed()
+.setColor ("RANDOM")
+.setTitle (`Bienvenue ${message.author.name} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
+.addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponnible\\\\\\\\\\\\\\\\\\<:indisponible:576662605704200192> = commandes en modification mais disponible\\\\\\\\\\\\\\\\\\<:offline:576662534585712640> = Commande Indisponible`);
+message.channel.send ({embed})
+}
+
+
+
+//<:en_ligne:576662449734811659>
+//<:indisponible:576662605704200192>
+//<:offline:576662534585712640>
 });
 client.login(process.env.BOT_TOKEN)
