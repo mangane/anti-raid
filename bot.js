@@ -421,7 +421,7 @@ const embed = new Discord.RichEmbed()
 .addField(" Communautaire :","<:en_ligne:576662449734811659>``g!commu``**\ Crée votre serveur sous le thème de la communauté**", true)
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**", true)
 .addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**")
-.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:offline:576662534585712640>``g!kick``\n<:offline:576662534585712640>``g!ban``")
+.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\n<:en_ligne:576662449734811659>``g!ban``")
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`)
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
@@ -430,6 +430,24 @@ if (message.content.startsWith (":")) {
 message.react ("🔻");
 message.react ("🔺");
 }
+if(message.content.startsWith(prefix + "kick")) {
+		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
+			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
+		if(message.mentions.users.size === 0)
+			return message.channel.send("Vous avez oublié de mention la personne à exclure !");
+		const member = message.mentions.members.first();
+		message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`);
+		member.kick();
+		}
+	 if (message.content.startsWith(prefix + "ban")) {
+		if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
+			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
+		if(message.mentions.users.size === 0)
+			return message.channel.send("Vous avez oublié de mention la personne à exclure !");
+		const member = message.mentions.members.first();
+		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
+		member.ban();
+	}
 
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
