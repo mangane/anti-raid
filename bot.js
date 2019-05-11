@@ -56,7 +56,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.channel.send(`${m}`);
 		}
 
-       if (message.content.startsWith (prefix + "gl")) {
+       if (message.content.startsWith (prefix + "salon")) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demander");	
 	message.guild.createRole({
                   name: "Membres",
@@ -215,8 +215,8 @@ const embed = new Discord.RichEmbed()
 .setFooter ("Par la suite **Vous pourrez choisir entre plusieurs type de serveurs**");
 message.channel.send({embed})
 }
-if (message.content.startsWith (prefix + "salon")) {
-message.channel.send ("__**```Commande en cours de fabrication```**__");
-}
+//if (message.content.startsWith (prefix + "salon")) {
+//message.channel.send ("__**```Commande en cours de fabrication```**__");
+//}
 });
 client.login(process.env.BOT_TOKEN)
