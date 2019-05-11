@@ -215,6 +215,21 @@ const embed = new Discord.RichEmbed()
 .addField ("Ajouter le bot :","<a:la:575843629449478165> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
 }
+	if (message.content.startsWith (prefix + "count")) {
+if (message.guild.channels.exists("name", "member-" + guild.memberCount)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
+message.guild.createChannel(`membres-` + guild.memberCount, "voice").then(c => {
+	let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+		    MENTION_EVERYONE: false
+            });
+})
 //if (message.content.startsWith (prefix + "salon")) {
 //message.channel.send ("__**```Commande en cours de fabrication```**__");
 //}
