@@ -404,9 +404,9 @@ const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle (`Bienvenue ${message.author.name} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
 .addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponnible\n<:indisponible:576662605704200192> = commandes en modification mais disponible\n<:offline:576662534585712640> = Commande Indisponible`, true)
-.addField("<:en_ligne:576662449734811659> Communautaire :","``g!commu``", true)
-.addField("<:en_ligne:576662449734811659> Basique :","``g!salon``", true)
-.addField("<:en_ligne:576662449734811659> Uniquement les rôles :","``g!role``")
+.addField(" Communautaire :","<:en_ligne:576662449734811659>``g!commu``", true)
+.addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``", true)
+.addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``")
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`);
 message.channel.send ({embed})
 }
