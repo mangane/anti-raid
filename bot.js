@@ -203,7 +203,7 @@ if (message.content.startsWith (prefix + "salon")) {
 message.channel.send ("__**```Commande en cours de fabrication```**__");
 }
 if(message.content.startsWith ("test")) {
-message.react ("😁").then ( await message.react =>
+message.react ("😁").then ( await react =>
 message.react.addRole("576691497651666945");
 })
 });
