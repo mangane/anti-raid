@@ -4,18 +4,18 @@ const client = new Discord.Client();
 var prefix = "g!";
 const cooldown = new Set ();
 function clean(text) {
-      const clean = text => {
-	      if (typeof(text) === "string")
+    if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-else 
+  else
       return text;
+      const clean = text => {
           if (typeof(text) === "string")
             return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-         else 
+          else
               return text;
         }
 }
-client.on("message", message => {
+
   let args = message.content.split(" ").slice(1);
 
   if (message.content.startsWith("g!eval")) {
@@ -34,7 +34,6 @@ client.on("message", message => {
   } else {
   }
 }
-});
 client.on('ready', () => {
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
