@@ -203,19 +203,8 @@ if (message.content.startsWith (prefix + "salon")) {
 message.channel.send ("__**```Commande en cours de fabrication```**__");
 }
 	if(message.content.startsWith (prefix + "test")) {
-message.guild.createChannel(`information`, "category").then{ message.guild.createChannel(`test`,`texte`).then (c => {
-		let role = message.guild.roles.find("name", "Staff");
-            let role2 = message.guild.roles.find("name", "@everyone");
-            c.overwritePermissions(role, {
-                SEND_MESSAGES: false,
-                READ_MESSAGES: true,
-		    MENTION_EVERYONE: false
-            });
-            c.overwritePermissions(role2, {
-                SEND_MESSAGES: false,
-                READ_MESSAGES: true
-   });
-})
+message.guild.createChannel(`information`, "category").then (c => {
+message.guild.createChannel(`test`);
 }
 }
 });
