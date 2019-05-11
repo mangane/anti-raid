@@ -1,6 +1,10 @@
 const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const botMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
+          if (message.content.match(botMention)) {
+                return message.channel.send("😀 Mon prefix est `g!`");
+          }
 var prefix = "g!";
 const cooldown = new Set ();
 function clean(text) {
