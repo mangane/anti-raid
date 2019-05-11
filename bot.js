@@ -408,8 +408,7 @@ const embed = new Discord.RichEmbed()
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`);
 message.channel.send ({embed})
 }
-if (message.content.startsWith ("^")) {
-	if(client.channel.get === "576842402459811863") {
+if (message.content.startsWith (":")) {
 message.react ("🔻");
 message.react ("🔺");
 }
