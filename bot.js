@@ -26,7 +26,7 @@ let uptime = `${hours} heures, ${minutes} minutes et ${seconds} secondes`;
 var embed220 = new Discord.RichEmbed()
 .setTitle("UpTime")
 .setDescription(uptime)
-.setFooter('youtube bot - index (principal)')
+.setFooter("Discord créateur sur  "+ client.guilds.size + "Serveurs")
 .setColor("#ff0000")
 .setTimestamp()
 message.channel.sendEmbed(embed220)
