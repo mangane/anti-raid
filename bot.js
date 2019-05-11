@@ -414,7 +414,7 @@ message.react ("🔻");
 message.react ("🔺");
 }
 if(message.content.startsWith(prefix + "uptime")) {
-const embed = new Discord.RichEmbed();
+const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Je suis connecté depuis :")
 .setDescription(`${client.uptime /60000} minutes`);
