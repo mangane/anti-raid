@@ -417,7 +417,7 @@ if(message.content.startsWith(prefix + "uptime")) {
 const embed = new Discord.RichEmbed();
 .setColor ("RANDOM")
 .setTitle("Je suis connecté depuis :")
-.setDescription(client.uptime /60000 + "minutes");
+.setDescription(`${client.uptime /60000} minutes`);
 message.channel.send ({embed})
 }
 
