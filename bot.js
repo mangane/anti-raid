@@ -186,7 +186,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 if(message.content.startsWith (prefix + "role")) {
-if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu ne peux pas executer la commande demandé");
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 message.guild.createRole({
                   name: "Membres",
                     color: "#032c23",
