@@ -37,7 +37,7 @@ client.on("guildDelete", guild => {
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
     client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 	const embed = new Discord.RichEmbed()
-        .setDescription(`<a:non:576666508571312138> **${guild.name}** Nous à retiré.`)
+        .setDescription(`<a:non:576666508571312138> **${guild.name}** ma retiré.`)
         .addField("📋 __Nom du serveur__", guild.name, true)
         .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
         .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
