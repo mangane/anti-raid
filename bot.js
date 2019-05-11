@@ -216,8 +216,8 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed})
 }
 	if (message.content.startsWith (prefix + "count")) {
-if (message.guild.channels.exists("name", `member-${guild.memberCount}`)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
-message.guild.createChannel(`membres-${guild.memberCount}`, "voice").then(c => {
+if (message.guild.channels.exists("name", `member-${memberCount}`)) return message.channel.send(`Votre serveur contient déjà le MemberCount`);
+message.guild.createChannel(`membres-${memberCount}`, "voice").then(c => {
 	let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
