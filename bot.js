@@ -30,6 +30,7 @@ var embed220 = new Discord.RichEmbed()
 .setColor("#ff0000")
 .setTimestamp()
 message.channel.sendEmbed(embed220)
+}
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
