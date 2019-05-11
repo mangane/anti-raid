@@ -412,7 +412,6 @@ if (message.content.startsWith (":")) {
 message.react ("🔻");
 message.react ("🔺");
 }
-}
 
 
 //<:en_ligne:576662449734811659>
