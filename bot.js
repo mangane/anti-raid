@@ -405,8 +405,9 @@ const embed = new Discord.RichEmbed()
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``", true)
 .addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``")
 .addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\n<:offline:576662534585712640>``g!kick``\n<:offline:576662534585712640>``g!ban``")
-.setAuthor(`${message.author.username}`,`${message.author.avatarURL}`);
-message.channel.send ({embed})
+.setAuthor(`${message.author.username}`,`${message.author.avatarURL}`)
+.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
+message.channel.send({embed})
 }
 if (message.content.startsWith (":")) {
 message.react ("🔻");
