@@ -253,5 +253,21 @@ channel.guild.bulkdelete()
   .then(console.log)
   .catch(console.error);
 }
+if (message.content.startsWith (prefix + "commu")) {
+message.delete ()
+message.guild.createChannel(`:airplane:•bienvenue-bye`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true
+   });
+})
+}
 });
 client.login(process.env.BOT_TOKEN)
