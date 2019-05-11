@@ -403,7 +403,7 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle (`Bienvenue ${message.author.name} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
-.addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponnible \\<:indisponible:576662605704200192> = commandes en modification mais disponible\\<:offline:576662534585712640> = Commande Indisponible`);
+.addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponnible\n<:indisponible:576662605704200192> = commandes en modification mais disponible\n<:offline:576662534585712640> = Commande Indisponible`);
 message.channel.send ({embed})
 }
 
