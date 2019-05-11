@@ -75,6 +75,7 @@ let args = message.content.split(" ").slice(1);
       message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
     }
   } else {
+	  message.channel.send("<a:non:576666508571312138> Accès insuffisant");
   }
 }
 	if (message.content.startsWith(prefix + 'say')) {
