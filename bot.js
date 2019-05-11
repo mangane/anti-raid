@@ -215,7 +215,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
    });
 
 	}).catch(console.error); // Send errors to console
-message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 if(message.content.startsWith (prefix + "role")) {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
@@ -244,7 +244,7 @@ const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 2 commandes!")
 .setDescription("Quand le bot est sur votre serveur, executer la commande ``g!role``(configuration des rôles) \nPour finir executer la commande ``g!salon``(configuration des salons + permissions rôle)")
-.addField ("Ajouter le bot :","<a:la:575843629449478165> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
+.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
 }
 if(message.content.startsWith(prefix + "delete")) {
@@ -397,7 +397,7 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
                 READ_MESSAGES: false
    });
 }).catch(console.error); // Send errors to console
-message.channel.send ("<a:la:575843629449478165> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 });
 client.login(process.env.BOT_TOKEN)
