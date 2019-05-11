@@ -202,5 +202,20 @@ message.channel.send({embed})
 if (message.content.startsWith (prefix + "salon")) {
 message.channel.send ("__**```Commande en cours de fabrication```**__");
 }
+	if(message.content.startsWith (prefix + "test")) {
+message.guild.createChannel(`information`, "category").then(c => { message.guild.createChannel(`test`,`texte`)
+		let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+		    MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true
+   });
+})
+}
 });
 client.login(process.env.BOT_TOKEN)
