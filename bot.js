@@ -417,7 +417,7 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 	if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
-.setTitle (`Bienvenue ${message.author.name} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
+.setTitle (`Bienvenue ${message.author.username} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
 .addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponibles\n<:indisponible:576662605704200192> = commandes en modification mais disponible\n<:offline:576662534585712640> = Commandes Indisponibles`, true)
 .addField(" Communautaire :","<:en_ligne:576662449734811659>``g!commu``**\ Crée votre serveur sous le thème de la communauté**", true)
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**", true)
