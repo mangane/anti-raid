@@ -66,7 +66,7 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 
-client.on("message", async message => {
+client.on("message", async message => {  
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
@@ -671,6 +671,23 @@ message.delete ()
 const embed = new Discord.RichEmbed()
 .addField("Vous voulez voir ce que les commandes font ??? alors rejoignez les serveurs pré faite :"," <:en_ligne:576662449734811659> Qu’il est disponible \n\n<:indisponible:576662605704200192> Qu’il est déjà pris\n\n<:indisponible:576662605704200192> Qu’il est en maintenance\n\n<:offline:576662534585712640>: Qu’il est Fermer\n\nServeur #1 https://discord.gg/Av73Vwg <:en_ligne:576662449734811659>\n\nServeur #2 https://discord.gg/bpZpepc <:en_ligne:576662449734811659> \n\nServeur #3 https://discord.gg/SwuCmmB <:en_ligne:576662449734811659> \n\nServeur #4 https://discord.gg/ <:offline:576662534585712640> \n\nServeur #5 https://discord.gg/ <:offline:576662534585712640>");
 message.channel.send({embed})
+}
+if(message.content.startsWith(prefix + "testa")) {
+ let categorie = message.guild.channels.find(c => c.name === "bla").id
+message.channel.createChannel(bla,"parent")
+ message.guild.createChannel(scroll•règlement, "text").setParent(categorie).then(c => {
+        let role = message.guild.roles.find("name", "Staff");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: true,
+   });
+})
 }
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
