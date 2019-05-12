@@ -678,7 +678,7 @@ if(message.content.startsWith(prefix + "testa")) {
 let categorieID = categorie.id
 
 message.guild.createChannel("bla",'category')
- message.guild.createChannel(`scroll•règlement`, "text").setParent(categorieID).then(c => {
+ message.guild.createChannel(`scroll•règlement`, "text").setCategory(categorieID).then(c => {
         let role = message.guild.roles.find(r => r.name === "Staff" );
             let role2 = message.guild.roles.find(r => r.name === "@everyone");
             c.overwritePermissions(role, {
