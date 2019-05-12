@@ -621,7 +621,6 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
    });
 }).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
-}
 	if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {	
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
