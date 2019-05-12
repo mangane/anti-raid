@@ -10,7 +10,7 @@ client.on('ready', () => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
         }, 1*30000);
 	setInterval(() => {
-            client.user.setPresence({ game: { name: `g!setup | V.1.0.1`, type: "PLAYING" } });
+            client.user.setPresence({ game: { name: `g!setup | V.1.0.4`, type: "PLAYING" } });
         }, 1*40000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
