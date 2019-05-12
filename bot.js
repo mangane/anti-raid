@@ -266,11 +266,8 @@ message.channel.send({embed})
 if(message.content.startsWith(prefix + "delete")) {
 if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 message.guild.forEach(channel =>
-	channel.delete()
+	channel.delete
 })
-  .then(console.log)
-  .catch(console.error);
-}
 if (message.content.startsWith (prefix + "commu")) {
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 	message.guild.createRole({
