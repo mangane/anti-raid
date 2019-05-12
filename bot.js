@@ -673,11 +673,14 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed})
 }
 if(message.content.startsWith(prefix + "testa")) {
- let categorie = message.guild.channels.find(c => c.name === "bla").id
-message.guild.createChannel(`bla`,"parent")
- message.guild.createChannel(`scroll•règlement`, "text").setParent(categorie).then(c => {
-        let role = message.guild.roles.find("name", "Staff");
-            let role2 = message.guild.roles.find("name", "@everyone");
+
+ let categorie = message.guild.channels.find(c =>	 c.name === "bla")
+let categorieID = categorie.id
+
+message.guild.createChannel("bla", { type: 'category' })
+ message.guild.createChannel(`scroll•règlement`, "text").setParent(categorieID).then(c => {
+        let role = message.guild.roles.find(r => r.name === "Staff" );
+            let role2 = message.guild.roles.find(r => r.name === "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: false,
                 READ_MESSAGES: true,
