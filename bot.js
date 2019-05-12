@@ -671,6 +671,7 @@ message.delete ()
 const embed = new Discord.RichEmbed()
 .addField("Vous voulez voir ce que les commandes font ??? alors rejoignez les serveurs pré faite :"," <:en_ligne:576662449734811659> Qu’il est disponible \n\n<:indisponible:576662605704200192> Qu’il est déjà pris\n\n<:indisponible:576662605704200192> Qu’il est en maintenance\n\n<:offline:576662534585712640>: Qu’il est Fermer\n\nServeur #1 https://discord.gg/Av73Vwg <:en_ligne:576662449734811659>\n\nServeur #2 https://discord.gg/bpZpepc <:en_ligne:576662449734811659> \n\nServeur #3 https://discord.gg/SwuCmmB <:en_ligne:576662449734811659> \n\nServeur #4 https://discord.gg/ <:offline:576662534585712640> \n\nServeur #5 https://discord.gg/ <:offline:576662534585712640>");
 message.channel.send({embed})
+}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
