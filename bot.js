@@ -1,10 +1,37 @@
 const CLEAR_MESSAGES = '!clearMessages';
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const request = require('request')
+let client = new Discord.Client();
 var prefix = "g!";
 var prefix2 = "G!";
 const cooldown = new Set ();
 
+Discord.TextChannel.prototype.setSlowmode = async function(time) {
+    if (time > 21600 || time < 0) return console.error("Bad slow value ! (0-21600)")
+    let r = require('util').promisify(request)
+    await r({
+        headers: {
+            "Authorization": "Bot " + this.client.token,
+            "Content-Type": "application/json"
+        },
+        method: 'PATCH',
+        uri: 'https://discordapp.com/api/v6/channels/' + this.id,
+        body: JSON.stringify({
+            rate_limit_per_user: time
+        })
+    })
+}
+
+client.on("message", async message => {
+    if (message.content.startsWith ("!slowmode") {
+        // La valeur du slowmode doit être entre 0 et 21600, ce sont des millisecondes
+        message.channel.setSlowmode(21600)
+        return message.channel.send("Le slowmode est de " + 21600 / 1000 + " secondes !")
+    }
+})
+	if (message.content.startsWith(prefix + "slow")) {
+message.channel.setRateLimitPerUser(30000, "Cooldown activé");
+}
 client.on('ready', () => {
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
@@ -67,9 +94,6 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
-	if (message.content.startsWith(prefix + "slow")) {
-message.channel.setRateLimitPerUser(30000, "Cooldown activé");
-}
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
