@@ -104,6 +104,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 		}
 
        if (message.content.startsWith (prefix + "salon")) {
+	       message.react("<:en_ligne:576662449734811659>");
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 	message.guild.createRole({
                   name: "Membres",
@@ -233,6 +234,7 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 if(message.content.startsWith (prefix + "role")) {
+	message.react("<:en_ligne:576662449734811659>");
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 message.guild.createRole({
                   name: "Membres",
@@ -255,6 +257,7 @@ message.guild.createRole({
      })     
 }
 if (message.content.startsWith (prefix + "setup")) {
+	message.react("<:en_ligne:576662449734811659>");
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 1 commandes!")
@@ -269,7 +272,7 @@ message.channel.delete()
   .catch(console.error);
 }
 if (message.content.startsWith (prefix + "commu")) {
-message.delete ()
+message.react("<:en_ligne:576662449734811659>");
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 	message.guild.createRole({
                   name: "Membres",
@@ -415,6 +418,7 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 	if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {
+		message.react("<:en_ligne:576662449734811659>");
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle (`Bienvenue ${message.author.username} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
@@ -434,6 +438,7 @@ message.react ("🔻");
 message.react ("🔺");
 }
 if(message.content.startsWith(prefix + "kick")) {
+	message.react("<:en_ligne:576662449734811659>");
 		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		if(message.mentions.users.size === 0)
@@ -443,6 +448,7 @@ if(message.content.startsWith(prefix + "kick")) {
 		member.kick();
 		}
 	 if (message.content.startsWith(prefix + "ban")) {
+		 message.react("<:en_ligne:576662449734811659>");
 		if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		if(message.mentions.users.size === 0)
