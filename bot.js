@@ -455,7 +455,7 @@ if(message.content.startsWith(prefix + "kick")) {
     message.reply("Pong! (Calcul en cours...)").then(m => m.edit(`${message.author}:ping_pong: Pong!__\n La latence actuelle est de ${m.createdTimestamp - message.createdTimestamp}ms__`) );
     message.react("✅");
   }
-	if (message.content.startsWith (prefix + "commu")) {
+	if (message.content.startsWith (prefix + "pubs")) {
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 	message.guild.createRole({
                   name: "Membres",
