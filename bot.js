@@ -97,6 +97,7 @@ let args = message.content.split(" ").slice(1);
   }
 }
 	if (message.content.startsWith(prefix + 'say')) {
+message.delete()
 if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
         let m = args.slice(1).join(' ');
         message.delete(100);
