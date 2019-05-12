@@ -677,7 +677,7 @@ if(message.content.startsWith(prefix + "testa")) {
  let categorie = message.guild.channels.find(c =>	 c.name === "bla")
 let categorieID = categorie.id
 
-message.guild.createChannel("bla", { type: 'category' })
+message.guild.createChannel("bla",'category')
  message.guild.createChannel(`scroll•règlement`, "text").setParent(categorieID).then(c => {
         let role = message.guild.roles.find(r => r.name === "Staff" );
             let role2 = message.guild.roles.find(r => r.name === "@everyone");
