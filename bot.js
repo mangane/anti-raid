@@ -17,6 +17,9 @@ client.on('ready', () => {
         }, 1*50000);
 });
 client.on('message', message => {
+if (message.content.startsWith(prefix + "slow")) {
+message.channel.setRateLimitPerUser(30000, "Cooldown activé");
+}
 if (message.content.startsWith ('g!uptime')) {
 let totalSeconds = (client.uptime / 1000);
 let hours = Math.floor(totalSeconds / 3600);
