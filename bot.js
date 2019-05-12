@@ -434,6 +434,7 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed})
 }
 if (message.content.startsWith (":")) {
+	message.react(`<:en_ligne:576662449734811659>`);
 message.react ("🔻");
 message.react ("🔺");
 }
