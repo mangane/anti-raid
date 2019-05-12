@@ -17,9 +17,6 @@ client.on('ready', () => {
         }, 1*50000);
 });
 client.on('message', message => {
-if (message.content.startsWith(prefix + "slow")) {
-message.channel.setRateLimitPerUser(30000, "Cooldown activé");
-}
 if (message.content.startsWith ('g!uptime')) {
 let totalSeconds = (client.uptime / 1000);
 let hours = Math.floor(totalSeconds / 3600);
@@ -70,6 +67,9 @@ client.on("guildDelete", guild => {
 });
 
 client.on("message", async message => {
+	if (message.content.startsWith(prefix + "slow")) {
+message.channel.setRateLimitPerUser(30000, "Cooldown activé");
+}
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
