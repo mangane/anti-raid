@@ -536,7 +536,7 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
         let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
-                SEND_MESSAGES: false,
+                SEND_MESSAGES: true,
                 READ_MESSAGES: true,
             MENTION_EVERYONE: false
             });
@@ -635,7 +635,7 @@ message.guild.createChannel(`pub-24h`, "category").then(c => {
             });
             c.overwritePermissions(role2, {
                 SEND_MESSAGES: true,
-                READ_MESSAGES: false
+                READ_MESSAGES: true
    });
 })
 	message.guild.createChannel(`🗯💬•chat-staff`, "text").then(c => {
