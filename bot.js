@@ -428,8 +428,10 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed})
 }
 if (message.content.startsWith (":")) {
+if(message.channel.id === "576842402459811863") {
 message.react ("🔻");
 message.react ("🔺");
+}
 }
 if(message.content.startsWith(prefix + "kick")) {
 		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
