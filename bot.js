@@ -695,6 +695,7 @@ setInterval(() => {
         msg.edit(client.users.size);
         }, 1*20000);
 })
+}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
