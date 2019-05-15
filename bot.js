@@ -692,7 +692,7 @@ test.send({embed})
 message.delete ()
 message.channel.send (client.users.size).then (async msg => {
 setInterval(() => {
-        msg.edit(client.users.size);
+        msg.edit("Le bot possède : " +client.users.size +"Utilisateurs\n Ainsi que :" + client.guilds.size +"Serveurs");
         }, 1*20000);
 })
 }
