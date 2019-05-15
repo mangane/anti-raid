@@ -678,6 +678,10 @@ var amsg = message.content;
 var msg = amsg.substr(amsg.indexOf(" ") + 1);
 var test = client.channels.find(`id`, "578189974667788289");
 var reason = msg;
+		if(msg.length <= 10) {
+			console.log("Pour contacter un Administrateur il faut au moin avoir écrit 10 caractères !!");
+			return message.channel.send ("Votre publicité doit contenir plus de 30 caractère");	
+}
 		const embed = new Discord.RichEmbed()
 .addField("Le message provient de :", message.author.username +"#"+ message.author.discriminator)
 .addField("du serveur :", message.guild.id)
