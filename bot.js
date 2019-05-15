@@ -679,7 +679,7 @@ var msg = amsg.substr(amsg.indexOf(" ") + 1);
 var test = client.channels.find(`id`, "578189974667788289");
 var reason = msg;
 		const embed = new Discord.RichEmbed()
-.addField("Le message provient de :", `${message.author}`)
+.addField("Le message provient de :", message.author.username +"#"+ message.author.discriminator)
 .addField("du serveur :", message.guild.id)
 .addField("La raison du report est :", reason);
 test.send({embed})
