@@ -690,7 +690,7 @@ test.send({embed})
 }
 	if (message.content.startsWith(prefix + "count")) {
 message.delete ()
-message.channel.send (client.users.size).then (async msg => {
+message.channel.send ("Le bot possède : " +client.users.size +"\``Utilisateurs``\n Ainsi que\ " + client.guilds.size + "\``Serveurs``").then (async msg => {
 setInterval(() => {
         msg.edit("Le bot possède : " +client.users.size +"Utilisateurs\n Ainsi que :" + client.guilds.size +"Serveurs");
         }, 1*20000);
