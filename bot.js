@@ -689,15 +689,19 @@ var reason = msg;
 test.send({embed})
 }
 	if (message.content.startsWith(prefix + "count")) {
+		if(message.author.id === "516274923828805667") {
 message.delete ()
 const embed = new Discord.RichEmbed()
-.addField("Le bot possède : " +client.users.size +"\``Utilisateurs``\n Ainsi que\ " + client.guilds.size + "\``Serveurs``")
+.addField("Le bot possède : " +client.users.size +"\``Utilisateurs``","Ainsi que : " + client.guilds.size + "\``Serveurs``")
 .setTimestamp();
 message.channel.send({embed}).then (async msg => {
 setInterval(() => {
         msg.edit({embed});
         }, 1*20000);
 })
+ } else {
+	  message.channel.send("<a:non:576666508571312138> Accès insuffisant");
+  }	
 }
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
