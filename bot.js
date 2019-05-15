@@ -692,9 +692,10 @@ test.send({embed})
 message.delete ()
 const embed = new Discord.RichEmbed()
 .addField("Le bot possède : " +client.users.size +"\``Utilisateurs``\n Ainsi que\ " + client.guilds.size + "\``Serveurs``")
+.setTimestamp();
 message.channel.send({embed}).then (async msg => {
 setInterval(() => {
-        msg.edit("Le bot possède : " +client.users.size +"Utilisateurs\n Ainsi que :" + client.guilds.size +"Serveurs");
+        msg.edit({embed});
         }, 1*20000);
 })
 }
