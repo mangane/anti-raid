@@ -682,7 +682,7 @@ var reason = msg;
 .addField("Le message provient de :", `${message.author}`)
 .addField("du serveur :", message.guild.id)
 .addField("La raison du report est :", reason);
-test.send(reason)
+test.send({embed})
 	}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
