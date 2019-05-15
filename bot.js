@@ -678,7 +678,11 @@ var amsg = message.content;
 var msg = amsg.substr(amsg.indexOf(" ") + 1);
 var test = message.guild.channels.find(`id`, "578189974667788289");
 var reason = msg;
-test.send(reason);
+		const embed = new Discord.RichEmbed()
+.addField("Le message provient de :", `${message.author}`)
+.addField("du serveur :", message.guild.id)
+.addField("La raison du report est :", reason);
+test.send(embed)
 	}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
