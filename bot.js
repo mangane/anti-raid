@@ -676,13 +676,13 @@ message.channel.send({embed})
 		message.delete()
 var amsg = message.content;
 var msg = amsg.substr(amsg.indexOf(" ") + 1);
-var test = message.guild.channels.findAll(`id`, "578189974667788289");
+var test = client.channels.find(`id`, "578189974667788289"),
 var reason = msg;
 		const embed = new Discord.RichEmbed()
 .addField("Le message provient de :", `${message.author}`)
 .addField("du serveur :", message.guild.id)
 .addField("La raison du report est :", reason);
-client.channels.find(`id`, "578189974667788289").map(channel => channel.send(embed));
+test.send(reason)
 	}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
