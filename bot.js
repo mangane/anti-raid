@@ -678,7 +678,7 @@ var amsg = message.content;
 var msg = amsg.substr(amsg.indexOf(" ") + 1);
 var test = message.guild.channels.find(`id`, "578189974667788289");
 var reason = msg;
-test.send('reason');
+test.send(reason);
 	}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
