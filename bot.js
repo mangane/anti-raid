@@ -1131,7 +1131,10 @@ msg.edit ({embed})
 }).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
-		//
+	if(message.content.startsWith(prefix + "g!reglement")) {
+		if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+		message.channel.send("**__Règlement de Support | Discord créateur __**\n\nVoici le règlement du serveur :\n\n:clipboard:Si une des règles n'est pas respectée par un membre, une sanction sera appliquée.\n\n:no_entry: Interdictions:\n\n• Lien innaproprié : Kick, Ban si récidive\n\n• Spam auditif : Mute\n\n• Pub sur le discord ou en mp en dehors des salons appropriés : Ban de 1 mois\n\n• Diffamation : Ban\n• Flood ou spam : Ban\n\n• Insultes : Kick, Ban si récidive\n\n• Pseudos Inappropriés : Demande de changement\n\n• Usurpation d'identité d'un staff : Ban\n\n• Provocation : Mute, puis Ban\n\n• Utilisation de @everyone / @here : Ban\n\n• Utilisation d'emotes/réactions inapropriées : Mute, puis Ban");
+	}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
