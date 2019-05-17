@@ -254,7 +254,7 @@ message.guild.createRole({
                   name: "Staff",
                     permissions: ["KICK_MEMBERS"]
      })
-message.channel.send("Tout les rôles on bien été mise à jours!!!");     
+message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");     
 }
 if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
