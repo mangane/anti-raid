@@ -1072,7 +1072,9 @@ msg.edit ({embed})
                 READ_MESSAGES: true,
             MENTION_EVERYONE: false
    });
-})
+}).catch(console.error); // Send errors to console
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+} 
 		//
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
