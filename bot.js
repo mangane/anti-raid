@@ -420,7 +420,7 @@ const embed = new Discord.RichEmbed()
 .addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponibles\n<:indisponible:576662605704200192> = commandes en modification mais disponible\n<:offline:576662534585712640> = Commandes Indisponibles`, true)
 .addField(" Communautaire :","<:en_ligne:576662449734811659>``g!commu``**\ Crée votre serveur sous le thème de la communauté**", true)
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**", true)
-.addField("Publicitaire :","<:en_ligne:576662449734811659>``g!pubs``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!pubs2``\ **Crée un serveur sous le thème Publicitaire 2**", true)
+.addField("Publicitaire :","<:en_ligne:576662449734811659>``g!pubs``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!pub-2``\ **Crée un serveur sous le thème Publicitaire 2**", true)
 .addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**", true)
 .addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**\n<:en_ligne:576662449734811659>``g!reglement``**vous fait un jolie règlement pré-definis**", true)
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`)
@@ -707,7 +707,7 @@ msg.edit ({embed})
 	  message.channel.send("<a:non:576666508571312138> Accès insuffisant");
   }	
 }
-	if (message.content.startsWith (prefix + "pubs2")) {
+	if (message.content.startsWith (prefix + "pub-2")) {
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 	message.guild.createRole({
                   name: "『👑』 Administrateurs",
