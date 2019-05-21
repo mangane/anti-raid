@@ -1136,6 +1136,13 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 		message.channel.send("**__Règlement du serveur | " + message.guild.name + "__**\n\nVoici le règlement du serveur :\n\n:clipboard:Si une des règles n'est pas respectée par un membre, une sanction sera appliquée.\n\n:no_entry: Interdictions:\n\n• Lien innaproprié : Kick, Ban si récidive\n\n• Spam auditif : Mute\n\n• Pub sur le discord ou en mp en dehors des salons appropriés : Ban de 1 mois\n\n• Diffamation : Ban\n• Flood ou spam : Ban\n\n• Insultes : Kick, Ban si récidive\n\n• Pseudos Inappropriés : Demande de changement\n\n• Usurpation d'identité d'un staff : Ban\n\n• Provocation : Mute, puis Ban\n\n• Utilisation de ``@everyone / @here`` : Ban\n\n• Utilisation d'emotes/réactions inapropriées : Mute, puis Ban");
 	await message.react("✅");
 	}
+	if(message.content.startsWith(prefix + "invite")) {
+		message.delete()
+		const embed = new Discord.RichEmbed()
+		.setColor("RANDOM")
+	.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
+        message.channel.send({embed})
+	}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
