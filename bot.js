@@ -35,7 +35,8 @@ message.channel.sendEmbed(embed220)
 });
 client.on('message', message => {
 	const cooldown = new Set();
-if(cooldown.has(message.author.id)) { 
+if (cooldown.has(message.author.id)) { 
+		 message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
 } else { 
 	if(message.content.startsWith(prefix + "testadmin")) {
 		message.delete()
@@ -43,8 +44,8 @@ if(cooldown.has(message.author.id)) {
 	cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id);
-}, 10000); 
-}}
+}, 720000); 
+}
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
