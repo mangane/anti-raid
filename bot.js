@@ -34,6 +34,7 @@ message.channel.sendEmbed(embed220)
 }
 });
 client.on('message', message => {
+	const cooldown = new Set();
 if(cooldown.has(message.author.id)) { 
 } else { 
 	if(message.content.startsWith(prefix + "testadmin")) {
