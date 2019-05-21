@@ -1144,6 +1144,18 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 	.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
         message.channel.send({embed})
 	}
+	if (cooldown.has(message.author.id)) { 
+		 message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
+} else { 
+	if(message.content.startsWith(prefix + "testadmin")) {
+		message.delete()
+		message.channel.send("testadmin");
+	}
+	cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id);
+}, 720000); 
+}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
