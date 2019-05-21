@@ -1145,7 +1145,7 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
         message.channel.send({embed})
 	}
 	if (cooldown.has(message.author.id)) { 
-		 message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
+		message.delete()
 } else { 
 	if(message.content.startsWith(prefix + "testadmin")) {
 		message.delete()
@@ -1155,8 +1155,7 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 setTimeout(() => { 
     cooldown.delete(message.author.id);
 }, 720000); 
-}
-}
+}}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
