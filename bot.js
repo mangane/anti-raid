@@ -35,7 +35,6 @@ message.channel.sendEmbed(embed220)
 });
 client.on('message', message => {
 if(cooldown.has(message.author.id)) { 
-		message.delete()
 } else { 
 	if(message.content.startsWith(prefix + "testadmin")) {
 		message.delete()
