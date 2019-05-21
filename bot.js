@@ -688,6 +688,7 @@ var reason = msg;
 .addField("du serveur :", message.guild.id)
 .addField("La raison du report est :", reason);
 test.send({embed})
+message.channel.send("Votre demande à bien été transmis à nos Administrateurs !!");
 }
 	if (message.content.startsWith(prefix + "count")) {
 		if(message.author.id === "516274923828805667") {
