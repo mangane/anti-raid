@@ -33,6 +33,20 @@ var embed220 = new Discord.RichEmbed()
 message.channel.sendEmbed(embed220)
 }
 });
+client.on('message', message => {
+if(cooldown.has(message.author.id)) { 
+		message.delete()
+} else { 
+	if(message.content.startsWith(prefix + "testadmin")) {
+		message.delete()
+		message.channel.send("testadmin");
+	} else {
+	cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id);
+}, 720000); 
+}}
+});
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -1144,18 +1158,6 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 	.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
         message.channel.send({embed})
 	}
-	if (cooldown.has(message.author.id)) { 
-		message.delete()
-} else { 
-	if(message.content.startsWith(prefix + "testadmin")) {
-		message.delete()
-		message.channel.send("testadmin");
-	} else {
-	cooldown.add(message.author.id);
-setTimeout(() => { 
-    cooldown.delete(message.author.id);
-}, 720000); 
-}}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
