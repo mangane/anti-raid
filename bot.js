@@ -44,7 +44,7 @@ if(cooldown.has(message.author.id)) {
 	cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id);
-}, 720000); 
+}, 10000); 
 }}
 });
 client.on("guildCreate", guild => {
