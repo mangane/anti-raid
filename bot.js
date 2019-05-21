@@ -1150,10 +1150,12 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 	if(message.content.startsWith(prefix + "testadmin")) {
 		message.delete()
 		message.channel.send("testadmin");
-	}
-	cooldssage.author.id);
+	} else {
+	cooldown.add(message.author.id);
 setTimeout(() => { 
-    cooldown.delete(message.aut
+    cooldown.delete(message.author.id);
+}, 720000); 
+}
 //<:en_ligne:576662449734811659>
 //<:indisponible:576662605704200192>
 //<:offline:576662534585712640>offline
