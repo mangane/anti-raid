@@ -33,22 +33,6 @@ var embed220 = new Discord.RichEmbed()
 message.channel.sendEmbed(embed220)
 }
 });
-client.on('message', message => {
-if (cooldown.has(message.author.id)) { 
-		 message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
-} else { 
-if(message.content.startsWith(prefix + "testadmin")) {
-message.delete()
-message.channel.send("testadmin");
- } else {
-	        message.channel.send("je ne trouve pas le salon de dans-ta-pub, contacter un administrateur! ");
-	    }
-	cooldown.add(message.author.id);
-setTimeout(() => { 
-    cooldown.delete(message.author.id);
-}, 720000); 
-}
-});
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -82,7 +66,21 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 
-client.on("message", async message => {  
+client.on("message", async message => {
+	if (cooldown.has(message.author.id)) { 
+		 message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
+} else { 
+if(message.content.startsWith(prefix + "testadmin")) {
+message.delete()
+message.channel.send("testadmin");
+ } else {
+	        message.channel.send("je ne trouve pas le salon de dans-ta-pub, contacter un administrateur! ");
+	    }
+	cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id);
+}, 720000); 
+}
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
