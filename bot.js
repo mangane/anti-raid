@@ -16,7 +16,7 @@ client.on('ready', () => {
             client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
         }, 1*50000);
 });
-client.on("message", async message => { 
+client.on('message', message => {
 if (message.content.startsWith ('g!uptime')) {
 let totalSeconds = (client.uptime / 1000);
 let hours = Math.floor(totalSeconds / 3600);
@@ -33,6 +33,20 @@ var embed220 = new Discord.RichEmbed()
 message.channel.sendEmbed(embed220)
 }
 });
+//client.on('message', message => {
+	////const cooldown = new Set();
+//if (cooldown.has(message.author.id)) { 
+		// message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
+//} else { 
+	//if(message.content.startsWith(prefix + "testadmin")) {
+		//message.delete()
+		//message.channel.send("testadmin");
+	//cooldown.add(message.author.id);
+//setTimeout(() => { 
+   //cooldown.delete(message.author.id);
+//}, 720000); 
+//}
+//});
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -65,7 +79,8 @@ client.on("guildDelete", guild => {
         .setColor("RANDOM")
       client.channels.get('576665756389867520').send(embed);
 });
-client.on("message", async message => { 
+
+client.on("message", async message => {  
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
@@ -102,9 +117,8 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.delete(100);
         message.channel.send(`${m}`);
 		}
-	if (cooldown.has(message.author.id)) {
-} else {
-if (message.content.startsWith (prefix + "salon")) {
+
+       if (message.content.startsWith (prefix + "salon")) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 	message.guild.createRole({
                   name: "Membres",
@@ -229,15 +243,10 @@ if (message.content.startsWith (prefix + "salon")) {
                 READ_MESSAGES: true,
 		MENTION_EVERYONE: false
    });
-})
-} else {
-    message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
-    }
-cooldown.add(message.author.id);
-setTimeout(() => { 
-    cooldown.delete(message.author.id); 
-}, 60000);
-}       
+
+	}).catch(console.error); // Send errors to console
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+}
 if(message.content.startsWith (prefix + "role")) {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 message.guild.createRole({
