@@ -68,7 +68,6 @@ client.on("guildDelete", guild => {
 client.on("message", async message => { 
 	if (cooldown.has(message.author.id)) {
 } else {
-} else {
 if (message.content.startsWith(prefix + "cmd")) {
     message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
     }
