@@ -66,16 +66,6 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 client.on("message", async message => { 
-	if (cooldown.has(message.author.id)) {
-} else {
-if (message.content.startsWith(prefix + "cmd")) {
-    message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
-    }
-}
-cooldown.add(message.author.id);
-setTimeout(() => { 
-    cooldown.delete(message.author.id); 
-}, 60000);
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
@@ -112,8 +102,9 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
         message.delete(100);
         message.channel.send(`${m}`);
 		}
-
-       if (message.content.startsWith (prefix + "salon")) {
+	if (cooldown.has(message.author.id)) {
+} else {
+if (message.content.startsWith (prefix + "salon")) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 	message.guild.createRole({
                   name: "Membres",
@@ -241,7 +232,15 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 
 	}).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+} {
+    message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
+    }
 }
+cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id); 
+}, 60000);
+       
 if(message.content.startsWith (prefix + "role")) {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 message.guild.createRole({
