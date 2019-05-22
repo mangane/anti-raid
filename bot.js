@@ -35,89 +35,9 @@ message.channel.sendEmbed(embed220)
 });
 client.on("message", async message => {
 if (cooldown.has(message.author.id)) { 
-  message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
+  message.channel.send("Merci de patientez 10 Minutes");
 } else { 
-	if(message.content.startsWith(prefix + "testadmin")) {
-		message.delete()
-		message.channel.send("testadmin")
-	cooldown.add(message.author.id);
-setTimeout(() => { 
-   cooldown.delete(message.author.id);
-}, 720000); 
-}}
-});
-client.on("guildCreate", guild => {
-    // This event triggers when the bot joins a guild.
-    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
-	const embed = new Discord.RichEmbed()
-        .setDescription(`<:en_ligne:576662449734811659> Merci à **${guild.name}** d'avoir ajouté __Discord créateur__.`)
-        .addField("📋 __Nom du serveur__", guild.name, true)
-        .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
-        .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
-        .addField("👤 __Propriétaire__ :", guild.owner, true)
-        .addField("🌍 __Région du serveur__ :", guild.region, true)
-        .addField("📝 __ID du serveur__ :", guild.id, true)
-        .setColor("RANDOM")
-      client.channels.get('576665756389867520').send(embed);
-});
-
-// Listener - Bot leaves server
-client.on("guildDelete", guild => {
-    // This event triggers when the bot is removed from a guild.
-    console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-    client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
-	const embed = new Discord.RichEmbed()
-        .setDescription(`<a:non:576666508571312138> **${guild.name}** ma retiré.`)
-        .addField("📋 __Nom du serveur__", guild.name, true)
-        .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
-        .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
-        .addField("👤 __Propriétaire__ :", guild.owner, true)
-        .addField("🌍 __Région du serveur__ :", guild.region, true)
-        .addField("📝 __ID du serveur__ :", guild.id, true)
-        .setColor("RANDOM")
-      client.channels.get('576665756389867520').send(embed);
-});
-
-client.on("message", async message => {  
-	function clean(text) {
-    if (typeof(text) === "string")
-    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-  else
-      return text;
-      const clean = text => {
-          if (typeof(text) === "string")
-            return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-          else
-              return text;
-        }
-}
-let args = message.content.split(" ").slice(1);
-  if (message.content.startsWith("g!eval")) {
-    if(message.author.id === "516274923828805667") {
-     try {
-      const code = args.join(" ");
-      let evaled = eval(code);
-
-      if (typeof evaled !== "string")
-        evaled = require("util").inspect(evaled);
-      message.channel.send(clean(evaled), {code:"xl"});
-    } catch (err) {
-      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
-    }
-  } else {
-	  message.channel.send("<a:non:576666508571312138> Accès insuffisant");
-  }
-}
-	if (message.content.startsWith(prefix + 'say')) {
-message.delete()
-if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":x: Et ben non, je crois bien que tu n'a pas les permissions d'utiliser cette commande :x:");
-        let m = args.slice(1).join(' ');
-        message.delete(100);
-        message.channel.send(`${m}`);
-		}
-
-       if (message.content.startsWith (prefix + "salon")) {
+	if (message.content.startsWith (prefix + "salon")) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 	message.guild.createRole({
                   name: "Membres",
@@ -245,6 +165,75 @@ if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":
 
 	}).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+}
+	cooldown.add(message.author.id);
+setTimeout(() => { 
+   cooldown.delete(message.author.id);
+}, 720000); 
+}}
+});
+client.on("guildCreate", guild => {
+    // This event triggers when the bot joins a guild.
+    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
+	const embed = new Discord.RichEmbed()
+        .setDescription(`<:en_ligne:576662449734811659> Merci à **${guild.name}** d'avoir ajouté __Discord créateur__.`)
+        .addField("📋 __Nom du serveur__", guild.name, true)
+        .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
+        .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
+        .addField("👤 __Propriétaire__ :", guild.owner, true)
+        .addField("🌍 __Région du serveur__ :", guild.region, true)
+        .addField("📝 __ID du serveur__ :", guild.id, true)
+        .setColor("RANDOM")
+      client.channels.get('576665756389867520').send(embed);
+});
+
+// Listener - Bot leaves server
+client.on("guildDelete", guild => {
+    // This event triggers when the bot is removed from a guild.
+    console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
+    client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
+	const embed = new Discord.RichEmbed()
+        .setDescription(`<a:non:576666508571312138> **${guild.name}** ma retiré.`)
+        .addField("📋 __Nom du serveur__", guild.name, true)
+        .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
+        .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
+        .addField("👤 __Propriétaire__ :", guild.owner, true)
+        .addField("🌍 __Région du serveur__ :", guild.region, true)
+        .addField("📝 __ID du serveur__ :", guild.id, true)
+        .setColor("RANDOM")
+      client.channels.get('576665756389867520').send(embed);
+});
+
+client.on("message", async message => {  
+	function clean(text) {
+    if (typeof(text) === "string")
+    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+  else
+      return text;
+      const clean = text => {
+          if (typeof(text) === "string")
+            return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+          else
+              return text;
+        }
+}
+let args = message.content.split(" ").slice(1);
+  if (message.content.startsWith("g!eval")) {
+    if(message.author.id === "516274923828805667") {
+     try {
+      const code = args.join(" ");
+      let evaled = eval(code);
+
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
+      message.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``)
+    }
+  } else {
+	  message.channel.send("<a:non:576666508571312138> Accès insuffisant");
+  }
 }
 if(message.content.startsWith (prefix + "role")) {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
