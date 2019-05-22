@@ -34,9 +34,8 @@ message.channel.sendEmbed(embed220)
 }
 });
 client.on('message', message => {
-const cooldown = new Set();
 if (cooldown.has(message.author.id)) { 
- message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
+		 message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
 } else { 
 if(message.content.startsWith(prefix + "testadmin")) {
 message.delete()
@@ -44,7 +43,10 @@ message.channel.send("testadmin");
  } else {
 	        message.channel.send("je ne trouve pas le salon de dans-ta-pub, contacter un administrateur! ");
 	    }
-	cooldown.add(
+	cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id);
+}, 720000); 
 }
 });
 client.on("guildCreate", guild => {
