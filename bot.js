@@ -33,20 +33,19 @@ var embed220 = new Discord.RichEmbed()
 message.channel.sendEmbed(embed220)
 }
 });
-//client.on('message', message => {
-	////const cooldown = new Set();
-//if (cooldown.has(message.author.id)) { 
-		// message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
-//} else { 
-	//if(message.content.startsWith(prefix + "testadmin")) {
-		//message.delete()
-		//message.channel.send("testadmin");
-	//cooldown.add(message.author.id);
-//setTimeout(() => { 
-   //cooldown.delete(message.author.id);
-//}, 720000); 
-//}
-//});
+client.on("message", async message => {
+if (cooldown.has(message.author.id)) { 
+  message.channel.send("Merci de patientez 2 heures avant de postez une nouvelles pub !");
+} else { 
+	if(message.content.startsWith(prefix + "testadmin")) {
+		message.delete()
+		message.channel.send("testadmin");
+	cooldown.add(message.author.id);
+setTimeout(() => { 
+   cooldown.delete(message.author.id);
+}, 720000); 
+}
+});
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
