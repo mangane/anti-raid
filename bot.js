@@ -16,7 +16,7 @@ client.on('ready', () => {
             client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
         }, 1*50000);
 });
-client.on('message', message => {
+client.on("message", async message => { 
 if (message.content.startsWith ('g!uptime')) {
 let totalSeconds = (client.uptime / 1000);
 let hours = Math.floor(totalSeconds / 3600);
