@@ -39,11 +39,12 @@ if (cooldown.has(message.author.id)) {
 } else { 
 	if(message.content.startsWith(prefix + "testadmin")) {
 		message.delete()
-		message.channel.send("testadmin");
+		message.channel.send("testadmin")
 	cooldown.add(message.author.id);
 setTimeout(() => { 
    cooldown.delete(message.author.id);
 }, 720000); 
+}
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
