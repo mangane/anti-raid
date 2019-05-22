@@ -76,7 +76,6 @@ cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id); 
 }, 60000);
-}
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
