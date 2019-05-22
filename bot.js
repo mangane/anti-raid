@@ -44,7 +44,6 @@ if (cooldown.has(message.author.id)) {
 setTimeout(() => { 
    cooldown.delete(message.author.id);
 }, 720000); 
-}
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
