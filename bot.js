@@ -30,7 +30,8 @@ var embed220 = new Discord.RichEmbed()
 .setFooter(`Discord créateur sur ${client.guilds.size}\ Serveurs`)
 .setColor("#ff0000")
 .setTimestamp()
-message.channel.sendEmbed(embed220);
+message.channel.sendEmbed(embed220)
+}
 });
 client.on("message", async message => {
 if (cooldown.has(message.author.id)) { 
