@@ -41,6 +41,7 @@ if (cooldown.has(message.author.id)) {
 if(message.content.startsWith(prefix + "testadmin")) {
 message.delete()
 message.channel.send("testadmin");
+} else {
 cooldown.add(message.author.id);
 setTimeout(() => { 
 cooldown.delete(message.author.id);
