@@ -66,6 +66,18 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 client.on("message", async message => { 
+	if (cooldown.has(message.author.id)) {
+} else {
+} else {
+if (message.content.startsWith(prefix + "cmd")) {
+    message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
+    }
+}
+cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id); 
+}, 60000);
+}
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
