@@ -41,12 +41,14 @@ if (cooldown.has(message.author.id)) {
 if(message.content.startsWith(prefix + "testadmin")) {
 message.delete()
 message.channel.send("testadmin");
-} else {
-cooldown.add(message.author.id);
+ } else {
+	        message.channel.send("je ne trouve pas le salon de dans-ta-pub, contacter un administrateur! ");
+	    }
+	cooldown.add(message.author.id);
 setTimeout(() => { 
-cooldown.delete(message.author.id);
+    cooldown.delete(message.author.id);
 }, 720000); 
-}}
+}
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
