@@ -167,8 +167,7 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 	cooldown.add(message.author.id);
 setTimeout(() => { 
    cooldown.delete(message.author.id);
-}, 720000); 
-}
+}, 720000);
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
