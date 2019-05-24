@@ -165,11 +165,11 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 }
     message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
     }
-}
 cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id); 
 }, 60000);
+}
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
