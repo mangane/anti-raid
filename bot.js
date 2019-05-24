@@ -261,6 +261,7 @@ message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien ét�
 setTimeout(() => { 
     cooldown.delete(message.author.id); 
 }, 60000);
+	}
 }
 if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
