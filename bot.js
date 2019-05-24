@@ -234,8 +234,8 @@ let args = message.content.split(" ").slice(1);
   }
 }
 if(message.content.startsWith (prefix + "role")) {
-	if (cooldown.has(message.author.id)) {
-	} else {
+	//if (cooldown.has(message.author.id)) {
+	//} else {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 message.guild.createRole({
                   name: "Membres",
@@ -257,11 +257,11 @@ message.guild.createRole({
                     permissions: ["KICK_MEMBERS"]
      })
 message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");     
-	cooldown.add(message.author.id);
-setTimeout(() => { 
-    cooldown.delete(message.author.id); 
-}, 60000);
-	}
+	//cooldown.add(message.author.id);
+//setTimeout(() => { 
+    //cooldown.delete(message.author.id); 
+//}, 60000);
+	//}
 }
 if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
