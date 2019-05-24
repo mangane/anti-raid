@@ -34,7 +34,14 @@ message.channel.sendEmbed(embed220)
 }
 });
 client.on("message", async message => {
-	if (cooldown.has(message.author.id)) { 
+	if (cooldown.has(message.author.id)) {  
+message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
+    }
+cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id); 
+}, 60000);
+else {
 if(message.content.startsWith(prefix + "salon")) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 	message.guild.createRole({
@@ -163,12 +170,6 @@ if(message.content.startsWith(prefix + "salon")) {
 	}).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
-    message.channel.send("⚠️ Le cooldown est activé pendant 1min ! ");
-    }
-cooldown.add(message.author.id);
-setTimeout(() => { 
-    cooldown.delete(message.author.id); 
-}, 60000);
 });
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
