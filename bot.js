@@ -41,7 +41,6 @@ cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id); 
 }, 60000);
-else {
 if(message.content.startsWith(prefix + "salon")) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 	message.guild.createRole({
