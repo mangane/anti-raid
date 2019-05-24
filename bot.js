@@ -257,7 +257,6 @@ message.guild.createRole({
                     permissions: ["KICK_MEMBERS"]
      })
 message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");     
-}
 	cooldown.add(message.author.id);
 setTimeout(() => { 
     cooldown.delete(message.author.id); 
