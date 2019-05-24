@@ -161,7 +161,6 @@ client.on("message", async message => {
    });
 	}).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
-}
 	cooldown.add(message.author.id);
 setTimeout(() => { 
    cooldown.delete(message.author.id);
