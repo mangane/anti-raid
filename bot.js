@@ -170,6 +170,38 @@ setTimeout(() => {
 }, 60000);
 	}
 });
+client.on("message", async message => {
+if (cooldown.has(message.author.id)) {
+	} else {
+if(message.content.startsWith (prefix + "role")) {
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+message.guild.createRole({
+                  name: "Membres",
+                    color: "#032c23",
+                    permissions: []
+     })     
+	message.guild.createRole({
+                  name: "Administrateurs",
+                    color: "#ffe200",
+                    permissions: []
+     })    
+	message.guild.createRole({
+                  name: "Modérateurs",
+                    color: "#801d1d",
+                    permissions: []
+     })     
+		message.guild.createRole({
+                  name: "Staff",
+                    permissions: ["KICK_MEMBERS"]
+     })
+message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");  
+}
+	cooldown.add(message.author.id);
+setTimeout(() => { 
+    cooldown.delete(message.author.id); 
+}, 60000);
+	}
+});
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -233,35 +265,7 @@ let args = message.content.split(" ").slice(1);
 	  message.channel.send("<a:non:576666508571312138> Accès insuffisant");
   }
 }
-         if (cooldown.has(message.author.id)) {
-	} else {
-if(message.content.startsWith (prefix + "role")) {
-if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
-message.guild.createRole({
-                  name: "Membres",
-                    color: "#032c23",
-                    permissions: []
-     })     
-	message.guild.createRole({
-                  name: "Administrateurs",
-                    color: "#ffe200",
-                    permissions: []
-     })    
-	message.guild.createRole({
-                  name: "Modérateurs",
-                    color: "#801d1d",
-                    permissions: []
-     })     
-		message.guild.createRole({
-                  name: "Staff",
-                    permissions: ["KICK_MEMBERS"]
-     })
-message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");     
-	cooldown.add(message.author.id);
-setTimeout(() => { 
-    cooldown.delete(message.author.id); 
-}, 60000);
-	}
+         
 if (message.content.startsWith (prefix + "setup")) {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
