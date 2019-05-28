@@ -1151,7 +1151,7 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 	.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
         message.channel.send({embed})
 	}
-	g!eval if (cooldown.has(message.author.id)) {
+if (cooldown.has(message.author.id)) {
 message.channel.send("test");
 }
 	if(message.content.startsWith(prefix + "testadmin")) {
