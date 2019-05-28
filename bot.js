@@ -4,6 +4,7 @@ let client = new Discord.Client();
 var prefix = "g!";
 var prefix2 = "G!";
 const cooldown = new Set ();
+const cooldown2 = new Set ();
 
 client.on('ready', () => {
 	setInterval(() => {
@@ -170,35 +171,16 @@ setTimeout(() => {
 }, 60000);
 	}
 });
-client.on("message", async message => {
-if (cooldown.has(message.author.id)) {
+
+client.on("message", async message => { 
+	if (cooldown2.has(message.author.id)) {
 	} else {
-if(message.content.startsWith (prefix + "role")) {
-if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
-message.guild.createRole({
-                  name: "Membres",
-                    color: "#032c23",
-                    permissions: []
-     })     
-	message.guild.createRole({
-                  name: "Administrateurs",
-                    color: "#ffe200",
-                    permissions: []
-     })    
-	message.guild.createRole({
-                  name: "Modérateurs",
-                    color: "#801d1d",
-                    permissions: []
-     })     
-		message.guild.createRole({
-                  name: "Staff",
-                    permissions: ["KICK_MEMBERS"]
-     })
-message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");  
-}
-	cooldown.add(message.author.id);
+		if(message.content.startsWith(prefix + "testadmin")) {
+			message.channel.send("Salut");
+		}
+	cooldown2.add(message.author.id);
 setTimeout(() => { 
-    cooldown.delete(message.author.id); 
+    cooldown2.delete(message.author.id); 
 }, 60000);
 	}
 });
@@ -235,7 +217,7 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 
-client.on("message", async message => {  
+client.on("message", async message => { 
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
@@ -423,6 +405,29 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
 }).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
+	if(message.content.startsWith (prefix + "role")) {
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+message.guild.createRole({
+                  name: "Membres",
+                    color: "#032c23",
+                    permissions: []
+     })     
+	message.guild.createRole({
+                  name: "Administrateurs",
+                    color: "#ffe200",
+                    permissions: []
+     })    
+	message.guild.createRole({
+                  name: "Modérateurs",
+                    color: "#801d1d",
+                    permissions: []
+     })     
+		message.guild.createRole({
+                  name: "Staff",
+                    permissions: ["KICK_MEMBERS"]
+     })
+message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");  
+}
 		if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {	
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
