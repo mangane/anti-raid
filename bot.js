@@ -4,7 +4,6 @@ let client = new Discord.Client();
 var prefix = "g!";
 var prefix2 = "G!";
 const cooldown = new Set ();
-const cooldown2 = new Set ();
 
 client.on('ready', () => {
 	setInterval(() => {
@@ -15,7 +14,7 @@ client.on('ready', () => {
         }, 1*40000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
-        }, 1*50000);
+        }, 1*70000);
 });
 client.on('message', message => {
 if (message.content.startsWith ('g!uptime')) {
