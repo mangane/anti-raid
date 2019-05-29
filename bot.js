@@ -172,18 +172,6 @@ setTimeout(() => {
 	}
 });
 
-client.on("message", async message => { 
-	if (cooldown2.has(message.author.id)) {
-	} else {
-		if(message.content.startsWith(prefix + "testadmin")) {
-			message.channel.send("Salut");
-		}
-	cooldown2.add(message.author.id);
-setTimeout(() => { 
-    cooldown2.delete(message.author.id); 
-}, 60000);
-	}
-});
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
