@@ -4,6 +4,7 @@ let client = new Discord.Client();
 var prefix = "g!";
 var prefix2 = "G!";
 const cooldown = new Set ();
+const Staff = ["493474639331459072"];
 
 client.on('ready', () => {
 	setInterval(() => {
@@ -65,6 +66,122 @@ client.on("guildDelete", guild => {
         .setColor("RANDOM")
       client.channels.get('576665756389867520').send(embed);
 });
+client.on ("message", async message => {
+  if (message.content.startsWith (prefix + "verif" )) {
+  if (message.author.id === "493474639331459072", "516274923828805667","312877756197109760", "506110769092362280","384029056145948673")  { 
+    const embed = new Discord.RichEmbed()
+    .setTitle("Authentification en cours...")
+    .setDescription(message.author.username + "#" + message.author.discriminator);
+    message.channel.send({embed}).then (async msg => {
+      setTimeout(() => {
+        const embed = new Discord.RichEmbed()
+.setTitle("Authentification accordé")
+.setDescription("Bienvenue " + message.author.username + "#" + message.author.discriminator + ".\n\n ***Vous apparaissez bien dans le Staff !!***");
+msg.edit ({embed})
+        }, 6000);
+  })
+  }
+  }
+    if (message.content.startsWith (prefix + "inv")) {
+      const args = message.content.slice(prefix.length).trim().split(/ +/g);
+      message.channel.createInvite({
+        maxAge: 0
+      }).then(invite => {
+      message.channel.send(`Voici l'invitation généré : ${message.guild.name}\n\ndiscord.gg/${invite.code}\n\n*** elle à une durée de : ${invite.maxAge}*** C'est à dire infinie !`)
+     message.channels.find(`id`, "583693815190126592").then(c => {
+       message.channel.send(`discord.gg/${invite.code}`)
+     })
+      
+                                                             
+      });
+    var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Invitation générer")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
+  }
+               
+     //const invite = message.channel.createInvite().code
+//message.channel.send(`${message.channel.createInvite(1).toString(`${invite}`)}`)
+      //message.channel.send (invite)
+  if(message.guild.id === "576435925794422794") {
+    var chaud = [
+      "il fait chaud",
+      //"ect..."
+      ];
+    if (chaud.some (x => message.content.toLowerCase().includes (chaud))) {
+      message.channel.send ("*je vais Ouvrir la fenêtre*")
+    }
+    var froid = [
+      "il fait froid",
+      //"ect..."
+      ];
+    if (froid.some (x => message.content.toLowerCase().includes (froid))) {
+      message.channel.send ("*Je vais fermer la fenêtre !*")
+    }
+    var link = [
+      "http",
+      //"ect..."
+      ];
+    if (link.some (x => message.content.toLowerCase().includes(link))) {
+      message.reply ("Lien Interdit sur ce serveur !")
+      message.delete (message.author)
+    }
+    var fly = [
+    "discord.gg",
+    
+      //"ect..."
+      ];
+  if (fly.some (x => message.content.toLowerCase().includes(fly))) {
+    message.reply ("Lien interdit sur ce serveur !")
+    message.delete(message.author)
+  }
+  
+  var banni = [
+   "connard",
+   "pute",
+   "putain",
+   "tg",
+   "nique",
+   "con",
+   "conne",
+   "salope",
+   "je ten merde",
+   "j'ten merde",
+   "merde",
+   "pd",
+   "fdp",
+   "cons",
+   "con",
+   "tes con",
+   "nike",
+   "nike ta mère",
+   "ta daronne",
+   "daronne",
+   "daronnes",
+   "ta daronnes",
+   "darones",
+   "darone",
+   "put",
+   "ta darone",
+   "fils de pute",
+   "fils de put",
+   "salop",
+   "ta geule",
+   "violé",
+   "viole",
+   "bite",
+   //"ect.."
+];
+  if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
+    message.reply("Message supprimé !\n :warning: Langage Trop Familier !")
+    message.delete(message.author)
+  }
+  }
+}); 
 
 client.on("message", async message => { 
 	function clean(text) {
@@ -570,23 +687,6 @@ message.guild.createChannel(`🗯📈•Réunion`, "voice").then(c => {
 }).catch(console.error); // Send errors to console
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
-               if(message.content.startsWith(prefix + "contact")) {
-		message.delete()
-var amsg = message.content;
-var msg = amsg.substr(amsg.indexOf(" ") + 1);
-var test = client.channels.find(`id`, "578189974667788289");
-var reason = msg;
-		if(msg.length <= 10) {
-			console.log("Pour contacter un Administrateur il faut au moin avoir écrit 10 caractères !!");
-			return message.channel.send ("Pour contacter un Administrateur il faut au moin avoir écrit 10 caractères !!");	
-}
-		const embed = new Discord.RichEmbed()
-.addField("Le message provient de :", message.author.username +"#"+ message.author.discriminator)
-.addField("du serveur :", message.guild.id)
-.addField("La raison du report est :", reason);
-test.send({embed})
-message.channel.send("Votre demande à bien été transmis à nos Administrateurs !!");
-}
 if (message.content.startsWith (prefix + "pub-2")) {
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 	message.guild.createRole({
@@ -1013,18 +1113,34 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 } 
         if(message.content.startsWith(prefix + "view")) {
 message.delete ()
-const embed = new Discord.RichEmbed()
-.addField("Vous voulez voir ce que les commandes font ??? alors rejoignez les serveurs pré faite :"," <:en_ligne:576662449734811659> Qu’il est disponible \n\n<:indisponible:576662605704200192> Qu’il est déjà pris\n\n<:indisponible:576662605704200192> Qu’il est en maintenance\n\n<:offline:576662534585712640>: Qu’il est Fermer\n\nServeur #1 https://discord.gg/Av73Vwg <:en_ligne:576662449734811659>\n\nServeur #2 https://discord.gg/bpZpepc <:en_ligne:576662449734811659> \n\nServeur #3 https://discord.gg/SwuCmmB <:en_ligne:576662449734811659> \n\nServeur #4 https://discord.gg/ <:offline:576662534585712640> \n\nServeur #5 https://discord.gg/ <:offline:576662534585712640>");
-message.channel.send({embed})
+message.channel.send("Tout les serveurs sont en reconstruction!");
 }
 cooldown.add(message.guild.id);
 setTimeout(() => { 
     cooldown.delete(message.guild.id); 
-}, 600000);
+}, 60000);
 	}
 });
 client.on ("message", async message => {
+  
   if(message.content.startsWith(prefix + "kick")) {
+    if(message.content.startsWith(prefix + "contact")) {
+		message.delete()
+var amsg = message.content;
+var msg = amsg.substr(amsg.indexOf(" ") + 1);
+var test = client.channels.find(`id`, "578189974667788289");
+var reason = msg;
+		if(msg.length <= 10) {
+			console.log("Pour contacter un Administrateur il faut au moin avoir écrit 10 caractères !!");
+			return message.channel.send ("Pour contacter un Administrateur il faut au moin avoir écrit 10 caractères !!");	
+}
+		const embed = new Discord.RichEmbed()
+.addField("Le message provient de :", message.author.username +"#"+ message.author.discriminator)
+.addField("du serveur :", message.guild.id)
+.addField("La raison du report est :", reason);
+test.send({embed})
+message.channel.send("Votre demande à bien été transmis à nos Administrateurs !!");
+    }
 		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		if(message.mentions.users.size === 0)
@@ -1048,7 +1164,7 @@ client.on ("message", async message => {
     message.react("✅");
   }
   if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {	
-const embed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle (`Bienvenue ${message.author.username} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
 .addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponibles\n<:indisponible:576662605704200192> = commandes en modification mais disponible\n<:offline:576662534585712640> = Commandes Indisponibles`, true)
@@ -1056,11 +1172,13 @@ const embed = new Discord.RichEmbed()
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**", true)
 .addField("Publicitaire :","<:en_ligne:576662449734811659>``g!pubs``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!pub-2``\ **Crée un serveur sous le thème Publicitaire 2**", true)
 .addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**", true)
-.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**\n<:en_ligne:576662449734811659>``g!reglement``**vous fait un jolie règlement pré-definis**", true)
+.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!deleteserv``\ **Détruit tout les salons de votre serveur (nous ne sommes pas responsable d'un mauvaise usage de votre part)**\n<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**\n<:en_ligne:576662449734811659>``g!reglement``**vous fait un jolie règlement pré-definis**", true)
 .setAuthor(`${message.author.username}`,`${message.author.avatarURL}`)
-.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**\n<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**\n<:en_ligne:576662449734811659>``g!setup``\ **Vous permet de voir comment construire votre serveur**\n<:en_ligne:576662449734811659>``g!view``\ **Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes !**\n<:en_ligne:576662449734811659>``g!contact``\**faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**", true)
+.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!avatar``\ **Vous donne la photo de profil de la personne mentionné !**\n<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**\n<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**\n<:en_ligne:576662449734811659>``g!setup``\ **Vous permet de voir comment construire votre serveur**\n<:en_ligne:576662449734811659>``g!view``\ **Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes !**\n<:en_ligne:576662449734811659>``g!contact``\**faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**", true)
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
-message.channel.send({embed})
+const helpmp = message.author.send({embed})
+message.channel.send(":white_check_mark: La page D'aide ta été envoyé en mp !")
+    helpmp.send;
 }
 if (message.content.startsWith (":")) {
 if(message.channel.id === "576842402459811863") {
@@ -1111,7 +1229,27 @@ msg.edit ({embed})
 message.guild.channels.forEach(c => {
     c.delete()
     })
+    message.guild.roles.forEach (r => {
+      r.delete ()
+    })
+  
 message.author.send("🔰Le serveur a été supprimé en entier !")
+  }
+  if (message.content.startsWith (prefix + "avatar")) {
+    if(message.mentions.users.size === 0)
+			return message.channel.send("Vous vouliez voir la photo de profil de quelqu'un mais vous ne l'avez pas mentionné!! **Recommencer!!**")
+    const toi = message.mentions.users.first();
+const embed = new Discord.RichEmbed()
+//.setImage(message.author.avatarURL)
+.setImage(message.mentions.users.first ().avatarURL);
+message.channel.send ({embed})
+  }
+  if (message.content.startsWith(prefix + "testad")) {
+    message.channel.send ("test1").then (m => {
+      message.react ("white_check_mark:").then (m => {
+m.edit ("nom de l'embed qui est en lien avec l'emoji")
+})
+  })
   }
 });
 client.login (process.env.TOKEN)
