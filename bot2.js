@@ -343,7 +343,16 @@ let args = message.content.split(" ").slice(1);
 		MENTION_EVERYONE: false
    });
 	}).catch(console.error); // Send errors to console
-message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+ var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Salon générer! ")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
+  
+      message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
         if (message.content.startsWith (prefix + "commu")) {
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
@@ -488,6 +497,15 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
                 READ_MESSAGES: false
    });
 }).catch(console.error); // Send errors to console
+           var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("commu générer")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
+  
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
 	if(message.content.startsWith (prefix + "role")) {
@@ -511,6 +529,14 @@ message.guild.createRole({
                   name: "Staff",
                     permissions: ["KICK_MEMBERS"]
      })
+    var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Roles générer")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
 message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");  
   }
         if (message.content.startsWith (prefix + "pub")) {
@@ -685,6 +711,14 @@ message.guild.createChannel(`🗯📈•Réunion`, "voice").then(c => {
                 READ_MESSAGES: false
    });
 }).catch(console.error); // Send errors to console
+          var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Pub générer")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
 if (message.content.startsWith (prefix + "pub-2")) {
@@ -1109,11 +1143,27 @@ if (message.content.startsWith (prefix + "pub-2")) {
             MENTION_EVERYONE: false
    });
 }).catch(console.error); // Send errors to console
+  var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Pub-2 générer")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
         if(message.content.startsWith(prefix + "view")) {
 message.delete ()
 message.channel.send("Tout les serveurs sont en reconstruction!");
+          var test = client.channels.find(`id`, "583693815190126592")
+    const embed = new Discord.RichEmbed()
+    .setTitle("commande view demander !")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
 }
 cooldown.add(message.guild.id);
 setTimeout(() => { 
@@ -1123,7 +1173,6 @@ setTimeout(() => {
 });
 client.on ("message", async message => {
   
-  if(message.content.startsWith(prefix + "kick")) {
     if(message.content.startsWith(prefix + "contact")) {
 		message.delete()
 var amsg = message.content;
@@ -1140,7 +1189,16 @@ var reason = msg;
 .addField("La raison du report est :", reason);
 test.send({embed})
 message.channel.send("Votre demande à bien été transmis à nos Administrateurs !!");
+      //var cons = client.channels.find(`id`, "583693815190126592");
+ //   const cont = new Discord.RichEmbed()
+    //.setTitle("Commande Contact executer! ")
+  //  .addField ("Du serveur :", message.guild.name)
+  //  .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+ // .addField ("Du salon :", "#" + message.channel.name)
+//    .setTimestamp();
+  //    cons.send({cont})
     }
+    if (message.content.startsWith (prefix + "kick")) {
 		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		if(message.mentions.users.size === 0)
@@ -1148,6 +1206,15 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
 		const member = message.mentions.members.first();
 		message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`);
 		member.kick();
+      var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Kick")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .addField ("Membre kick :", member)
+    .setTimestamp();
+      test.send({embed})
 		}
 	 if (message.content.startsWith(prefix + "ban")) {
 		if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
@@ -1157,11 +1224,29 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
 		const member = message.mentions.members.first();
 		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
 		member.ban();
+     var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Ban executer ")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .addField ("Membre bannis :", member)
+    .setTimestamp();
+      test.send({embed})
 	}
 	if (message.content.startsWith (prefix + "ping")) {
     message.delete();
     message.reply("Pong! (Calcul en cours...)").then(m => m.edit(`${message.author}:ping_pong: Pong!__\n La latence actuelle est de ${m.createdTimestamp - message.createdTimestamp}ms__`) );
     message.react("✅");
+    var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle ("Ping executer ")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
+    
   }
   if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {	
     const embed = new Discord.RichEmbed()
@@ -1195,9 +1280,17 @@ const embed = new Discord.RichEmbed()
 message.channel.send({embed})
   }
   if (message.content.startsWith (prefix + "reglement")) {
-		if (!message.member.hasPermission("ADMINISTRiTOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
-		message.channel.send("**__Règlement du serur | " + message.guild.name + "__**\n\nVoici le règlement du serveur :\n\n:clipboard:Si une des règles n'est pas respectée par un membre, une sanction sera appliquée.\n\n:no_entry: Interdictions:\n\n• Lien innaproprié : Kick, Ban si récidive\n\n• Spam auditif : Mute\n\n• Pub sur le discord ou en mp en dehors des salons appropriés : Ban de 1 mois\n\n• Diffamation : Ban\n• Flood ou spam : Ban\n\n• Insultes : Kick, Ban si récidive\n\n• Pseudos Inappropriés : Demande de changement\n\n• Usurpation d'identité d'un staff : Ban\n\n• Provocation : Mute, puis Ban\n\n• Utilisation de ``@everyone / @here`` : Ban\n\n• Utilisation d'emotes/réactions inapropriées : Mute, puis Ban");
+		if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+		message.channel.send("**__Règlement du serveur | " + message.guild.name + "__**\n\nVoici le règlement du serveur :\n\n:clipboard:Si une des règles n'est pas respectée par un membre, une sanction sera appliquée.\n\n:no_entry: Interdictions:\n\n• Lien innaproprié : Kick, Ban si récidive\n\n• Spam auditif : Mute\n\n• Pub sur le discord ou en mp en dehors des salons appropriés : Ban de 1 mois\n\n• Diffamation : Ban\n• Flood ou spam : Ban\n\n• Insultes : Kick, Ban si récidive\n\n• Pseudos Inappropriés : Demande de changement\n\n• Usurpation d'identité d'un staff : Ban\n\n• Provocation : Mute, puis Ban\n\n• Utilisation de ``@everyone / @here`` : Ban\n\n• Utilisation d'emotes/réactions inapropriées : Mute, puis Ban");
 	await message.react("✅");
+    var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("règlement générer")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
 }	
 	if(message.content.startsWith(prefix + "invite")) {
 		message.delete()
@@ -1232,7 +1325,14 @@ message.guild.channels.forEach(c => {
     message.guild.roles.forEach (r => {
       r.delete ()
     })
-  
+  var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Deleteserv executer ")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
 message.author.send("🔰Le serveur a été supprimé en entier !")
   }
   if (message.content.startsWith (prefix + "avatar")) {
