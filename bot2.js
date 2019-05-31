@@ -67,26 +67,55 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 client.on ("message", async message => {
-if(message.content.startsWith(prefix + "verify-staff")){
-    var user = message.mentions.users.first() || message.author;
-    const staffs = ["516274923828805667", "id2"];
-    if (!staffs.includes(user.id)) {
-      return message.channel.send(`❌ L\'utilisateur/trice ${user.username} ne fait pas parti(e) de nos équipes.`)
-    };
-    
-    const embed = new Discord.RichEmbed()
+if(message.content.startsWith(prefix + "verif")){
+    var user2 = message.mentions.users.first() || message.author;
+    const staffs = ["516274923828805667", "493474639331459072", "384029056145948673","312877756197109760","528677711980396554","506110769092362280"];
+   if (!staffs.includes(user2.id)) {
+      const embed = new Discord.RichEmbed()
     .setTitle("Authentification en cours...")
-    .setDescription(message.author.username + "#" + message.author.discriminator);
-    message.channel.send({embed}).then (async msg => {
+    .setDescription(user2.username + "#" + user2.discriminator);
+   return message.channel.send({embed}).then (async msg => {
       setTimeout(() => {
         const embed = new Discord.RichEmbed()
-.setTitle("Authentification accordé")
-.setDescription("Bienvenue " + message.author.username + "#" + message.author.discriminator + ".\n\n ***Vous apparaissez bien dans le Staff !!***");
+.setTitle("<a:non:576666508571312138>Authentification refusée")
+.setDescription("Accès refusée " + user2.username + "#" + user2.discriminator + "\n\n**N'appartient pas au Staff**")
+        .setFooter ("Authentification refusée");
 msg.edit ({embed})
         }, 6000);
   })
-  
-  }
+      
+    };
+    var embed = new Discord.RichEmbed()
+    .setTitle("Authentification en cours...")
+    .setDescription(user2.username + "#" + user2.discriminator);
+    message.channel.send({embed}).then (async msg => {
+      setTimeout(() => {
+        var embed = new Discord.RichEmbed()
+        .setImage (user2.avatarURL)
+.setTitle(`<:okay:578974520199741472>Authentification accordé`)
+.setFooter (`Authentification accordé $`)
+.setDescription("Bienvenue " + user2.username + "#" + user2.discriminator + ".\n\n ***Appartien bien au Staff !!***");
+msg.edit ({embed})
+      }, 6000);
+    })
+ // const moi = message.mention.user.first
+      if (staffs.includes(message.author.id)) {
+  message.channel.send ("Vérification Lancé ").then (async msg => {
+    setTimeout (() => {
+       user2.send("Vous avez accès au commande suivante :\n\n▪``g!verif``▪");
+      }, 6000);
+  })
+      }
+  var test = client.channels.find(`id`, "583693815190126592")
+   // const embed2 = new Discord.RichEmbed()
+  //  .setTitle("commande view demander !")
+  //  .addField ("Du serveur :", message.guild.name)
+   // .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  //.addField ("Du salon :", "#" + message.channel.name)
+      test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
+}
+
+
     if (message.content.startsWith (prefix + "inv")) {
       const args = message.content.slice(prefix.length).trim().split(/ +/g);
       message.channel.createInvite({
