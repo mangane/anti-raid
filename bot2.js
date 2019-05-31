@@ -99,6 +99,9 @@ msg.edit ({embed})
       }, 6000);
     })
  // const moi = message.mention.user.first
+  var test = client.channels.find (`id`, "583693815190126592")
+  test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
+
       if (staffs.includes(message.author.id)) {
   message.channel.send ("Vérification Lancé ").then (async msg => {
     setTimeout (() => {
@@ -106,13 +109,13 @@ msg.edit ({embed})
       }, 6000);
   })
       }
-  var test = client.channels.find(`id`, "583693815190126592")
+  //var test = client.channels.find(`id`, "583693815190126592")
    // const embed2 = new Discord.RichEmbed()
   //  .setTitle("commande view demander !")
   //  .addField ("Du serveur :", message.guild.name)
    // .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
   //.addField ("Du salon :", "#" + message.channel.name)
-      test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
+      //test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
 }
 
 
