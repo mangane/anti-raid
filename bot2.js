@@ -30,7 +30,7 @@ var embed220 = new Discord.RichEmbed()
 .setDescription(uptime)
 .setFooter(`Discord créateur sur ${client.guilds.size}\ Serveurs`)
 .setColor("#ff0000")
-.setTimestamp()
+.setTimestamp() 
 message.channel.sendEmbed(embed220)
 }
 });
@@ -67,8 +67,13 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 client.on ("message", async message => {
-  if (message.content.startsWith (prefix + "verif" )) {
-  if (message.author.id === "493474639331459072", "516274923828805667","312877756197109760", "506110769092362280","384029056145948673")  { 
+if(message.content.startsWith(prefix + "verify-staff")){
+    var user = message.mentions.users.first() || message.author;
+    const staffs = ["516274923828805667", "id2"];
+    if (!staffs.includes(user.id)) {
+      return message.channel.send(`❌ L\'utilisateur/trice ${user.username} ne fait pas parti(e) de nos équipes.`)
+    };
+    
     const embed = new Discord.RichEmbed()
     .setTitle("Authentification en cours...")
     .setDescription(message.author.username + "#" + message.author.discriminator);
@@ -80,7 +85,7 @@ client.on ("message", async message => {
 msg.edit ({embed})
         }, 6000);
   })
-  }
+  
   }
     if (message.content.startsWith (prefix + "inv")) {
       const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -108,6 +113,12 @@ msg.edit ({embed})
 //message.channel.send(`${message.channel.createInvite(1).toString(`${invite}`)}`)
       //message.channel.send (invite)
   if(message.guild.id === "576435925794422794") {
+    if (message.author.id === "520322405982535705") {
+    } else {
+      if (message.author.id === "516274923828805667") {
+   
+    } else {
+  
     var chaud = [
       "il fait chaud",
       //"ect..."
@@ -179,6 +190,8 @@ msg.edit ({embed})
   if (banni.some(x => message.content.toLowerCase().split(/\s+/).includes(x))) {
     message.reply("Message supprimé !\n :warning: Langage Trop Familier !")
     message.delete(message.author)
+  }
+  }
   }
   }
 }); 
@@ -1155,20 +1168,23 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
 } 
         if(message.content.startsWith(prefix + "view")) {
 message.delete ()
-message.channel.send("Tout les serveurs sont en reconstruction!");
-          var test = client.channels.find(`id`, "583693815190126592")
-    const embed = new Discord.RichEmbed()
-    .setTitle("commande view demander !")
-    .addField ("Du serveur :", message.guild.name)
-    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
-  .addField ("Du salon :", "#" + message.channel.name)
-    .setTimestamp();
-      test.send({embed})
+          const embed = new Discord.RichEmbed()
+          .setTitle("Les serveurs exemples :")
+          .addField ("Serveur 1 (exemple g!pub-2)", "[Cliquez ici](https://discord.gg/qBeujhT)");
+message.channel.send({embed});
+          //var test = client.channels.find(`id`, "583693815190126592")
+   // const embed = new Discord.RichEmbed()
+  //  .setTitle("commande view demander !")
+  //.addField ("Du serveur :", message.guild.name)
+   // .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  //.addField ("Du salon :", "#" + message.channel.name)
+   // .setTimestamp();
+     // test.send({embed})
 }
 cooldown.add(message.guild.id);
 setTimeout(() => { 
     cooldown.delete(message.guild.id); 
-}, 60000);
+}, 120000);
 	}
 });
 client.on ("message", async message => {
@@ -1257,9 +1273,9 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**", true)
 .addField("Publicitaire :","<:en_ligne:576662449734811659>``g!pubs``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!pub-2``\ **Crée un serveur sous le thème Publicitaire 2**", true)
 .addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**", true)
-.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!deleteserv``\ **Détruit tout les salons de votre serveur (nous ne sommes pas responsable d'un mauvaise usage de votre part)**\n<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**\n<:en_ligne:576662449734811659>``g!reglement``**vous fait un jolie règlement pré-definis**", true)
-.setAuthor(`${message.author.username}`,`${message.author.avatarURL}`)
-.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!avatar``\ **Vous donne la photo de profil de la personne mentionné !**\n<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**\n<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**\n<:en_ligne:576662449734811659>``g!setup``\ **Vous permet de voir comment construire votre serveur**\n<:en_ligne:576662449734811659>``g!view``\ **Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes !**\n<:en_ligne:576662449734811659>``g!contact``\**faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**", true)
+.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!slowmode``\ **Mettre un slowmode (mettre 0 pour désactiver)**\n<:en_ligne:576662449734811659>``g!deleteserv``\ **Détruit tout les salons de votre serveur (nous ne sommes pas responsable d'un mauvaise usage de votre part)**\n<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**\n<:en_ligne:576662449734811659>``g!reglement``**vous fait un jolie règlement pré-definis**", true)
+.setAuthor(`${message.author.username}`)
+.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!inv``\ **Vous permet de générer une invitation permanente! **\n<:en_ligne:576662449734811659>``g!avatar``\ **Vous donne la photo de profil de la personne mentionné !**\n<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**\n<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**\n<:en_ligne:576662449734811659>``g!setup``\ **Vous permet de voir comment construire votre serveur**\n<:en_ligne:576662449734811659>``g!view``\ **Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes !**\n<:en_ligne:576662449734811659>``g!contact``\**faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**", true)
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 const helpmp = message.author.send({embed})
 message.channel.send(":white_check_mark: La page D'aide ta été envoyé en mp !")
@@ -1275,7 +1291,7 @@ message.react ("🔺");
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 1 commandes!")
-.setDescription("Quand le bot est sur votre serveur, executer la commande du panel ``g!help`` ")
+.setDescription("Quand le bot est sur votre serveur, executer une des commandes du panel ``g!help`` (cooldown de 2 minutes par serveur) ")
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
   }
@@ -1351,5 +1367,19 @@ m.edit ("nom de l'embed qui est en lien avec l'emoji")
 })
   })
   }
+  if (message.content.startsWith(prefix + "slowmode")) {
+    if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+		return message.channel.send(" <a:non:576666508571312138> | Accès refusé !");
+    var args = message.content.split(` `).slice(1)
+    if(!args[0]|| args[0] < 0 || args[0] > 10800) return message.channel.send("Merci d'indiquer un nombre entre 0 et 10800 ! (calcul en seconds)");
+	
+   // var amsg = message.content;
+   // var msg = amsg.substr(amsg.indexOf(" ") + 1);
+  //var reason = msg;
+message.channel.edit({
+rateLimitPerUser: `${args[0]}`
+})
+message.channel.send (`Le slowmode est activé sur ${args[0]} seconds`);
+}
 });
 client.login (process.env.TOKEN)
