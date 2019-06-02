@@ -11,7 +11,7 @@ client.on('ready', () => {
             client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
         }, 1*30000);
 	setInterval(() => {
-            client.user.setPresence({ game: { name: `g!setup | V.1.5.0`, type: "PLAYING" } });
+            client.user.setPresence({ game: { name: `g!setup | V.2.0.0`, type: "PLAYING" } });
         }, 1*40000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `${client.users.size} Utilisateurs `, type: "WATCHING" } });
@@ -67,9 +67,16 @@ client.on("guildDelete", guild => {
       client.channels.get('576665756389867520').send(embed);
 });
 client.on ("message", async message => {
-if(message.content.startsWith(prefix + "verif")){
+  if(message.author.bot) return;
+	if(message.content.indexOf(prefix) !== 0) return;
+	// ajout de args vu que tu appelle une variable qui n'existe pas
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
+if(command === "verif"){
     var user2 = message.mentions.users.first() || message.author;
-    const staffs = ["516274923828805667", "493474639331459072", "384029056145948673","312877756197109760","528677711980396554","506110769092362280"];
+    var test = client.channels.find (`id`, "583693815190126592")
+  test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
+  const staffs = ["516274923828805667", "493474639331459072", "384029056145948673","312877756197109760","528677711980396554","506110769092362280","521783661113376769","302428822706585600"];
    if (!staffs.includes(user2.id)) {
       const embed = new Discord.RichEmbed()
     .setTitle("Authentification en cours...")
@@ -99,8 +106,8 @@ msg.edit ({embed})
       }, 6000);
     })
  // const moi = message.mention.user.first
-  var test = client.channels.find (`id`, "583693815190126592")
-  test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
+  //var test = client.channels.find (`id`, "583693815190126592")
+ // test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
 
       if (staffs.includes(message.author.id)) {
   message.channel.send ("Vérification Lancé ").then (async msg => {
@@ -119,7 +126,7 @@ msg.edit ({embed})
 }
 
 
-    if (message.content.startsWith (prefix + "inv")) {
+    if (command === "gen") {
       const args = message.content.slice(prefix.length).trim().split(/ +/g);
       message.channel.createInvite({
         maxAge: 0
@@ -140,7 +147,8 @@ msg.edit ({embed})
     .setTimestamp();
       test.send({embed})
   }
-               
+});
+client.on("message", async message => {
      //const invite = message.channel.createInvite().code
 //message.channel.send(`${message.channel.createInvite(1).toString(`${invite}`)}`)
       //message.channel.send (invite)
@@ -229,6 +237,11 @@ msg.edit ({embed})
 }); 
 
 client.on("message", async message => { 
+  if(message.author.bot) return;
+	if(message.content.indexOf(prefix) !== 0) return;
+	// ajout de args vu que tu appelle une variable qui n'existe pas
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
 	function clean(text) {
     if (typeof(text) === "string")
     return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
@@ -241,8 +254,7 @@ client.on("message", async message => {
               return text;
         }
 }
-let args = message.content.split(" ").slice(1);
-  if (message.content.startsWith("g!eval")) {
+  if (command === "eval") {
     if(message.author.id === "516274923828805667") {
      try {
       const code = args.join(" ");
@@ -260,10 +272,15 @@ let args = message.content.split(" ").slice(1);
 }
 });
     client.on ("message", async message => {
+      if(message.author.bot) return;
+	if(message.content.indexOf(prefix) !== 0) return;
+	// ajout de args vu que tu appelle une variable qui n'existe pas
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
       if (cooldown.has (message.guild.id)) {
       } else {
-    if (message.content.startsWith (prefix + "salon")) {
-	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
+    if (command === "salon") {
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");	
 	message.guild.createRole({
                   name: "Membres",
                     color: "#032c23",
@@ -399,8 +416,8 @@ let args = message.content.split(" ").slice(1);
   
       message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
-        if (message.content.startsWith (prefix + "commu")) {
-	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+        if (command === "commu") {
+	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
 	message.guild.createRole({
                   name: "Membres",
                     color: "#032c23",
@@ -553,8 +570,8 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
   
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
-	if(message.content.startsWith (prefix + "role")) {
-if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+	if(command === "role") {
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
 message.guild.createRole({
                   name: "Membres",
                     color: "#032c23",
@@ -584,7 +601,9 @@ message.guild.createRole({
       test.send({embed})
 message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");  
   }
-        if (message.content.startsWith (prefix + "pub")) {
+        if (command === "pub") {
+          if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
+
 	message.guild.createChannel(`📜•règlement`, "text").then(c => {
         let role = message.guild.roles.find("name", "Staff");
             let role2 = message.guild.roles.find("name", "@everyone");
@@ -766,8 +785,8 @@ message.guild.createChannel(`🗯📈•Réunion`, "voice").then(c => {
       test.send({embed})
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 }
-if (message.content.startsWith (prefix + "pub-2")) {
-	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
+if (command === "p-2") {
+	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
 	message.guild.createRole({
                   name: "『👑』 Administrateurs",
                     color: "#ffe200",
@@ -1198,7 +1217,33 @@ if (message.content.startsWith (prefix + "pub-2")) {
       test.send({embed})
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
-        if(message.content.startsWith(prefix + "view")) {
+     //   if(message.content.startsWith(prefix + "view")) {
+//message.delete ()
+          //const embed = new Discord.RichEmbed()
+         // .setTitle("Les serveurs exemples :")
+       //   .addField ("Serveur 1 (exemple g!pub-2)", "[Cliquez ici](https://discord.gg/qBeujhT)");
+//message.channel.send({embed})
+          //var test = client.channels.find(`id`, "583693815190126592")
+   // const embed = new Discord.RichEmbed()
+  //  .setTitle("commande view demander !")
+  //.addField ("Du serveur :", message.guild.name)
+   // .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  //.addField ("Du salon :", "#" + message.channel.name)
+   // .setTimestamp();
+     // test.send
+cooldown.add(message.guild.id);
+setTimeout(() => { 
+    cooldown.delete(message.guild.id); 
+}, 60000);
+	}
+});
+client.on ("message", async message => {
+  if(message.author.bot) return;
+	if(message.content.indexOf(prefix) !== 0) return;
+	// ajout de args vu que tu appelle une variable qui n'existe pas
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
+  if(command === "view") {
 message.delete ()
           const embed = new Discord.RichEmbed()
           .setTitle("Les serveurs exemples :")
@@ -1213,15 +1258,7 @@ message.channel.send({embed});
    // .setTimestamp();
      // test.send({embed})
 }
-cooldown.add(message.guild.id);
-setTimeout(() => { 
-    cooldown.delete(message.guild.id); 
-}, 120000);
-	}
-});
-client.on ("message", async message => {
-  
-    if(message.content.startsWith(prefix + "contact")) {
+    if(command === "contact") {
 		message.delete()
 var amsg = message.content;
 var msg = amsg.substr(amsg.indexOf(" ") + 1);
@@ -1246,7 +1283,7 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
 //    .setTimestamp();
   //    cons.send({cont})
     }
-    if (message.content.startsWith (prefix + "kick")) {
+    if (command === "kick") {
 		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		if(message.mentions.users.size === 0)
@@ -1264,7 +1301,7 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
     .setTimestamp();
       test.send({embed})
 		}
-	 if (message.content.startsWith(prefix + "ban")) {
+	 if (command === "ban") {
 		if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
 			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
 		if(message.mentions.users.size === 0)
@@ -1282,7 +1319,7 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
     .setTimestamp();
       test.send({embed})
 	}
-	if (message.content.startsWith (prefix + "ping")) {
+	if (command === "ping") {
     message.delete();
     message.reply("Pong! (Calcul en cours...)").then(m => m.edit(`${message.author}:ping_pong: Pong!__\n La latence actuelle est de ${m.createdTimestamp - message.createdTimestamp}ms__`) );
     message.react("✅");
@@ -1296,30 +1333,48 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
       test.send({embed})
     
   }
-  if (message.content.startsWith (prefix + "help") || message.content.startsWith (prefix2 + "help")) {	
+  if (command === "helpmp") {	
     const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle (`Bienvenue ${message.author.username} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
 .addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponibles\n<:indisponible:576662605704200192> = commandes en modification mais disponible\n<:offline:576662534585712640> = Commandes Indisponibles`, true)
 .addField(" Communautaire :","<:en_ligne:576662449734811659>``g!commu``**\ Crée votre serveur sous le thème de la communauté**", true)
 .addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**", true)
-.addField("Publicitaire :","<:en_ligne:576662449734811659>``g!pubs``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!pub-2``\ **Crée un serveur sous le thème Publicitaire 2**", true)
+.addField("Publicitaire :","<:en_ligne:576662449734811659>``g!pub``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!p-2``\ **Crée un serveur sous le thème Publicitaire 2**", true)
 .addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**", true)
 .addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!slowmode``\ **Mettre un slowmode (mettre 0 pour désactiver)**\n<:en_ligne:576662449734811659>``g!deleteserv``\ **Détruit tout les salons de votre serveur (nous ne sommes pas responsable d'un mauvaise usage de votre part)**\n<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**\n<:en_ligne:576662449734811659>``g!reglement``**vous fait un jolie règlement pré-definis**", true)
 .setAuthor(`${message.author.username}`)
-.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!inv``\ **Vous permet de générer une invitation permanente! **\n<:en_ligne:576662449734811659>``g!avatar``\ **Vous donne la photo de profil de la personne mentionné !**\n<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**\n<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**\n<:en_ligne:576662449734811659>``g!setup``\ **Vous permet de voir comment construire votre serveur**\n<:en_ligne:576662449734811659>``g!view``\ **Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes !**\n<:en_ligne:576662449734811659>``g!contact``\**faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**", true)
+.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!verif``\ **Vous permet de verifier si l'utilisateur mentionné est dans le staff du bot**\n<:en_ligne:576662449734811659>``g!gen``\ **Vous permet de générer une invitation permanente! **\n<:en_ligne:576662449734811659>``g!avatar``\ **Vous donne la photo de profil de la personne mentionné !**\n<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**\n<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**\n<:en_ligne:576662449734811659>``g!setup``\ **Vous permet de voir comment construire votre serveur**\n<:en_ligne:576662449734811659>``g!view``\ **Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes !**\n<:en_ligne:576662449734811659>``g!contact``\**faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**", true)
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 const helpmp = message.author.send({embed})
 message.channel.send(":white_check_mark: La page D'aide ta été envoyé en mp !")
     helpmp.send;
 }
-if (message.content.startsWith (":")) {
+  if (command === "help") {	
+    const embed = new Discord.RichEmbed()
+.setColor ("RANDOM")
+    .setFooter ("g!helpmp pour recevoir l'aide en mp")
+.setTitle (`Bienvenue ${message.author.username} dans le placard de mes serveurs Choisi bien :ballot_box_with_check:`)
+.addField("Balise :",`<:en_ligne:576662449734811659> = Commandes disponibles\n<:indisponible:576662605704200192> = commandes en modification mais disponible\n<:offline:576662534585712640> = Commandes Indisponibles`, true)
+.addField(" Communautaire :","<:en_ligne:576662449734811659>``g!commu``**\ Crée votre serveur sous le thème de la communauté**", true)
+.addField(" Basique :","<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**", true)
+.addField("Publicitaire :","<:en_ligne:576662449734811659>``g!pub``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!p-2``\ **Crée un serveur sous le thème Publicitaire 2**", true)
+.addField(" Uniquement les rôles :","<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**", true)
+.addField("Le placard de la modération","<:en_ligne:576662449734811659>``g!lock``\ **Interdit au rôle everyone de parler sur le salon**\n<:en_ligne:576662449734811659>``g!unlock``\ **Autorise de nouveaux au role everyone de parler**\n<:en_ligne:576662449734811659>``g!say``\ **Fait parler le bot à votre place**\n<:en_ligne:576662449734811659>``g!slowmode``\ **Mettre un slowmode (mettre 0 pour désactiver)**\n<:en_ligne:576662449734811659>``g!deleteserv``\ **Détruit tout les salons de votre serveur (nous ne sommes pas responsable d'un mauvaise usage de votre part)**\n<:en_ligne:576662449734811659>``g!eval``\ **Réservé à l'owner du bot**\n<:en_ligne:576662449734811659>``g!kick``\ **Exclut le membre mentionner**\n<:en_ligne:576662449734811659>``g!ban``\ **Bannis le membre mentionner**\n<:en_ligne:576662449734811659>``g!reglement``**vous fait un jolie règlement pré-definis**", true)
+.setAuthor(`${message.author.username}`)
+.addField("Le placard de l'utilisateurs","<:en_ligne:576662449734811659>``g!new``\ **Crée un ticket (nécessite le role __Support Team__)**\n<:en_ligne:576662449734811659>``g!si``\ **Vous donne des informations sur le serveur**\n<:en_ligne:576662449734811659>``g!verif``\ **Vous permet de verifier si l'utilisateurs mentionné est dans le staff du bot**\n<:en_ligne:576662449734811659>``g!inv``\ **Vous permet de générer une invitation permanente! **\n<:en_ligne:576662449734811659>``g!avatar``\ **Vous donne la photo de profil de la personne mentionné !**\n<:en_ligne:576662449734811659>``g!uptime``\ **Voir depuis quand le bot ne c'est pas redémarré**\n<:en_ligne:576662449734811659>``g!ping``\ **Regarder le ping du bot**\n<:en_ligne:576662449734811659>``g!setup``\ **Vous permet de voir comment construire votre serveur**\n<:en_ligne:576662449734811659>``g!view``\ **Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes !**\n<:en_ligne:576662449734811659>``g!contact``\**faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**", true)
+.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
+//const helpmp = message.author.send({embed})
+//message.channel.send(":white_check_mark: La page D'aide ta été envoyé en mp !")
+    message.channel.send({embed})
+  }
+if (message.content.startsWith(":")) {
 if(message.channel.id === "576842402459811863") {
-message.react ("🔻");
-message.react ("🔺");
+message.react("🔻");
+message.react("🔺");
 }
 }
-  if (message.content.startsWith (prefix + "setup")) {
+  if (command === "setup") {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 1 commandes!")
@@ -1327,7 +1382,7 @@ const embed = new Discord.RichEmbed()
 .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
   }
-  if (message.content.startsWith (prefix + "reglement")) {
+  if (command === "reglement") {
 		if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");
 		message.channel.send("**__Règlement du serveur | " + message.guild.name + "__**\n\nVoici le règlement du serveur :\n\n:clipboard:Si une des règles n'est pas respectée par un membre, une sanction sera appliquée.\n\n:no_entry: Interdictions:\n\n• Lien innaproprié : Kick, Ban si récidive\n\n• Spam auditif : Mute\n\n• Pub sur le discord ou en mp en dehors des salons appropriés : Ban de 1 mois\n\n• Diffamation : Ban\n• Flood ou spam : Ban\n\n• Insultes : Kick, Ban si récidive\n\n• Pseudos Inappropriés : Demande de changement\n\n• Usurpation d'identité d'un staff : Ban\n\n• Provocation : Mute, puis Ban\n\n• Utilisation de ``@everyone / @here`` : Ban\n\n• Utilisation d'emotes/réactions inapropriées : Mute, puis Ban");
 	await message.react("✅");
@@ -1340,14 +1395,15 @@ message.channel.send({embed})
     .setTimestamp();
       test.send({embed})
 }	
-	if(message.content.startsWith(prefix + "invite")) {
+	if(command === "invite") {
 		message.delete()
 		const embed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-	.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
+	.addField ("Rejoindre le support :","<a:la:576804659528990751>[Rejoindre Le support](https://discord.gg/2Pabk6p)")
+    .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
         message.channel.send({embed})
 	}
-  if (message.content.startsWith(prefix + "count")) {
+  if (command === "count") {
 		if(message.author.id === "516274923828805667") {
 message.delete ()
 const embed = new Discord.RichEmbed()
@@ -1365,7 +1421,7 @@ msg.edit ({embed})
 	  message.channel.send("<a:non:)76666508571312138> Accès insuffisant");
   }	
 }
-  if(message.content.startsWith (prefix + "deleteserv")) {
+  if(command === "deleteserv") {
   if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("⚠️ Vous n'avez pas la permission d'utiliser cette commande.")
 message.guild.channels.forEach(c => {
     c.delete()
@@ -1383,7 +1439,7 @@ message.guild.channels.forEach(c => {
       test.send({embed})
 message.author.send("🔰Le serveur a été supprimé en entier !")
   }
-  if (message.content.startsWith (prefix + "avatar")) {
+  if (command === "avatar") {
     if(message.mentions.users.size === 0)
 			return message.channel.send("Vous vouliez voir la photo de profil de quelqu'un mais vous ne l'avez pas mentionné!! **Recommencer!!**")
     const toi = message.mentions.users.first();
@@ -1392,18 +1448,17 @@ const embed = new Discord.RichEmbed()
 .setImage(message.mentions.users.first ().avatarURL);
 message.channel.send ({embed})
   }
-  if (message.content.startsWith(prefix + "testad")) {
+  if (command === "testad") {
     message.channel.send ("test1").then (m => {
       message.react ("white_check_mark:").then (m => {
 m.edit ("nom de l'embed qui est en lien avec l'emoji")
 })
   })
   }
-  if (message.content.startsWith(prefix + "slowmode")) {
-    if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+  if (command === "slowmode") {
+    if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
 		return message.channel.send(" <a:non:576666508571312138> | Accès refusé !");
-    var args = message.content.split(` `).slice(1)
-    if(!args[0]|| args[0] < 0 || args[0] > 10800) return message.channel.send("Merci d'indiquer un nombre entre 0 et 10800 ! (calcul en seconds)");
+    if(!args[0]|| args[0] < 0 || args[0] > 10800) return message.channel.send("------------------------------------------------------------------------\n\nMerci d'indiquer un nombre entre 0 et 10800 ! (calcul en seconds)\n\n------------------------------------------------------------------------");
 	
    // var amsg = message.content;
    // var msg = amsg.substr(amsg.indexOf(" ") + 1);
@@ -1411,7 +1466,147 @@ m.edit ("nom de l'embed qui est en lien avec l'emoji")
 message.channel.edit({
 rateLimitPerUser: `${args[0]}`
 })
-message.channel.send (`Le slowmode est activé sur ${args[0]} seconds`);
+message.channel.send (`------------------------------------------------------------------------\n\n⛔  Le Mode Ralenti  est Maintenant activé sur #${message.channel.name} !\n\n🆕 Temps : ${args [0]}\n\n------------------------------------------------------------------------`);
+}
+if (command === "notif") {
+  if(message.guild.id === "576435925794422794") {
+  var toi = message.member
+  
+  toi.addRole (`584305495771185162`)
+  message.channel.send ("Role Ajouter avec succès! ")
+  }
+}
+  if (command === "nonotif") {
+    if (message.guild.id === "576435925794422794"){
+      var toi = message.member
+      toi.removeRole (`584305495771185162`)
+      message.channel.send ("Role retiré avec succès! ")
+    }
+  }
+  if(message.content.startsWith (prefix + "say")) {
+    message.delete ()
+    if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
+			return message.channel.send("<a:non:576666508571312138> | Vous n'avez pas accès à cette commande !");
+		var amsg = message.content;
+		// supprime le premier mot de la chaine (string) donc "!pub machin" va supprimer pub
+		var msg = amsg.substr(amsg.indexOf(" ") + 1);
+   var reason = msg;
+let args = message.content.split(" ").slice(1);
+   if (!args [0] || args [0] < 0 ) return message.channel.send("pas bien de rien mettre")
+message.channel.send (`${reason}`)
+}
+  if (message.content.startsWith (prefix + "si")) {
+    var sale = message.guild.members.filter(m =>  ! m.user.bot).size
+     var sale2 = message.guild.members.filter (m => m.user.bot).size
+      const embed = new Discord.RichEmbed()
+      .setColor ("#d11000")
+  .setAuthor(`${message.guild.name}`, message.guild.iconURL)
+      .addField("🔱 | Créateur du serveur :", message.guild.owner)
+      .addField("📅 | Crée depuis le :", message.guild.createdAt)
+      .addField ("🌎 | La région est :", message.guild.region)
+      .addField ("👪 | Nombre de membres :", message.guild.memberCount)
+      .addField ("♨ | Nombre de salon :", message.guild.channels.size)
+      .addField ("🔨 | Nombre de Bot :", sale2)
+      .addField ("👪 | Nombre d'humain", sale)
+      .setThumbnail(message.guild.iconURL)
+      message.channel.send ({embed})
+    var test = client.channels.find(`id`, "583693815190126592");
+    let embed220 = new Discord.RichEmbed()
+    .setTitle("Serveur info ")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed220})
+  
+      }
+  if(message.content.startsWith (prefix + "lock")) {
+      if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.channel.send("**❌ Vous n'avez pas les permissions, `MANAGE_CHANNELS`❌**")
+    
+      message.channel.overwritePermissions(message.guild.id, {
+        SEND_MESSAGES: false
+    });
+    let lock = new Discord.RichEmbed()
+    .addField(`🔒 Salon verrouillé`,`**Le salon a été verrouillé par ${message.author}**`)
+      
+    message.channel.send(lock)
+    var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Lock Channel")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
+  
+    }
+  if(message.content.startsWith (prefix + "unlock")) {
+      if(!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.channel.send("**❌ Vous n'avez pas les permissions, `MANAGE_CHANNELS`❌**")
+    
+      message.channel.overwritePermissions(message.guild.id, {
+        SEND_MESSAGES: true
+    });
+    let lock = new Discord.RichEmbed()
+    .addField(`🔓 Salon déverrouillé `,`**Le salon a été déverouillé par ${message.author}**`)
+      
+    message.channel.send(lock)
+    var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle("Unlock Channel")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
+  
+    }
+  if (message.content.toLowerCase().startsWith(prefix + `new`)) {
+    const reason = message.content.split(" ").slice(1).join(" ");
+    if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`Ce serveur ne possède pas de rôle \`Support Team\` Le ticket ne peux donc pas être créé, Contacté un administrateur pour qu'ilcréele rôle avec le nom Exact !`);
+      if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`Vous êtes déjà en possession d'un ticket `);
+    message.guild.createChannel(`ticket-${message.author.name}`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Support Team");
+        let role2 = message.guild.roles.find("name", "@everyone");
+        c.overwritePermissions(role, {
+            SEND_MESSAGES: true,
+            READ_MESSAGES: true
+        });
+        c.overwritePermissions(role2, {
+            SEND_MESSAGES: false,
+            READ_MESSAGES: false
+        });
+        c.overwritePermissions(message.author, {
+            SEND_MESSAGES: true,
+            READ_MESSAGES: true
+        });
+        message.channel.send(`<:okay:578974520199741472> Votre ticket à bien été créé  ${c}.`);
+        const embed = new Discord.RichEmbed()
+        .setColor(0xCF40FA)
+        .addField(`Bonjour ${message.author.username}!`, `Merci d'expliquer avec le plus de précisions votre problème puis patientez qu'un **Support Team** viennent vous aider`)
+        .setTimestamp()
+        .setFooter (prefix+`close pour fermer`);
+        c.send({ embed: embed });
+    }).catch(console.error);
+}
+if (message.content.toLowerCase().startsWith(prefix + `close`)) {
+    if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`Vous pouvez utiliser cette commande uniquement sur votre ticket !`);
+
+    message.channel.send(`Vous êtes sûr ? Vous ne pourrez pas revenir en arrière ! Pour confirmer taper ` + prefix+`confirm (vous avez 20 seconds)`)
+    .then((m) => {
+      message.channel.awaitMessages(response => response.content === prefix +'confirm', {
+        max: 1,
+        time: 20000,
+        errors: ['time'],
+      })
+      .then((collected) => {
+          message.channel.delete();
+        })
+        .catch(() => {
+          m.edit('Vous n\'avez pas confirmer la fermeture du ticket').then(m2 => {
+              m2.delete();
+          }, 3000);
+        });
+    });
 }
 });
 client.login (process.env.TOKEN)

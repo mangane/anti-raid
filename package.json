@@ -1,7 +1,7 @@
 {
   "name": "spaceboat",
   "version": "0.0.6",
-  "main": "bot.js",
+  "main": "node bot2.js",
   "scripts": {
     "start": "node bot2.js",
     "background": "screen -dmS SpaceBoat nodemon bot.js"
