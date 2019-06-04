@@ -1646,16 +1646,20 @@ if (command === `close`) {
         }, {
             name: ":nut_and_bolt: | Commande pour la création des serveurs",
             value: "Voir les commandes de création de serveur"
-        }],
+          }, {
+            name: "⛔| Fermer l'aide",
+value: "Vous ne pourrez plus naviguez dans l'aide cependant le message sera encore présent !"
+        }], 
         footer: {
             text: "⚠ Vous avez 30 secondes ⚠",
         }
-    }})
- 
+    }});  
     await base.react('🔨');
     await base.react('👪');
     await base.react('🔩');
     await base.react ('🔐');
+   await base.react('⛔');
+await base.react('🏠');
  
     const collector = base.createReactionCollector((reaction, user) => user.id === message.author.id);
        
@@ -1716,8 +1720,38 @@ if (command === `close`) {
               description: "<:en_ligne:576662449734811659>``g!verif-on``\ **Vous permet D'activer une protection  (vérification à l'arrivée) sur votre serveur**\n <:en_ligne:576662449734811659>``g!v-ok``\ **Permet de passez la vérification**\n ",
             }})
           }
-        });
-  };
+          if(reaction.emoji.name === "⛔") {
+          base.clearReactions();
+          }
+          if(reaction.emoji.name === "🏠") {
+       
+           base.edit ({ embed : {
+             
+             color: 3447003,
+        title: `:chart_with_upwards_trend: Choisissez la catégorie que vous souhaitez voir :`,
+        fields : [{
+            name: "🔨 | Modération",
+            value: "Voir les commandes de modération "
+        }, {
+            name: ":family: | Utilisateurs",
+            value: "Voir les commandes Utilisateurs "
+        }, {
+            name: ":nut_and_bolt: | Commande pour la création des serveurs",
+            value: "Voir les commandes de création de serveur"
+          }, {
+            name: "⛔| Fermer l'aide",
+value: "Vous ne pourrez plus naviguez dans l'aide cependant le message sera encore présent !"
+        }], 
+        footer: {
+            text: "⚠ Vous avez 30 secondes ⚠",
+        }
+                 }})
+          }
+          
+})
+ };
+
+            
   if(command === "v-ok") {
          let role = message.guild.roles.find("name", "Membres Vérifié");
 
