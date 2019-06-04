@@ -42,6 +42,7 @@ message.channel.sendEmbed(embed220)
     .addField("Bienvenue Pour accéder au serveur il va falloir passer la vérification pour cela taper","\n``g!v-ok``")
     .setAuthor("🔐 La sécurité avant tout 🔐 ");
     channel.send({embed})
+channel.send(member)
 });
     client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
