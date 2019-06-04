@@ -1775,7 +1775,7 @@ if (message.channel.name === "🚫vérification🚫") {
           collector.stop ();
           setTimeout (() => {
             base.delete ();
-            message.channel.bulkDelete (3);
+            message.channel.bulkDelete (5);
           }, 120000);
   var serv = message.guild.id
   message.channel.send("Merci de notez ci-dessous :\ " + serv).then((m) => {
@@ -1795,7 +1795,7 @@ if (message.channel.name === "🚫vérification🚫") {
         .catch(() => {
           m.edit('Vous n\'avez pas confirmer le code').then(m => {
               m.delete ()
-            message.channel.message.channel.bulkDelete(3);
+            message.channel.bulkDelete(5);
             message.member.send ("Vous venez de vous faire kick de\ " + message.guild.name +"\ Car vous n'avez pas Compléter  vérification")
             message.member.kick ();
             var test = client.channels.find(`id`, "583693815190126592");
