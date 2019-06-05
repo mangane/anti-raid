@@ -1737,7 +1737,10 @@ await base.react('🏠');
           }, {
             name: "⛔| Fermer l'aide",
 value: "Vous ne pourrez plus naviguez dans l'aide cependant le message sera encore présent !"
-        }], 
+        }, {
+name: "Les balises :",
+value: "<:offline:576662534585712640> = commande indisponible\n <:en_ligne:576662449734811659> = Commande disponible"
+	  }], 
         footer: {
             text: "⚠ Vous avez 30 secondes ⚠",
         }
