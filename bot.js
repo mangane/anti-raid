@@ -1483,10 +1483,6 @@ m.edit ("nom de l'embed qui est en lien avec l'emoji")
     if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
 		return message.channel.send(" <a:non:576666508571312138> | Accès refusé !");
     if(!args[0]|| args[0] < 0 || args[0] > 10800) return message.channel.send("------------------------------------------------------------------------\n\nMerci d'indiquer un nombre entre 0 et 10800 ! (calcul en seconds)\n\n------------------------------------------------------------------------");
-	
-   // var amsg = message.content;
-   // var msg = amsg.substr(amsg.indexOf(" ") + 1);
-  //var reason = msg;
 message.channel.edit({
 rateLimitPerUser: `${args[0]}`
 })
