@@ -100,8 +100,7 @@ if(command === "verif"){
 msg.edit ({embed})
         }, 6000);
   })
-      
-    };
+	   }
     var embed = new Discord.RichEmbed()
     .setTitle("Authentification en cours...")
     .setDescription(user2.username + "#" + user2.discriminator);
