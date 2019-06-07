@@ -1519,7 +1519,7 @@ message.channel.send (`${reason}`)
      var sale2 = message.guild.members.filter (m => m.user.bot).size
       const embed = new Discord.RichEmbed()
       .setColor ("#d11000")
-  .setAuthor(`${message.guild.name}`, message.guild.iconURL, true)
+  .setAuthor(`${message.guild.name}`, message.guild.iconURL)
       .addField("🔱 | Créateur du serveur :", message.guild.owner, true)
       .addField("📅 | Crée depuis le :", message.guild.createdAt, true)
       .addField ("🌎 | La région est :", message.guild.region, true)
