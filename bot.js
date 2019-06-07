@@ -1845,4 +1845,4 @@ if (message.channel.name === "🚫vérification🚫") {
     message.channel.send("Il ne vous reste plus qu'à configurer tout vos salons sauf le salon vérification !")
   }
 });
-client.login(process.env.BOT_TOKEN
+client.login(process.env.BOT_TOKEN)
