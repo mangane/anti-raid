@@ -1478,15 +1478,6 @@ m.edit ("nom de l'embed qui est en lien avec l'emoji")
 })
   })
   }
-  if (command === "slowmode") {
-    if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
-		return message.channel.send(" <a:non:576666508571312138> | Accès refusé !");
-    if(!args[0]|| args[0] < 0 || args[0] > 10800) return message.channel.send("------------------------------------------------------------------------\n\nMerci d'indiquer un nombre entre 0 et 10800 ! (calcul en seconds)\n\n------------------------------------------------------------------------");
-message.channel.edit({
-rateLimitPerUser: `${args[0]}`
-})
-message.channel.send (`------------------------------------------------------------------------\n\n⛔  Le Mode Ralenti  est Maintenant activé sur #${message.channel.name} !\n\n🆕 Temps : ${args [0]}\n\n------------------------------------------------------------------------`);
-}
 if (command === "notif") {
   if(message.guild.id === "576435925794422794") {
   var toi = message.member
