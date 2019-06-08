@@ -1426,7 +1426,7 @@ message.channel.send({embed})
 		const embed = new Discord.RichEmbed()
 		.setColor("RANDOM")
 	.addField ("Rejoindre le support :","<a:la:576804659528990751>[Rejoindre Le support](https://discord.gg/2Pabk6p)")
-    .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
+    .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/api/oauth2/authorize?client_id=586962507776655372&permissions=8&scope=bot)");
         message.channel.send({embed})
 	}
   if (command === "count") {
