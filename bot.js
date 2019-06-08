@@ -1445,12 +1445,13 @@ msg.edit ({embed})
   }	
 }
   if(command === "deleteserv") {
+	  message.channel.senf("commande indisponible")
   if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send("⚠️ Vous n'avez pas la permission d'utiliser cette commande.")
-message.guild.channels.forEach(c => {
-    c.delete()
-    })
-    message.guild.roles.forEach (r => {
-      r.delete ()
+//message.guild.channels.forEach(c => {
+   // c.delete()
+  //  })
+   // message.guild.roles.forEach (r => {
+     // r.delete ()
     })
   var test = client.channels.find(`id`, "583693815190126592");
     const embed = new Discord.RichEmbed()
