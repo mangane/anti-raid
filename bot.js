@@ -1815,7 +1815,7 @@ if (message.channel.name === "🚫vérification🚫") {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
           if (message.guild.channels.exists("name", "🚫vérification🚫")) return message.channel.send(`Ce serveur possède déjà la vérification`);
 
-    if (message.guild.roles.exists("name", "Membres Vérifié")) return message.channel.send(`Ce serveur possède le rôle Membres Validé`);
+   // if (message.guild.roles.exists("name", "Membres Vérifié")) return message.channel.send(`Ce serveur possède le rôle Membres Validé`);
     message.guild.createRole({
                   name: "Membres Vérifié",
                     color: "#ffe200",
