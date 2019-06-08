@@ -162,7 +162,7 @@ client.on("message", async message => {
 //message.channel.send(`${message.channel.createInvite(1).toString(`${invite}`)}`)
       //message.channel.send (invite)
   if(message.guild.id === "576435925794422794") {
-    if (message.author.id === "459986110525997067") {
+    if (message.author.id === "459986110525997067", "586962507776655372") {
     } else {
   
     var chaud = [
