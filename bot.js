@@ -86,7 +86,7 @@ if(command === "verif"){
     var user2 = message.mentions.users.first() || message.author;
     var test = client.channels.find (`id`, "583693815190126592")
   test.send(`***Verification demander par ***` + message.author.username + `\ ***qui verifie***\ ` + user2.username +"#"+ user2.discriminator)
-  const staffs = ["516274923828805667", "493474639331459072", "384029056145948673","312877756197109760","506110769092362280","521783661113376769","302428822706585600"];
+  const staffs = ["516274923828805667", "493474639331459072", "384029056145948673","312877756197109760","506110769092362280","521783661113376769","302428822706585600","459986110525997067"];
    if (!staffs.includes(user2.id)) {
       const embed = new Discord.RichEmbed()
     .setTitle("Authentification en cours...")
