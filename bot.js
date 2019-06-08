@@ -581,6 +581,8 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
 	if(command === "role") {
+message.channel.send ("<:ahah:586067009238728704> La commandes est en maintenance")
+if (message.author.id === 516274923828805667 ) {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
 message.guild.createRole({
                   name: "Membres",
@@ -611,6 +613,7 @@ message.guild.createRole({
       test.send({embed})
 message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");  
   }
+}
         if (command === "pub") {
           if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 
