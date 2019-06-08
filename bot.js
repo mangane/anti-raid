@@ -241,7 +241,7 @@ client.on("message", async message => {
   }
   }
   }
-  }
+  
 }); 
 
 client.on("message", async message => { 
@@ -263,7 +263,7 @@ client.on("message", async message => {
         }
 }
   if (command === "eval") {
-    if(message.author.id === "516274923828805667") {
+    if(message.author.id === "459986110525997067") {
      try {
       const code = args.join(" ");
       let evaled = eval(code);
