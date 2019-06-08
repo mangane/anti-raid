@@ -1402,7 +1402,7 @@ const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
 .setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 1 commandes!")
 .setDescription("Quand le bot est sur votre serveur, executer une des commandes du panel ``g!help`` (cooldown de 2 minutes par serveur) ")
-.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
+//.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
   }
   if (command === "reglement") {
