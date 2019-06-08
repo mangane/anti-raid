@@ -1452,7 +1452,7 @@ msg.edit ({embed})
   //  })
    // message.guild.roles.forEach (r => {
      // r.delete ()
-    })
+   // })
   var test = client.channels.find(`id`, "583693815190126592");
     const embed = new Discord.RichEmbed()
     .setTitle("Deleteserv executer ")
