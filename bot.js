@@ -1700,7 +1700,7 @@ await base.react('🏠');
                 value: "<:en_ligne:576662449734811659>``g!pub``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!p-2``\ **Crée un serveur sous le thème Publicitaire 2**"
             }, {
                 name: "Uniquement les rôles",
-                value: "<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**"
+                value: "<:offline:576662534585712640>``g!role``\ **Création des roles uniquement**"
             }]
             }})
 }
