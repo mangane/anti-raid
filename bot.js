@@ -1639,8 +1639,8 @@ message.channel.send({embed})
 		message.delete()
 		const embed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-	.addField ("Rejoindre le support :","<a:la:576804659528990751>[Rejoindre Le support](https://discord.gg/EXBbkhw)")
-    .addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/api/oauth2/authorize?client_id=587288527985704962&permissions=8&scope=bot)");
+	.addField ("Rejoindre le support :","<a:la:587292297247457310>[Rejoindre Le support](https://discord.gg/EXBbkhw)")
+    .addField ("Ajouter le bot :","<a:la:587292297247457310> [Inviter le bot](https://discordapp.com/api/oauth2/authorize?client_id=587288527985704962&permissions=8&scope=bot)");
         message.channel.send({embed})
 	}
   if (command === "count") {
