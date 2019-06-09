@@ -1458,7 +1458,7 @@ cooldown.add(message.guild.id);
 setTimeout(() => { 
     cooldown.delete(message.guild.id); 
 }, 60000);
-	}
+	
 });
 client.on ("message", async message => {
   if(message.author.bot) return;
