@@ -621,7 +621,7 @@ if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("
       test.send({embed})
 message.channel.send("<:okay:578974520199741472>\ ``Tout les rôles on bien été mise à jours!!!``");  
   }
-}
+
         if (command === "pub") {
           if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandé");	
 
