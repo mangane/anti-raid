@@ -47,7 +47,7 @@ message.channel.sendEmbed(embed220)
         .addField("🌍 __Région du serveur__ :", guild.region, true)
         .addField("📝 __ID du serveur__ :", guild.id, true)
         .setColor("RANDOM")
-      client.channels.get('576665756389867520').send(embed);
+      client.channels.get('587292169048424458').send(embed);
 });
 
 // Listener - Bot leaves server
@@ -64,7 +64,7 @@ client.on("guildDelete", guild => {
         .addField("🌍 __Région du serveur__ :", guild.region, true)
         .addField("📝 __ID du serveur__ :", guild.id, true)
         .setColor("RANDOM")
-      client.channels.get('576665756389867520').send(embed);
+      client.channels.get('587292169048424458').send(embed);
 });
 client.on ("message", async message => {
   if(message.author.bot) return;
