@@ -8,7 +8,8 @@ const Staff = ["493474639331459072"];
 
 client.on('ready', () => {
 	setInterval(() => {
-            client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
+            client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHI
+					    NG" } });
         }, 1*30000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `g!setup | V.2.0.0`, type: "PLAYING" } });
@@ -484,9 +485,9 @@ client.on("message", async message => {
 		MENTION_EVERYONE: false
    });
 })
-    }  
+    
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont crée automatiquement");
-
+}
   }
     if (command === "salon") {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");	
