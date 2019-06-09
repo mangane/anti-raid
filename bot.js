@@ -2052,6 +2052,16 @@ if (message.channel.name === "🚫vérification🚫") {
             MENTION_EVERYONE: false
    });
 })
+	  message.guild.channels.forEach(c => {
+		  c.overwritePermissions (role, {
+			  SEND_MESSAGES: true,
+			  READ_MESSAGES: true
+			  });
+		  c.overwritePermission (role2, {
+			  SEND_MESSAGES: false,
+			  READ_MESSAGES: false
+			  });
+		  })
     message.channel.send("Il ne vous reste plus qu'à configurer tout vos salons sauf le salon vérification !")
   }
   
