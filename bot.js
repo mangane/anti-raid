@@ -1295,31 +1295,54 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
   //    cons.send({cont})
     }
     if (command === "kick") {
-		if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS"))
-			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
-		if(message.mentions.users.size === 0)
-			return message.channel.send("Vous avez oublié de mention la personne à exclure !");
-		const member = message.mentions.members.first();
-		message.channel.send(`${message.mentions.users.first()} à été Kické par ${message.author.username}`);
-		member.kick();
-      var test = client.channels.find(`id`, "583693815190126592");
-    const embed = new Discord.RichEmbed()
-    .setTitle("Kick")
-    .addField ("Du serveur :", message.guild.name)
-    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
-  .addField ("Du salon :", "#" + message.channel.name)
-    .addField ("Membre kick :", member)
-    .setTimestamp();
-      test.send({embed})
-		}
+    var amsg = message.content;
+		// supprime le premier mot de la chaine (string) donc "!pub machin" va supprimer pub
+		var msg = amsg.substr(amsg.indexOf(" ") + 23);
+   var reason = msg;
+    if (!reason || reason < 250 ) return message.channel.send("***Vous n'avez pas mis de raison ou vous en avez mise une trop longue !!***")
+
+    let member = message.mentions.members.first ();
+    let member2 = message.mentions.users.first ();
+   var embed = new Discord.RichEmbed()
+   .setColor ("#f08619")
+   .setTitle ("Vous venez de vous faire kické :warning:")
+   .addField("Par le modérateur/administrateur :", message.author.username + "#" + message.author.discriminator)
+   .addField("Depuis le serveur :", message.guild.name)
+   .addField ("Pour la raison suivante :", reason)
+   .setFooter ("Vous n'êtes pas bannis du serveur et pouvez y revenir !!")
+    
+    let search = message.guild.channels.find(`name`, "modlogs")
+    const a = new Discord.RichEmbed()
+    .setTitle("test")
+    member.send ({embed})
+   
+message.channel.send ("```diff\nL'utilisateurs "+member2.username +"#"+ member2.discriminator +"\ Viens de ce faire kick pour la raison ci-dessous :\n``` ``\n\n"+ reason + " 🔨 ``")
+ member.kick ();
+  }
 	 if (command === "ban") {
-		if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
-			return message.channel.send("Vous n'avez pas accès à cette commande, seul les administrateur on accès à cette commande!");
-		if(message.mentions.users.size === 0)
-			return message.channel.send("Vous avez oublié de mention la personne à exclure !");
-		const member = message.mentions.members.first();
-		message.channel.send(`${message.mentions.users.first()} à été banni par ${message.author.username}`);
-		member.ban();
+    var amsg = message.content;
+		// supprime le premier mot de la chaine (string) donc "!pub machin" va supprimer pub
+		var msg = amsg.substr(amsg.indexOf(" ") + 23);
+   var reason = msg;
+    if (!reason || reason < 250 ) return message.channel.send("***Vous n'avez pas mis de raison ou vous en avez mise une trop longue !!***")
+
+    let member = message.mentions.members.first ();
+    let member2 = message.mentions.users.first ();
+   var embed = new Discord.RichEmbed()
+   .setColor ("#f08619")
+   .setTitle ("Vous venez de vous faire bannir :warning:")
+   .addField("Par le modérateur/administrateur :", message.author.username + "#" + message.author.discriminator)
+   .addField("Depuis le serveur :", message.guild.name)
+   .addField ("Pour la raison suivante :", reason)
+   .setFooter ("Vous êtes bannis, vous ne pourrez y retournez que en cas de unban 💮 !!")
+    
+    let search = message.guild.channels.find(`name`, "modlogs")
+    const a = new Discord.RichEmbed()
+    .setTitle("test")
+    member.send ({embed})
+   
+message.channel.send ("```diff\nL'utilisateurs "+member2.username +"#"+ member2.discriminator +"\ Viens de ce faire kick pour la raison ci-dessous :\n``` ``\n\n"+ reason + " 🔨 ``")
+ member.ban();
      var test = client.channels.find(`id`, "583693815190126592");
     const embed = new Discord.RichEmbed()
     .setTitle("Ban executer ")
