@@ -485,7 +485,7 @@ client.on("message", async message => {
    });
 })
     }  
-message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont crée automatiquement");
 
   }
     if (command === "salon") {
@@ -623,7 +623,7 @@ message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à met
     .setTimestamp();
       test.send({embed})
   
-      message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+      message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont crée automatiquement ");
 }
         if (command === "commu") {
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
@@ -776,7 +776,7 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
     .setTimestamp();
       test.send({embed})
   
-message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les rôles sont crée automatiquement ");
 } 
 	if(command === "role") {
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");                      
@@ -1005,7 +1005,7 @@ message.guild.createChannel(`🗯📈•Réunion`, "voice").then(c => {
   .addField ("Du salon :", "#" + message.channel.name)
     .setTimestamp();
       test.send({embed})
-message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont crée automatiquement");
 }
 if (command === "p-2") {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
@@ -1438,7 +1438,7 @@ if (command === "p-2") {
   .addField ("Du salon :", "#" + message.channel.name)
     .setTimestamp();
       test.send({embed})
-message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
+message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sontcrée automatiquement ");
 } 
      //   if(message.content.startsWith(prefix + "view")) {
 //message.delete ()
