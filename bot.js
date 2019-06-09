@@ -8,8 +8,7 @@ const Staff = ["493474639331459072"];
 
 client.on('ready', () => {
 	setInterval(() => {
-            client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHI
-					    NG" } });
+            client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
         }, 1*30000);
 	setInterval(() => {
             client.user.setPresence({ game: { name: `g!setup | V.2.0.0`, type: "PLAYING" } });
