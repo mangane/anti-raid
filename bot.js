@@ -1306,6 +1306,8 @@ message.channel.send("Votre demande à bien été transmis à nos Administrateur
   //    cons.send({cont})
     }
     if (command === "kick") {
+	    	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");	
+
     var amsg = message.content;
 		// supprime le premier mot de la chaine (string) donc "!pub machin" va supprimer pub
 		var msg = amsg.substr(amsg.indexOf(" ") + 23);
@@ -1331,6 +1333,8 @@ message.channel.send ("```diff\nL'utilisateurs "+member2.username +"#"+ member2.
  member.kick ();
   }
 	 if (command === "ban") {
+		 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");	
+
     var amsg = message.content;
 		// supprime le premier mot de la chaine (string) donc "!pub machin" va supprimer pub
 		var msg = amsg.substr(amsg.indexOf(" ") + 23);
