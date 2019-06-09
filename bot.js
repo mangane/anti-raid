@@ -1845,7 +1845,7 @@ if (command === `close`) {
 value: "Vous ne pourrez plus naviguez dans l'aide cependant le message sera encore présent !"
        }, {
 name: "Les balises :",
-value: "<:offline:576662534585712640> = commande indisponible\n <:en_ligne:576662449734811659> = Commande disponible"
+value: "<:offline:576662534585712640> = commande indisponible\n <:online:587292258282373130> = Commande disponible"
 	  }], 
         footer: {
             text: "⚠ Vous avez 30 secondes ⚠",
@@ -1870,7 +1870,7 @@ await base.react('🏠');
               color: 0xFF0000,
                 fields: [{
                     name: "Le placard de la modération",
-                    value: "**<:en_ligne:576662449734811659>``g!lock``\ Interdit au rôle everyone de parler sur le salon\n<:en_ligne:576662449734811659>``g!unlock``\ Autorise de nouveaux au role everyone de parler\n<:en_ligne:576662449734811659>``g!say``\ Fait parler le bot à votre place\n<:en_ligne:576662449734811659>```g!slowmode``\ Mettre un slowmode (mettre 0 pour désactiver)\n<:en_ligne:576662449734811659>``g!deleteserv``\ Détruit tout les salons de votre serveur (nous ne sommes pas responsable d'un mauvais usage de votre part)\n<:en_ligne:576662449734811659>``g!eval``\ Réservé à l'owner du bot\n<:en_ligne:576662449734811659>``g!kick``\ Exclut le membre mentionner\n<:en_ligne:576662449734811659>``g!ban``\ Bannis le membre mentionner\n<:en_ligne:576662449734811659>``g!reglement``vous fait un jolie règlement pré-definis**"
+                    value: "**<:online:587292258282373130>``g!lock``\ Interdit au rôle everyone de parler sur le salon\n<:online:587292258282373130>``g!unlock``\ Autorise de nouveaux au role everyone de parler\n<:online:587292258282373130>``g!say``\ Fait parler le bot à votre place\n<:online:587292258282373130>``g!slowmode``\ Mettre un slowmode (mettre 0 pour désactiver)\n<:online:587292258282373130>``g!deleteserv``\ Détruit tout les salons de votre serveur (nous ne sommes pas responsable d'un mauvais usage de votre part)\n<:online:587292258282373130>``g!eval``\ Réservé à l'owner du bot\n<:online:587292258282373130>``g!kick``\ Exclut le membre mentionner\n<:online:587292258282373130>``g!ban``\ Bannis le membre mentionner\n<:online:587292258282373130>``g!reglement``vous fait un jolie règlement pré-definis**"
                 }]
             }})
  
@@ -1883,7 +1883,7 @@ await base.react('🏠');
             base.edit({ embed: {
               color: 0xFF0000,
                 title: "Le placard de l'utilisateurs",
-              description: "<:en_ligne:576662449734811659>``g!new``\ **Créé un ticket de support\n<:en_ligne:576662449734811659>``g!verif``\ Vous permet de verifier si l'utilisateur mentionné est dans le staff du bot\n<:en_ligne:576662449734811659>``g!gen``\ Vous permet de générer une invitation permanente!\n <:en_ligne:576662449734811659>``g!avatar``\ Vous donne la photo de profil de la personne mentionné !\n <:en_ligne:576662449734811659>``g!uptime``\ Voir depuis quand le bot ne c'est pas redémarré\n<:en_ligne:576662449734811659>``g!ping``\ Regarder le ping du bot\n<:en_ligne:576662449734811659>``g!setup``\ Vous permet de voir comment construire votre serveur\n<:en_ligne:576662449734811659>``g!view``\ Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes\n<:en_ligne:576662449734811659>``g!contact``\ faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**"
+              description: "<:online:587292258282373130>``g!new``\ **Créé un ticket de support\n<:online:587292258282373130>``g!verif``\ Vous permet de verifier si l'utilisateur mentionné est dans le staff du bot\n<:online:587292258282373130>``g!gen``\ Vous permet de générer une invitation permanente!\n <:online:587292258282373130>``g!avatar``\ Vous donne la photo de profil de la personne mentionné !\n<:online:587292258282373130>``g!uptime``\ Voir depuis quand le bot ne c'est pas redémarré\n<:online:587292258282373130>``g!ping``\ Regarder le ping du bot\n<:online:587292258282373130>``g!setup``\ Vous permet de voir comment construire votre serveur\n<:online:587292258282373130>``g!view``\ Vous permet d'avoir la liste de 5 serveurs qui sont là pour exemple des commandes\n<:online:587292258282373130>``g!contact``\ faire un report ou autre en contactant un administrateur rapidemment (réponse sous 24h)**"
  
         }})
  
@@ -1896,19 +1896,19 @@ await base.react('🏠');
           color: 0xFF0000,
             fields: [{
                 name: "Communautaire :",
-                value: "<:en_ligne:576662449734811659>``g!commu``**\ Crée votre serveur sous le thème de la communauté**"
+                value: "<:online:587292258282373130>``g!commu``**\ Crée votre serveur sous le thème de la communauté**"
             }, {
                 name : "Basique :",
-                value: "<:en_ligne:576662449734811659>``g!salon``\ **Création de votre serveur sous le thème global**"
+                value: "<:online:587292258282373130>``g!salon``\ **Création de votre serveur sous le thème global**"
             }, {
                 name : "Publicitaire :",
-                value: "<:en_ligne:576662449734811659>``g!pub``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!p-2``\ **Crée un serveur sous le thème Publicitaire 2**"
+                value: "<:online:587292258282373130>``g!pub``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!p-2``\ **Crée un serveur sous le thème Publicitaire 2**"
             }, {
                 name: "Uniquement les rôles",
-                value: "<:en_ligne:576662449734811659>``g!role``\ **Création des roles uniquement**"
+                value: "<:online:587292258282373130>``g!role``\ **Création des roles uniquement**"
             }, {
 name: "Serveur Discord communauté Minecraft !",
-value: "<:en_ligne:576662449734811659>``g!mc``\ **Création d'un serveur sous le thème d'une communauté Minecraftienne**"
+value: "<:online:587292258282373130>``g!mc``\ **Création d'un serveur sous le thème d'une communauté Minecraftienne**"
             }]
             }})
 }
@@ -1917,7 +1917,7 @@ value: "<:en_ligne:576662449734811659>``g!mc``\ **Création d'un serveur sous le
             base.edit ({ embed : {
               color: 0xF0000,
               title: "Les commandes De Protection",
-              description: "<:en_ligne:576662449734811659>``g!verif-on``\ **Vous permet D'activer une protection  (vérification à l'arrivée) sur votre serveur**\n <:en_ligne:576662449734811659>``g!v-ok``\ **Permet de passez la vérification**\n ",
+              description: "<:online:587292258282373130>``g!verif-on``\ **Vous permet D'activer une protection  (vérification à l'arrivée) sur votre serveur**\n <:online:587292258282373130>``g!v-ok``\ **Permet de passez la vérification**\n ",
             }})
           }
           if(reaction.emoji.name === "⛔") {
@@ -1943,7 +1943,7 @@ value: "<:en_ligne:576662449734811659>``g!mc``\ **Création d'un serveur sous le
 value: "Vous ne pourrez plus naviguez dans l'aide cependant le message sera encore présent !"
         }, {
 name: "Les balises :",
-value: "<:offline:576662534585712640> = commande indisponible\n <:en_ligne:576662449734811659> = Commande disponible"
+value: "<:offline:576662534585712640> = commande indisponible\n <:online:587292258282373130> = Commande disponible"
 	  }], 
         footer: {
             text: "⚠ Vous avez 30 secondes ⚠",
