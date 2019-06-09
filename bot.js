@@ -2052,12 +2052,14 @@ if (message.channel.name === "🚫vérification🚫") {
             MENTION_EVERYONE: false
    });
 })
+	  let role = message.guild.roles.find ("name", "Membres Vérifié");
+	  let role2 = message.guild.roles.find ("name", "@everyone");
 	  message.guild.channels.forEach(c => {
 		  c.overwritePermissions (role, {
 			  SEND_MESSAGES: true,
 			  READ_MESSAGES: true
 			  });
-		  c.overwritePermission (role2, {
+		  c.overwritePermission(role2, {
 			  SEND_MESSAGES: false,
 			  READ_MESSAGES: false
 			  });
