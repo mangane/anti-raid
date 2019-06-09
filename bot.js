@@ -578,28 +578,40 @@ message.guild.createChannel(`✈•bienvenue-bye`, "text").then(c => {
 message.channel.send ("<a:la:576804659528990751> Il ne vous reste plus qu'à mettre les salons au bonne endroit, les roles sont à créé avec la commande g!role");
 } 
 	if(command === "role") {
-message.channel.send ("<:ahah:586067009238728704> La commandes est en maintenance")
-if (message.author.id === 516274923828805667 ) {
-if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
-message.guild.createRole({
-                  name: "Membres",
-                    color: "#032c23",
-                    permissions: []
-     })     
-	message.guild.createRole({
-                  name: "Administrateurs",
+if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");                      
+                          message.guild.createRole({
+                  name: "[🔨] Administrateurs",
                     color: "#ffe200",
+                    permissions: ["ADMINISTRATOR"]
+     })                 
+    message.guild.createRole({
+                  name: "[🔧] Modérateurs ",
+                    color: "#f08619",
+                    permissions: ["KICK_MEMBERS","BAN_MEMBERS"]
+     })    
+    message.guild.createRole({
+                  name: "[🆘] Helpers",
+                    color: "#d11000",
                     permissions: []
      })    
-	message.guild.createRole({
-                  name: "Modérateurs",
-                    color: "#801d1d",
+    message.guild.createRole({
+                  name: "[🆙] Partenaires",
+                    color: "#10d6b3",
                     permissions: []
-     })     
-		message.guild.createRole({
-                  name: "Staff",
-                    permissions: ["KICK_MEMBERS"]
-     })
+     })    
+    message.guild.createRole({
+                  name: "Membres Vérifié",
+                    color: "#008080",
+                    permissions: []
+     })    
+    message.guild.createRole({
+                  name: "[💮] Bots",
+                    color: "#3b3b71",
+                    permissions: ["ADMINISTRATOR"]
+     
+                      })            
+  }
+  }
     var test = client.channels.find(`id`, "583693815190126592");
     const embed = new Discord.RichEmbed()
     .setTitle("Roles générer")
