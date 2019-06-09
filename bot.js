@@ -1896,7 +1896,7 @@ await base.react('🏠');
           color: 0xFF0000,
             fields: [{
                 name: "Communautaire :",
-                value: "<:online:587292258282373130>``g!commu``**\ Crée votre serveur sous le thème de la communauté**"
+                value: "<:online:587292258282373130>``g!commu``\ **Crée votre serveur sous le thème de la communauté**"
             }, {
                 name : "Basique :",
                 value: "<:online:587292258282373130>``g!salon``\ **Création de votre serveur sous le thème global**"
