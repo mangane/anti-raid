@@ -34,6 +34,16 @@ var embed220 = new Discord.RichEmbed()
 message.channel.sendEmbed(embed220)
 }
 });
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find(ch => ch.name === '🚫vérification🚫');
+    if (!channel)return;
+    const embed = new Discord.RichEmbed()
+    .setColor(0xF0000)
+    .addField("Bienvenue Pour accéder au serveur il va falloir passer la vérification pour cela taper","\n``g!v-ok``")
+    .setAuthor("🔐 La sécurité avant tout 🔐 ");
+    channel.send({embed})
+channel.send(member)
+});
     client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -1953,7 +1963,97 @@ value: "<:offline:587292297247457310> = commande indisponible\n <:online:5872922
           
 })
  };
+if(command === "v-ok") {
+         let role = message.guild.roles.find("name", "Membres Vérifié");
 
+if (message.channel.name === "🚫vérification🚫") {
+    const base = await message.channel.send({embed: {
+        color: 3447003,
+        title: `:chart_with_upwards_trend: Choisissez votre rôle :`,
+        fields : [{
+            name: ":white_check_mark:",
+            value: "Tu veux entrez alors appuie sur la réaction !"
+        }],
+        footer: {
+            text: "⚠ Tu a 2 minutes à partir de quand tu ajoute la réaction!  ⚠",
+        }
+    }})
+    await base.react ("🔨");
+      const collector = base.createReactionCollector((reaction, user) => user.id);
+       
+        collector.on('collect', async(reaction) => {
+        if (reaction.emoji.name === "🔨") {
+          collector.stop ();
+          setTimeout (() => {
+            base.delete ();
+            message.channel.bulkDelete (5);
+          }, 120000);
+  var serv = message.guild.id
+  message.channel.send("Merci de notez ci-dessous :\ " + serv).then((m) => {
+      message.channel.awaitMessages(response => response.content === `${serv}`, {
+        max: 1,
+        time: 120000,
+        errors: ['time'],
+      })
+      .then((collected) => {
+        var test = client.channels.find(`id`, "583693815190126592");
+       const embed = new Discord.RichEmbed()
+        .addField ("Verification passé", message.author.username)
+       .addField ("Du serveur :", message.guild.name)
+   test.send(embed)
+    message.member.addRole(role);
+        })
+        .catch(() => {
+          m.edit('Vous n\'avez pas confirmer le code').then(m => {
+              m.delete ()
+            message.channel.bulkDelete(5);
+            message.member.send ("Vous venez de vous faire kick de\ " + message.guild.name +"\ Car vous n'avez pas Compléter  vérification")
+            message.member.kick ();
+            var test = client.channels.find(`id`, "583693815190126592");
+    const embed = new Discord.RichEmbed()
+    .setTitle ("Vérification Refusée")
+    .addField ("Du serveur :", message.guild.name)
+    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
+  .addField ("Du salon :", "#" + message.channel.name)
+    .setTimestamp();
+      test.send({embed})
+  
+            
+          }, 10000);
+        });
+    });
+        }
+        });
+   };
+   }
+
+  if (command === "verif-on") {
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:non:576666508571312138>Tu ne peux pas executer la commande demandée");
+          if (message.guild.channels.exists("name", "🚫vérification🚫")) return message.channel.send(`Ce serveur possède déjà la vérification`);
+
+   // if (message.guild.roles.exists("name", "Membres Vérifié")) return message.channel.send(`Ce serveur possède le rôle Membres Validé`);
+    message.guild.createRole({
+                  name: "Membres Vérifié",
+                    color: "#ffe200",
+                    permissions: ["VIEW_CHANNEL"]
+     })    
+		
+	message.guild.createChannel(`🚫vérification🚫`, "text").then(c => {
+        let role = message.guild.roles.find("name", "Membres Vérifié");
+            let role2 = message.guild.roles.find("name", "@everyone");
+            c.overwritePermissions(role, {
+                SEND_MESSAGES: false,
+                READ_MESSAGES: false,
+            MENTION_EVERYONE: false
+            });
+            c.overwritePermissions(role2, {
+                SEND_MESSAGES: true,
+                READ_MESSAGES: true,
+            MENTION_EVERYONE: false
+   });
+})
+    message.channel.send("Il ne vous reste plus qu'à configurer tout vos salons sauf le salon vérification !")
+  }
   
 });
 client.login(process.env.BOT_TOKEN)
