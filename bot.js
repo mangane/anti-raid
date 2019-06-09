@@ -1687,17 +1687,17 @@ m.edit ("nom de l'embed qui est en lien avec l'emoji")
   })
   }
 if (command === "notif") {
-  if(message.guild.id === "576435925794422794") {
+  if(message.guild.id === "587286042042826811") {
   var toi = message.member
   
-  toi.addRole (`584305495771185162`)
+  toi.addRole (`587297724387426459`)
   message.channel.send ("Role Ajouter avec succès! ")
   }
 }
   if (command === "nonotif") {
-    if (message.guild.id === "576435925794422794"){
+    if (message.guild.id === "587286042042826811"){
       var toi = message.member
-      toi.removeRole (`584305495771185162`)
+      toi.removeRole (`587297724387426459`)
       message.channel.send ("Role retiré avec succès! ")
     }
   }
