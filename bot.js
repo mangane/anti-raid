@@ -1845,7 +1845,7 @@ if (command === `close`) {
 value: "Vous ne pourrez plus naviguez dans l'aide cependant le message sera encore présent !"
        }, {
 name: "Les balises :",
-value: "<:offline:576662534585712640> = commande indisponible\n <:online:587292258282373130> = Commande disponible"
+value: "<:offline:587292297247457310> = commande indisponible\n <:online:587292258282373130> = Commande disponible"
 	  }], 
         footer: {
             text: "⚠ Vous avez 30 secondes ⚠",
@@ -1943,7 +1943,7 @@ value: "<:online:587292258282373130>``g!mc``\ **Création d'un serveur sous le t
 value: "Vous ne pourrez plus naviguez dans l'aide cependant le message sera encore présent !"
         }, {
 name: "Les balises :",
-value: "<:offline:576662534585712640> = commande indisponible\n <:online:587292258282373130> = Commande disponible"
+value: "<:offline:587292297247457310> = commande indisponible\n <:online:587292258282373130> = Commande disponible"
 	  }], 
         footer: {
             text: "⚠ Vous avez 30 secondes ⚠",
