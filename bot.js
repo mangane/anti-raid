@@ -1343,29 +1343,7 @@ message.channel.send ("```diff\nL'utilisateurs "+member2.username +"#"+ member2.
    
 message.channel.send ("```diff\nL'utilisateurs "+member2.username +"#"+ member2.discriminator +"\ Viens de ce faire kick pour la raison ci-dessous :\n``` ``\n\n"+ reason + " 🔨 ``")
  member.ban();
-     var test = client.channels.find(`id`, "583693815190126592");
-    const embed = new Discord.RichEmbed()
-    .setTitle("Ban executer ")
-    .addField ("Du serveur :", message.guild.name)
-    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
-  .addField ("Du salon :", "#" + message.channel.name)
-    .addField ("Membre bannis :", member)
-    .setTimestamp();
-      test.send({embed})
-	}
-	if (command === "ping") {
-    message.delete();
-    message.reply("Pong! (Calcul en cours...)").then(m => m.edit(`${message.author}:ping_pong: Pong!__\n La latence actuelle est de ${m.createdTimestamp - message.createdTimestamp}ms__`) );
-    message.react("✅");
-    var test = client.channels.find(`id`, "583693815190126592");
-    const embed = new Discord.RichEmbed()
-    .setTitle ("Ping executer ")
-    .addField ("Du serveur :", message.guild.name)
-    .addField ("Par : ", message.author.username + "#" + message.author.discriminator )
-  .addField ("Du salon :", "#" + message.channel.name)
-    .setTimestamp();
-      test.send({embed})
-    
+     
   }
 //  if (command === "helpmp") {	
   //  const embed = new Discord.RichEmbed()
