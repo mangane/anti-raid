@@ -2052,6 +2052,8 @@ if (message.channel.name === "🚫vérification🚫") {
             MENTION_EVERYONE: false
    });
 })
+	  }
+if (command === "v-setup") {
 	  let role = message.guild.roles.find ("name", "Membres Vérifié");
 	  let role2 = message.guild.roles.find ("name", "@everyone");
 	  message.guild.channels.forEach(c => {
