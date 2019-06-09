@@ -1902,7 +1902,7 @@ await base.react('🏠');
                 value: "<:online:587292258282373130>``g!salon``\ **Création de votre serveur sous le thème global**"
             }, {
                 name : "Publicitaire :",
-                value: "<:online:587292258282373130>``g!pub``\ **Crée un serveur sous le thème Publicitaire**\n<:en_ligne:576662449734811659>``g!p-2``\ **Crée un serveur sous le thème Publicitaire 2**"
+                value: "<:online:587292258282373130>``g!pub``\ **Crée un serveur sous le thème Publicitaire**\n<:online:587292258282373130> ``g!p-2``\ **Crée un serveur sous le thème Publicitaire 2**"
             }, {
                 name: "Uniquement les rôles",
                 value: "<:online:587292258282373130>``g!role``\ **Création des roles uniquement**"
