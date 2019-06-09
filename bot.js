@@ -39,7 +39,7 @@ client.on('guildMemberAdd', member => {
     if (!channel)return;
     const embed = new Discord.RichEmbed()
     .setColor(0xF0000)
-    .addField("Bienvenue Pour accéder au serveur il va falloir passer la vérification pour cela taper","\n``g!v-ok``")
+    .addField("Bienvenue Pour accéder au serveur il va falloir passer la vérification pour cela taper","\n``s!v-ok``")
     .setAuthor("🔐 La sécurité avant tout 🔐 ");
     channel.send({embed})
 channel.send(member)
