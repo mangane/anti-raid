@@ -49,7 +49,7 @@ channel.send(member)
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
     client.user.setPresence({ game: { name: `${client.guilds.size} Serveurs `, type: "WATCHING" } });
 	const embed = new Discord.RichEmbed()
-        .setDescription(`<:en_ligne:576662449734811659> Merci à **${guild.name}** d'avoir ajouté __Discord créateur__.`)
+        .setDescription(`<:online:587292258282373130> Merci à **${guild.name}** d'avoir ajouté __GuildMaker__.`)
         .addField("📋 __Nom du serveur__", guild.name, true)
         .addField("📊 __Nombre de membres__ :", guild.memberCount, true)
         .addField("💻 __Nombre de salons__ :", guild.channels.size, true)
@@ -1617,8 +1617,8 @@ message.react("🔺");
   if (command === "setup") {
 const embed = new Discord.RichEmbed()
 .setColor ("RANDOM")
-.setTitle("Bonjour, Je m'appelle **Discord créateur** je suis là pour configurer votre serveur en 1 commandes!")
-.setDescription("Quand le bot est sur votre serveur, executer une des commandes du panel ``g!help`` (cooldown de 2 minutes par serveur) ")
+.setTitle("Bonjour, Je m'appelle **GuildMaker** je suis là pour configurer votre serveur en 1 commandes!")
+.setDescription("Quand le bot est sur votre serveur, executer une des commandes du panel ``s!help`` (cooldown de 2 minutes par serveur) ")
 //.addField ("Ajouter le bot :","<a:la:576804659528990751> [Inviter le bot](https://discordapp.com/oauth2/authorize?client_id=520322405982535705&scope=bot&permissions=2146958847)");
 message.channel.send({embed})
   }
